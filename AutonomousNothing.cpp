@@ -8,6 +8,7 @@
 #include "OurRobot.h"
 
 void OurRobot::Autonomous() {
-	while ( IsEnabled() && IsAutonomous() )
+	while ( IsEnabled() && IsAutonomous() ) {
 		Wait( 0.01 );
+	}
 }

@@ -48,10 +48,12 @@ void KinectBase::receive() {
 			extractPacket();
 			valueAge.restart();
 		}
-		else if ( sOnlineStatus == sf::Socket::Disconnected || sOnlineStatus == sf::Socket::Error ) // if socket failed
+		else if ( sOnlineStatus == sf::Socket::Disconnected || sOnlineStatus == sf::Socket::Error ) { // if socket failed
 			clearValues();
-		else if ( valueAge.getElapsedTime().asMilliseconds() > 500 ) // if values received are older than 500ms clear them
+		}
+		else if ( valueAge.getElapsedTime().asMilliseconds() > 500 ) { // if values received are older than 500ms clear them
 			clearValues();
+		}
 
 		// else do nothing because the socket is fine; it just doesn't have any new values
 	}

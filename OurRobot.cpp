@@ -59,38 +59,49 @@ void OurRobot::DS_PrintOut() {
 
 	driverStation->Printf( DriverStationLCD::kUser_Line1 , 1 , "RPM=%f" , shooterEncoder.getRPM() );
 
-	if ( shooterIsManual )
+	if ( shooterIsManual ) {
 		driverStation->Printf( DriverStationLCD::kUser_Line2 , 1 , "MANUAL TargetRPM=%f" , 72.0 * ScaleZ(turretStick) * 60.0 ); // 72 = max RPS of shooter
-	else
+	}
+	else {
 		driverStation->Printf( DriverStationLCD::kUser_Line2 , 1 , "AUTO   TargetRPM=%f" , 72.0 * ScaleZ(turretStick) * 60.0 ); // 72 = max RPS of shooter
+	}
 
 	driverStation->Printf( DriverStationLCD::kUser_Line3 , 1 , "Lock [ ]" );
 
-	if ( sPixelOffset < TurretKinect::pxlDeadband )
+	if ( sPixelOffset < TurretKinect::pxlDeadband ) {
 		driverStation->Printf( DriverStationLCD::kUser_Line3 , 7 , "x" );
-	else
+	}
+    else {
 		driverStation->Printf( DriverStationLCD::kUser_Line3 , 7 , " " );
+    }
 
 	driverStation->Printf( DriverStationLCD::kUser_Line3 , 10 , "ScaleZ=%f" , ScaleZ(turretStick) );
 
 	driverStation->Printf( DriverStationLCD::kUser_Line4 , 1 , "KinectOnline [ ]" );
 
-	if ( sOnlineStatus == sf::Socket::Done )
+	if ( sOnlineStatus == sf::Socket::Done ) {
 		driverStation->Printf( DriverStationLCD::kUser_Line4 , 15 , "x" );
-	else if ( sOnlineStatus == sf::Socket::NotReady )
+	}
+    else if ( sOnlineStatus == sf::Socket::NotReady ) {
 		driverStation->Printf( DriverStationLCD::kUser_Line4 , 15 , "?" );
-	else
+    }
+	else {
 		driverStation->Printf( DriverStationLCD::kUser_Line4 , 15 , " " );
+	}
 
-	if ( isShooting )
+	if ( isShooting ) {
 		driverStation->Printf( DriverStationLCD::kUser_Line5 , 1 , "shooter ON " );
-	else
+	}
+    else {
 		driverStation->Printf( DriverStationLCD::kUser_Line5 , 1 , "shooter OFF" );
+    }
 
-	if ( isAutoAiming )
+	if ( isAutoAiming ) {
 		driverStation->Printf( DriverStationLCD::kUser_Line5 , 13 , "aAim ON " );
-	else
+	}
+	else {
 		driverStation->Printf( DriverStationLCD::kUser_Line5 , 13 , "aAim OFF" );
+	}
 
 	driverStation->Printf( DriverStationLCD::kUser_Line6 , 1 , "Dist=%f%s" , sDistance * 0.00328084f , " ft" ); // converts from mm to ft
 

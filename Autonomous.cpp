@@ -28,10 +28,12 @@ void OurRobot::Autonomous() {
 
 		if ( aiming ) {
 			turretKinect.valueMutex.lock();
-			if ( fabs( turretKinect.pixelOffset ) > TurretKinect::pxlDeadband ) // if turret isn't locked on, then aim
+			if ( fabs( turretKinect.pixelOffset ) > TurretKinect::pxlDeadband ) { // if turret isn't locked on, then aim
 				rotateMotor.Set( static_cast<float>(turretKinect.pixelOffset) / 320.f ); // "pixelOffset / 320" produces abs() function from -1 to 1 for smooth tracking
-			else
+			}
+			else {
 				aiming = false;
+			}
 			turretKinect.valueMutex.unlock();
 		}
 

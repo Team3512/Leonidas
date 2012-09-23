@@ -35,28 +35,33 @@ void OurRobot::OperatorControl() {
 		turretStickButtons.updateButtons();
 
 		/* ===== AIM ===== */
-		if ( fabs( turretStick.GetX() ) > 0.1 ) // manual turret movement outside of -0.5 to 0.5 range, up to 0.5 speed
+		if ( fabs( turretStick.GetX() ) > 0.1 ) { // manual turret movement outside of -0.5 to 0.5 range, up to 0.5 speed
 			rotateMotor.Set( -turretStick.GetX() / 2.f );
-		else if ( isAutoAiming ) { // let autoAiming take over if activated and user isn't rotating turret
+		}
+        else if ( isAutoAiming ) { // let autoAiming take over if activated and user isn't rotating turret
 			turretKinect.valueMutex.lock();
 
 			sPixelOffset = turretKinect.pixelOffset; // store value so it can be accessed safely elsewhere
 
 			turretKinect.valueMutex.unlock();
 
-			if( fabs( sPixelOffset ) < TurretKinect::pxlDeadband ) // deadband so shooter won't jitter
+			if( fabs( sPixelOffset ) < TurretKinect::pxlDeadband ) { // deadband so shooter won't jitter
 				rotateMotor.Set(0);
-			else
+			}
+			else {
 				rotateMotor.Set( static_cast<float>(sPixelOffset) / 320.f ); // "pixelOffset / 320" produces abs() function from -1 to 1 for smooth tracking
-		}
-		else
+			}
+        }
+		else {
 			rotateMotor.Set( 0 );
-		/* =============== */
+		}
+        /* =============== */
 
 
 		/* ===================== AutoAim ===================== */
-		if ( turretStickButtons.releasedButton( 3 ) )
+		if ( turretStickButtons.releasedButton( 3 ) ) {
 			isAutoAiming = !isAutoAiming; // toggles autoAim
+		}
 		/* =================================================== */
 
 		/* ================= Target Selection ================ */
@@ -82,8 +87,9 @@ void OurRobot::OperatorControl() {
 
 		/* ============== Toggle Shooter Motors ============== */
 		// turns shooter on/off
-		if ( turretStickButtons.releasedButton( 1 ) ) // if released trigger
+		if ( turretStickButtons.releasedButton( 1 ) ) { // if released trigger
 			isShooting = !isShooting;
+		}
 
 		if ( isShooting ) {
 			if ( shooterIsManual ) { // let driver change shooter speed manually
@@ -107,8 +113,9 @@ void OurRobot::OperatorControl() {
 		}
 
 		// toggle manual RPM setting vs setting with encoder input
-		if ( turretStickButtons.releasedButton( 2 ) )
+		if ( turretStickButtons.releasedButton( 2 ) ) {
 			shooterIsManual = !shooterIsManual;
+		}
 		/* =================================================== */
 
 
@@ -119,8 +126,9 @@ void OurRobot::OperatorControl() {
 		else if ( turretStick.GetRawButton( 11 ) ) { // move upper lift down
 			upperLift.Set( Relay::kReverse );
 		}
-		else
+		else {
 			upperLift.Set( Relay::kOff ); // turn off lift
+		}
 
 		if ( turretStick.GetRawButton( 7 ) ) { // move lower lift up
 			lowerLift.Set( Relay::kReverse );
@@ -128,8 +136,9 @@ void OurRobot::OperatorControl() {
 		else if ( turretStick.GetRawButton( 10 ) ) { // move lower lift down
 			lowerLift.Set( Relay::kForward );
 		}
-		else
+		else {
 			lowerLift.Set( Relay::kOff ); // turn off lift
+		}
 
 		// ---------- Full Lift Forward ----------
 		if ( turretStick.GetRawButton( 8 ) ) { // move all lifts up
@@ -150,11 +159,13 @@ void OurRobot::OperatorControl() {
 
 			hammerClock.Start();
 
-			if( isHammerDown )
+			if( isHammerDown ) {
 				hammer.Set( true ); // if hammer should be going down, deploy it immediately
-			else
+			}
+			else {
 				pinLock.Set( false ); // if hammer is coming back up, unlock solenoid immediately
-		}
+			}
+        }
 
 		if ( isHammerDown && hammerClock.Get() > 0 ) {
 			pinLock.Set( true ); // if hammer is down after delay passed, deploy locks
@@ -171,9 +182,10 @@ void OurRobot::OperatorControl() {
 		/* ================== */
 
 		/* ===== Shifter ===== */
-		if ( driveStick1Buttons.releasedButton( 1 ) ) // if released trigger
+		if ( driveStick1Buttons.releasedButton( 1 ) ) { // if released trigger
 			shifter.Set( !shifter.Get() ); // shifts between low and high gear
-		/* =================== */
+		}
+        /* =================== */
 
 		mainDrive.ArcadeDrive( ScaleZ( driveStick1 ) * driveStick1.GetY() , driveStick2.GetX() , false ); //moves robot based on two joystick inputs
 	}
