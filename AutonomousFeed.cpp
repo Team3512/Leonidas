@@ -8,10 +8,9 @@
 #include "OurRobot.h"
 
 void OurRobot::Autonomous() {
-	while ( IsEnabled() && IsAutonomous() ) {
-		upperLift.Set( Relay::kOn );
-		upperLift.Set( Relay::kReverse );
-		lowerLift.Set( Relay::kOn );
-		lowerLift.Set( Relay::kForward );
-	}
+    while ( IsEnabled() && IsAutonomous() ) {
+        // make ball conveyors run in reverse for all of Autonomous
+        upperLift.Set( Relay::kReverse );
+        lowerLift.Set( Relay::kForward );
+    }
 }

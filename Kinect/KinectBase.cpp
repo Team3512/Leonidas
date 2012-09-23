@@ -16,7 +16,7 @@ KinectBase::KinectBase( sf::IpAddress IP , unsigned short portNumber ) : socketT
 KinectBase::~KinectBase() {
 	closeThreads = true;
 
-	socketThread.wait();
+	socketThread.wait(); // waits for receive thread to end
 	kinectSocket.unbind();
 }
 
@@ -40,12 +40,13 @@ void KinectBase::receive() {
 		onlineStatus = kinectSocket.receive( packet , receiveIP , receivePort );
 		packetMutex.unlock();
 
+		// get a safe version of onlineStatus
 		valueMutex.lock();
 		sOnlineStatus = onlineStatus;
 		valueMutex.unlock();
 
 		if ( sOnlineStatus == sf::Socket::Done ) { // data received
-			extractPacket();
+			extractPacket(); // unpack new data
 			valueAge.restart();
 		}
 		else if ( sOnlineStatus == sf::Socket::Disconnected || sOnlineStatus == sf::Socket::Error ) { // if socket failed

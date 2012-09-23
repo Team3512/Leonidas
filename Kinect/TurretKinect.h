@@ -11,25 +11,27 @@
 
 class TurretKinect : public KinectBase {
 public:
-	typedef enum {
-		pxlDeadband = 5
-	} targetting;
+    // Packet data
+    signed short pixelOffset; // amount of pixels turret is off of center (is from -320 to 320)
+    unsigned int distance;
+    signed char targetSelect;
+    unsigned char dummyVar;
+    /* FIXME "dummyVar" isn't and should never be used.
+     * Including it in packet insertion and extraction somehow prevents the robot code from crashing during data receive.
+     */
 
-	signed short pixelOffset; // amount of pixels turret is off of center (is from -320 to 320)
-	unsigned int distance;
-	signed char targetSelect;
-	unsigned char dummyVar;
-	/* FIXME This variable isn't and should never be used.
-	 * Including it in packet insertion and extraction somehow prevents the robot code from crashing during socket reception.
-	 */
+    typedef enum {
+        pxlDeadband = 5
+    } targetting;
 
-	TurretKinect( sf::IpAddress IP , unsigned short portNumber );
+    TurretKinect( sf::IpAddress IP , unsigned short portNumber );
 
-	void clearValues();
+    void clearValues(); // own definition of clearValues()
 
 protected:
-	void insertPacket();
-	void extractPacket();
+    // own definitions of packet manipulation functions
+    void insertPacket();
+    void extractPacket();
 };
 
 #endif // TURRET_KINECT_H

@@ -11,16 +11,18 @@
 
 class DriveKinect : public KinectBase {
 public:
-	float right;
-	float left;
+    // Packet data
+    float right;
+    float left;
 
-	DriveKinect( sf::IpAddress IP , unsigned short portNumber );
+    DriveKinect( sf::IpAddress IP , unsigned short portNumber );
 
-	void clearValues();
+    void clearValues(); // own definition of clearValues()
 
 protected:
-	void insertPacket();
-	void extractPacket();
+    // own definitions of packet manipulation functions
+    void insertPacket();
+    void extractPacket();
 };
 
 #endif // DRIVE_KINECT_H

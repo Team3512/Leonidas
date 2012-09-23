@@ -10,6 +10,16 @@ TurretKinect::TurretKinect( sf::IpAddress IP , unsigned short portNumber ) : Kin
 	clearValues();
 }
 
+void TurretKinect::clearValues() {
+    valueMutex.lock();
+    pixelOffset = 0;
+    distance = 0;
+    targetSelect = 0;
+    dummyVar = 0;
+    KinectBase::clearValues();
+    valueMutex.unlock();
+}
+
 void TurretKinect::insertPacket() {
 	packetMutex.lock();
 	valueMutex.lock();
@@ -24,14 +34,4 @@ void TurretKinect::extractPacket() {
 	packet >> pixelOffset >> distance >> targetSelect >> dummyVar;
 	valueMutex.unlock();
 	packetMutex.unlock();
-}
-
-void TurretKinect::clearValues() {
-	valueMutex.lock();
-	pixelOffset = 0;
-	distance = 0;
-	targetSelect = 0;
-	dummyVar = 0;
-	KinectBase::clearValues();
-	valueMutex.unlock();
 }

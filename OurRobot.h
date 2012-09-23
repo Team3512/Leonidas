@@ -23,46 +23,47 @@
 
 #include "Kinect/TurretKinect.h"
 
-float ScaleZ( Joystick& stick ); // scales joystick's Z axis from -1 .. 1 at its limits to 0 .. 1 within same range of movement
+// scales joystick's Z axis values from -1 .. 1 to 0 .. 1, but within same range of movement
+float ScaleZ( Joystick& stick );
 
 class OurRobot : public SimpleRobot {
 public:
-	static DriverStationLCD* driverStation;
+    static DriverStationLCD* driverStation; // used for printing messages to the Driver Station
 
-	OurRobot();
+    OurRobot();
 
-	void Autonomous();
-	void OperatorControl();
-	void Disabled();
+    void Autonomous();
+    void OperatorControl();
+    void Disabled();
 
 private:
-	Compressor mainCompressor;
+    Compressor mainCompressor;
 
-	RobotDrive mainDrive;
+    RobotDrive mainDrive;
 
-	Joystick driveStick1;
-	Joystick driveStick2;
-	Joystick turretStick;
-	Relay upperLift;
-	Relay lowerLift;
+    Joystick driveStick1;
+    Joystick driveStick2;
+    Joystick turretStick;
+    Relay upperLift;
+    Relay lowerLift;
 
-	Victor shooterMotorLeft;
-	Victor shooterMotorRight;
-	Victor rotateMotor;
+    Victor shooterMotorLeft;
+    Victor shooterMotorRight;
+    Victor rotateMotor;
 
-	Solenoid pinLock;
-	Solenoid hammer;
-	Solenoid shifter;
+    Solenoid pinLock;
+    Solenoid hammer;
+    Solenoid shifter;
 
-	PhotoEncoder shooterEncoder;
+    PhotoEncoder shooterEncoder;
 
-	TurretKinect turretKinect;
+    TurretKinect turretKinect;
 
-	bool shooterIsManual;
-	bool isShooting;
-	bool isAutoAiming;
+    bool shooterIsManual;
+    bool isShooting;
+    bool isAutoAiming;
 
-	void DS_PrintOut(); // prints messages to driverStation LCD
+    void DS_PrintOut(); // prints messages to driverStation LCD
 };
 
 #endif // OUR_ROBOT_H

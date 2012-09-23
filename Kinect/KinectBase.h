@@ -19,24 +19,32 @@ public:
 	KinectBase( sf::IpAddress IP , unsigned short portNumber ); // takes IP and portNumber to which to bind
 	virtual ~KinectBase();
 
-	void send();
-	void receive();
+	void send(); // sends data to on-board computer
+	void receive(); // receives data from on-board computer
 
-	virtual void insertPacket() = 0;
-	virtual void extractPacket() = 0;
-	virtual void clearValues() = 0;
-	/* This zeroes all data in the packet (used if socket connection fails or data is old).
-	 * KinectBase::clearValues() should be called at end of all clearValues() implementations to reset the timer
+	/* The next two methods are used for packing a derived Kinect class's packet.
+	 * Each Kinect's packet is unique, so the method must be defined by the derived class.
 	 */
 
+	// Packs data into packet for sending to on-board computer
+	virtual void insertPacket() = 0;
+
+	// Unpacks data received from on-board computer
+	virtual void extractPacket() = 0;
+
+	/* This zeroes all data in the packet (used if socket connection fails or data is old).
+     * KinectBase::clearValues() should be called at end of all clearValues() implementations to reset the timer
+     */
+	virtual void clearValues() = 0;
+
 	sf::Socket::Status onlineStatus;
-	sf::Mutex valueMutex;
+	sf::Mutex valueMutex; // locks data received from packet
 
 protected:
 	sf::Thread socketThread;
 	sf::UdpSocket kinectSocket;
 
-	sf::Clock valueAge;
+	sf::Clock valueAge; // used to throw away old values
 
 	sf::IpAddress sourceIP;
 	unsigned short sourcePort;
@@ -45,7 +53,7 @@ protected:
 	unsigned short receivePort;
 
 	sf::Packet packet;
-	sf::Mutex packetMutex;
+	sf::Mutex packetMutex; // locks packet for insertion, extraction, and receive operations
 
 private:
 	static bool closeThreads;

@@ -8,10 +8,10 @@
 #include "OurRobot.h"
 
 void OurRobot::Disabled() {
-	mainCompressor.Stop();
+    mainCompressor.Stop();
 
-	while ( IsDisabled() ) {
-		DS_PrintOut();
-		Wait(0.01);
-	}
+    while ( IsDisabled() ) {
+        DS_PrintOut();
+        Wait(0.01);
+    }
 }

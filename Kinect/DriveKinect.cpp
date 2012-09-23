@@ -10,6 +10,14 @@ DriveKinect::DriveKinect( sf::IpAddress IP , unsigned short portNumber ) : Kinec
 	clearValues();
 }
 
+void DriveKinect::clearValues() {
+    valueMutex.lock();
+    right = 0;
+    left = 0;
+    KinectBase::clearValues();
+    valueMutex.unlock();
+}
+
 void DriveKinect::insertPacket() {
 	packetMutex.lock();
 	valueMutex.lock();
@@ -24,12 +32,4 @@ void DriveKinect::extractPacket() {
 	packet >> right >> left;
 	valueMutex.unlock();
 	packetMutex.unlock();
-}
-
-void DriveKinect::clearValues() {
-	valueMutex.lock();
-	right = 0;
-	left = 0;
-	KinectBase::clearValues();
-	valueMutex.unlock();
 }
