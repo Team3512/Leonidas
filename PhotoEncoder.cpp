@@ -28,12 +28,26 @@ float PhotoEncoder::getRPM() {
         //return 0;
     }
 
-    // Pack 4 8 bit numbers into a 32 bit number
+    // Pack 4 8-bit numbers into a 32 bit number
     data = dataArray[3];
     data |= dataArray[2] << 8;
     data |= dataArray[1] << 16;
     data |= dataArray[0] << 24;
 
     std::cout << "data=" << data << "\n";
-    return ( 1250000.f * 60.f ) / ( 16.f * data ); // TODO add comments here for magic numbers
+
+/* Revolutions / Minute derivation
+ * Note: Numbers are in parentheses.
+ *       Units for the numbers are next to the parentheses.
+ * ---------------------------------------------------------
+ *   ( data ) 1/1250000.f of sec / ( 1 ) 1/16 rev                number of 1/1250000ths of a second per 1/16th revolution
+ * = ( 16.f * data ) 1/1250000.f of sec / ( 1 ) rev              number of 1/1250000ths of a second per revolution
+ * = ( 16.f * data ) sec / ( 1 * 1250000.f ) rev                 number of seconds per revolution
+ * = ( 16.f * data ) min / ( 1 * 1250000.f * 60.f ) rev          number of minutes per revolution
+ * = 1 / ( ( 16.f * data ) min / ( 1 * 1250000.f * 60.f ) rev )  number of revolutions per minute
+ * = ( 1 * 1250000.f * 60.f ) rev / ( 16.f * data ) min          number of revolutions per minute
+ * = ( 1250000.f * 60.f ) rev / ( 16.f * data ) min              number of revolutions per minute
+ */
+
+    return ( 1250000.f * 60.f ) / ( 16.f * data );
 }
