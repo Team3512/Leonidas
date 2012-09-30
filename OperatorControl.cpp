@@ -50,7 +50,7 @@ void OurRobot::OperatorControl() {
             }
             else {
                 /* Set(x) = x / 320
-                 * x = -320 .. 320 -> Set( -1 .. 1 )
+                 * -320 <= x <= 320 therefore Set( -1 <= x / 320 <= 1 )
                  * smooth tracking because as the turret aims closer to the target, the motor value gets smaller
                  */
                 rotateMotor.Set( static_cast<float>(sPixelOffset) / 320.f );

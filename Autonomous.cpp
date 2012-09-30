@@ -29,8 +29,9 @@ void OurRobot::Autonomous() {
             turretKinect.valueMutex.lock();
             if ( fabs( turretKinect.pixelOffset ) > TurretKinect::pxlDeadband ) { // if turret isn't locked on, then aim
                 /* Set(x) = x / 320
-                 * {x | -320 < x < 320 } -> Set( { y | -1 < y < 1 } )
-                 * smooth tracking because the turret aims closer to the target, the motor value gets smaller
+                 * x is always in range: -320 <= x <= 320,
+                 * therefore Set( x / 320.f ) always gets a value between -1 and 1
+                 * smooth tracking because as the turret aims closer to the target, the motor value gets smaller
                  */
                 rotateMotor.Set( static_cast<float>(turretKinect.pixelOffset) / 320.f );
             }
