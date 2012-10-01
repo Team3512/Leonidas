@@ -31,7 +31,7 @@ OurRobot::OurRobot() :
     hammer( 2 ),
     shifter( 1 ),
 
-    shooterEncoder( 1 , 0x20 ),
+    shooterEncoder( 1 , 0x20 << 1 ),
 
     turretKinect( "10.35.12.192" , 5614 ) // on-board computer's IP address and port
 {
