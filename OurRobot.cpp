@@ -54,10 +54,22 @@ void OurRobot::DS_PrintOut() {
     turretKinect.valueMutex.unlock();
     /* ====================================== */
 
-    /* ===== Print to Driver Station LCD ===== */
+    /* ===== Print to Driver Station LCD =====
+     * Packs the following variables:
+     *
+     * double: shooter RPM
+     * bool: shooter RPM control is manual
+     * float: turret ScaleZ
+     * bool: turret is locked on
+     * bool: Kinect is online
+     * bool: isShooting
+     * bool: isAutoAiming
+     * float: distance to target
+     */
+
     driverStation->clear();
 
-    *driverStation << 60.f / ( 16.f * shooterEncoder.GetPeriod() );
+    *driverStation << static_cast<double>(60.f / ( 16.f * shooterEncoder.GetPeriod() ));
 
     *driverStation << shooterIsManual;
 
