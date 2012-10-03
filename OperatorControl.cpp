@@ -101,7 +101,7 @@ void OurRobot::OperatorControl() {
                 shooterMotorRight.Set( ScaleZ(turretStick) );
             }
             else { // else adjust shooter voltage to match RPM
-                if ( shooterEncoder.getRPM() < 72.0 * ScaleZ(turretStick) * 60.0 ) {
+                if ( 60.f / ( 16.f * shooterEncoder.GetPeriod() ) < 72.0 * ScaleZ(turretStick) * 60.0 ) {
                     shooterMotorLeft.Set( -1 );
                     shooterMotorRight.Set( 1 );
                 }

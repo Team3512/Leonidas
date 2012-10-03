@@ -4,12 +4,14 @@
 //Author: FRC Team 3512, Spartatroniks
 //=============================================================================
 
+#include "../SFML/System/Sleep.hpp"
 #include "KinectBase.h"
 
 bool KinectBase::closeThreads = false;
 
 KinectBase::KinectBase( sf::IpAddress IP , unsigned short portNumber ) : socketThread( &KinectBase::receive , this ) , sourceIP( IP ) , sourcePort( portNumber ) {
 	kinectSocket.bind( portNumber );
+	kinectSocket.setBlocking( false );
 	socketThread.launch();
 }
 
@@ -57,6 +59,7 @@ void KinectBase::receive() {
 		}
 
 		// else do nothing because the socket is fine; it just doesn't have any new values
+		sf::sleep( sf::milliseconds( 250 ) );
 	}
 }
 

@@ -44,7 +44,7 @@ void OurRobot::Autonomous() {
         /* gives full power to shooter motors until it reaches set point,
          * then turn them off until the shooter slows down again
          */
-        if ( shooterEncoder.getRPM() < 2300 ) {
+        if ( 60.f / ( 16.f * shooterEncoder.GetPeriod() ) < 2300 ) {
             shooterMotorLeft.Set( -1 );
             shooterMotorRight.Set( 1 );
         }

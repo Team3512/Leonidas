@@ -18,7 +18,7 @@
 #include <Relay.h>
 #include <Victor.h>
 #include <Solenoid.h>
-#include "PhotoEncoder.h"
+#include <Counter.h>
 
 #include "Kinect/TurretKinect.h"
 
@@ -56,7 +56,7 @@ private:
     Solenoid hammer;
     Solenoid shifter;
 
-    PhotoEncoder shooterEncoder;
+    Counter shooterEncoder;
 
     TurretKinect turretKinect;
 

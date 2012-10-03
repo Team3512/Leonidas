@@ -1,5 +1,6 @@
 // Implementation of class ShooterController
 #include "ShooterController.h"
+#include "PhotoEncoder.h"
 
 //------------------------------------------------------------------------------
 // Static items
