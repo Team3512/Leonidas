@@ -5,14 +5,14 @@
 //Author: FRC Team 3512, Spartatroniks
 //=============================================================================
 
-#include <DriverStationLCD.h>
 #include "OurRobot.h"
+#include "DriverStationDisplay.h"
 
 float ScaleZ( Joystick& stick) {
     return floorf( 500.f * ( 1.f - stick.GetZ() ) / 2.f ) / 500.f; // CONSTANT^-1 is step value (now 1/500)
 }
 
-DriverStationLCD* OurRobot::driverStation = DriverStationLCD::GetInstance();
+DriverStationDisplay* OurRobot::driverStation = DriverStationDisplay::getInstance();
 
 OurRobot::OurRobot() :
     mainCompressor( 1 , 6 ),
@@ -55,60 +55,28 @@ void OurRobot::DS_PrintOut() {
     /* ====================================== */
 
     /* ===== Print to Driver Station LCD ===== */
-    driverStation->Clear();
+    driverStation->clear();
 
-    driverStation->Printf( DriverStationLCD::kUser_Line1 , 1 , "RPM=%f" , shooterEncoder.getRPM() );
+    *driverStation << shooterEncoder.getRPM();
 
-    if ( shooterIsManual ) {
-        driverStation->Printf( DriverStationLCD::kUser_Line2 , 1 , "MANUAL TargetRPM=%f" , 72.0 * ScaleZ(turretStick) * 60.0 ); // 72 = max RPS of shooter
-    }
-    else {
-        driverStation->Printf( DriverStationLCD::kUser_Line2 , 1 , "AUTO   TargetRPM=%f" , 72.0 * ScaleZ(turretStick) * 60.0 ); // 72 = max RPS of shooter
-    }
+    *driverStation << shooterIsManual;
 
-    driverStation->Printf( DriverStationLCD::kUser_Line3 , 1 , "Lock [ ]" );
+    *driverStation << ScaleZ(turretStick); // This was "72.f * ScaleZ(turretStick) * 60.f"
 
-    if ( sPixelOffset < TurretKinect::pxlDeadband ) { // if turret is locked on
-        driverStation->Printf( DriverStationLCD::kUser_Line3 , 7 , "x" );
-    }
-    else {
-        driverStation->Printf( DriverStationLCD::kUser_Line3 , 7 , " " );
-    }
+    *driverStation << static_cast<bool>( sPixelOffset < TurretKinect::pxlDeadband );
 
-    driverStation->Printf( DriverStationLCD::kUser_Line3 , 10 , "ScaleZ=%f" , ScaleZ(turretStick) );
+    *driverStation << sOnlineStatus;
 
-    driverStation->Printf( DriverStationLCD::kUser_Line4 , 1 , "KinectOnline [ ]" );
+    *driverStation << isShooting;
 
-    if ( sOnlineStatus == sf::Socket::Done ) {
-        driverStation->Printf( DriverStationLCD::kUser_Line4 , 15 , "x" );
-    }
-    else if ( sOnlineStatus == sf::Socket::NotReady ) {
-        driverStation->Printf( DriverStationLCD::kUser_Line4 , 15 , "?" );
-    }
-    else {
-        driverStation->Printf( DriverStationLCD::kUser_Line4 , 15 , " " );
-    }
+    *driverStation << isAutoAiming;
 
-    if ( isShooting ) {
-        driverStation->Printf( DriverStationLCD::kUser_Line5 , 1 , "shooter ON " );
-    }
-    else {
-        driverStation->Printf( DriverStationLCD::kUser_Line5 , 1 , "shooter OFF" );
-    }
-
-    if ( isAutoAiming ) {
-        driverStation->Printf( DriverStationLCD::kUser_Line5 , 13 , "aAim ON " );
-    }
-    else {
-        driverStation->Printf( DriverStationLCD::kUser_Line5 , 13 , "aAim OFF" );
-    }
-
-    /* Prints distance to target
+    /* Inserts distance to target
      * 0.00328084f converts from millimeters to feet
      */
-    driverStation->Printf( DriverStationLCD::kUser_Line6 , 1 , "Dist=%f%s" , sDistance * 0.00328084f , " ft" );
+    *driverStation << sDistance * 0.00328084f;
 
-    driverStation->UpdateLCD();
+    driverStation->sendToDS();
     /* ====================================== */
 }
 

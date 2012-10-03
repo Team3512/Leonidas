@@ -46,8 +46,8 @@ protected:
 
 	sf::Clock valueAge; // used to throw away old values
 
-	sf::IpAddress sourceIP;
-	unsigned short sourcePort;
+	sf::IpAddress sourceIP; // IP address of data receiver when sending
+	unsigned short sourcePort; // port to which to bind and wait for incoming data
 
 	sf::IpAddress receiveIP;
 	unsigned short receivePort;

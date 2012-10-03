@@ -9,7 +9,6 @@
 #define OUR_ROBOT_H
 
 #include <cmath>
-#include <DriverStationLCD.h>
 
 #include <SimpleRobot.h>
 
@@ -26,9 +25,11 @@
 // scales joystick's Z axis values from -1 .. 1 to 0 .. 1, but within same range of movement
 float ScaleZ( Joystick& stick );
 
+class DriverStationDisplay;
+
 class OurRobot : public SimpleRobot {
 public:
-    static DriverStationLCD* driverStation; // used for printing messages to the Driver Station
+    static DriverStationDisplay* driverStation; // used for sending data to the Driver Station
 
     OurRobot();
 

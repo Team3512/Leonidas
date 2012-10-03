@@ -261,6 +261,7 @@
                 <folder name="/Leonidas/SFMLSystem" recursive="true"/>
                 <file name="/Leonidas/ButtonTracker.cpp"/>
                 <file name="/Leonidas/ShooterController.cpp"/>
+                <file name="/Leonidas/DriverStationDisplay.cpp"/>
             </contents>
         </buildtarget>
     </buildtargets>
