@@ -19,7 +19,7 @@ private:
     DriverStationDisplay( sf::IpAddress IP , unsigned short portNumber );
 
     // disallow copy and assignment
-    DriverStationDisplay ( const DriverStationDisplay& );
+    DriverStationDisplay( const DriverStationDisplay& );
     void operator=( const DriverStationDisplay& );
 
     static DriverStationDisplay* m_dsDisplay;

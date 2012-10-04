@@ -29,6 +29,9 @@ public:
 	// Packs data into packet for sending to on-board computer
 	virtual void insertPacket() = 0;
 
+	// Packs data into user-provided packet for sending to on-board computer (NO MUTEXES)
+	virtual void insertPacketMutexless( sf::Packet& tempPacket ) = 0;
+
 	// Unpacks data received from on-board computer
 	virtual void extractPacket() = 0;
 
@@ -43,6 +46,7 @@ public:
 protected:
 	sf::Thread socketThread;
 	sf::UdpSocket kinectSocket;
+	sf::UdpSocket sendSocket;
 
 	sf::Clock valueAge; // used to throw away old values
 
@@ -54,6 +58,8 @@ protected:
 
 	sf::Packet packet;
 	sf::Mutex packetMutex; // locks packet for insertion, extraction, and receive operations
+
+	sf::Packet sendOnlyPacket;
 
 private:
 	static bool closeThreads;

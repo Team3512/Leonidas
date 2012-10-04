@@ -26,6 +26,10 @@ void DriveKinect::insertPacket() {
 	packetMutex.unlock();
 }
 
+// does nothing because sending isn't needed in this class implementation
+void DriveKinect::insertPacketMutexless( sf::Packet& tempPacket ) {
+}
+
 void DriveKinect::extractPacket() {
 	packetMutex.lock();
 	valueMutex.lock();

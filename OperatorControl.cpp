@@ -192,5 +192,7 @@ void OurRobot::OperatorControl() {
         /* =================== */
 
         mainDrive.ArcadeDrive( ScaleZ( driveStick1 ) * driveStick1.GetY() , driveStick2.GetX() , false ); //moves robot based on two joystick inputs
+
+        Wait( 0.1 );
     }
 }

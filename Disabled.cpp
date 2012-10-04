@@ -12,6 +12,6 @@ void OurRobot::Disabled() {
 
     while ( IsDisabled() ) {
         DS_PrintOut();
-        Wait(0.01);
+        Wait( 0.1 );
     }
 }

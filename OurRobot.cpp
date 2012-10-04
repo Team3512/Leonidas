@@ -61,7 +61,7 @@ void OurRobot::DS_PrintOut() {
      * bool: shooter RPM control is manual
      * float: turret ScaleZ
      * bool: turret is locked on
-     * bool: Kinect is online
+     * unsigned char: Kinect is online
      * bool: isShooting
      * bool: isAutoAiming
      * float: distance to target
@@ -69,15 +69,19 @@ void OurRobot::DS_PrintOut() {
 
     driverStation->clear();
 
+    *driverStation << static_cast<int>(1);
+
     *driverStation << static_cast<double>(60.f / ( 16.f * shooterEncoder.GetPeriod() ));
 
     *driverStation << shooterIsManual;
 
-    *driverStation << ScaleZ(turretStick); // This was "72.f * ScaleZ(turretStick) * 60.f"
+    *driverStation << static_cast<float>(1.f);
 
-    *driverStation << static_cast<bool>( sPixelOffset < TurretKinect::pxlDeadband );
+    //*driverStation << ScaleZ(turretStick); // This was "72.f * ScaleZ(turretStick) * 60.f"
 
-    *driverStation << sOnlineStatus;
+    *driverStation << static_cast<bool>( sPixelOffset < TurretKinect::pxlDeadband && sOnlineStatus == sf::Socket::Done );
+
+    *driverStation << static_cast<unsigned char>(sOnlineStatus);
 
     *driverStation << isShooting;
 
@@ -86,7 +90,9 @@ void OurRobot::DS_PrintOut() {
     /* Inserts distance to target
      * 0.00328084f converts from millimeters to feet
      */
-    *driverStation << sDistance * 0.00328084f;
+    *driverStation << static_cast<float>(sDistance * 0.00328084f);
+
+    *driverStation << static_cast<float>(0.f); // dummy value
 
     driverStation->sendToDS();
     /* ====================================== */

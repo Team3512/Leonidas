@@ -10,15 +10,21 @@ DriverStationDisplay* DriverStationDisplay::m_dsDisplay = NULL;
 
 DriverStationDisplay* DriverStationDisplay::getInstance() {
     if ( m_dsDisplay == NULL ) {
-        m_dsDisplay = new DriverStationDisplay( "10.35.12.5" , 5615 );
+        m_dsDisplay = new DriverStationDisplay( "10.35.12.9" , 5615 );
     }
 
     return m_dsDisplay;
 }
 
 void DriverStationDisplay::sendToDS() {
-    socket.send( *dynamic_cast<sf::Packet*>(this) , sourceIP , sourcePort );
+    socket.send( *static_cast<sf::Packet*>(this) , sourceIP , sourcePort );
 }
 
 DriverStationDisplay::DriverStationDisplay( sf::IpAddress IP , unsigned short portNumber ) : sourceIP( IP ) , sourcePort( portNumber ) {
+}
+
+DriverStationDisplay::DriverStationDisplay( const DriverStationDisplay& ) {
+}
+
+void DriverStationDisplay::operator=( const DriverStationDisplay& ) {
 }

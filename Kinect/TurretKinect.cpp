@@ -28,6 +28,10 @@ void TurretKinect::insertPacket() {
 	packetMutex.unlock();
 }
 
+void TurretKinect::insertPacketMutexless( sf::Packet& tempPacket ) {
+    tempPacket << targetSelect;
+}
+
 void TurretKinect::extractPacket() {
 	packetMutex.lock();
 	valueMutex.lock();

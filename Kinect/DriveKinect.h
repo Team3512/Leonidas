@@ -22,6 +22,7 @@ public:
 protected:
     // own definitions of packet manipulation functions
     void insertPacket();
+    void insertPacketMutexless( sf::Packet& tempPacket );
     void extractPacket();
 };
 

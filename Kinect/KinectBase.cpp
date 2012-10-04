@@ -4,8 +4,9 @@
 //Author: FRC Team 3512, Spartatroniks
 //=============================================================================
 
-#include "../SFML/System/Sleep.hpp"
 #include "KinectBase.h"
+#include <iostream> // FIXME
+#include <Timer.h>
 
 bool KinectBase::closeThreads = false;
 
@@ -23,15 +24,14 @@ KinectBase::~KinectBase() {
 }
 
 void KinectBase::send() {
-	packetMutex.lock();
-	packet.clear();
-	packetMutex.unlock();
+	sf::Packet sendOnlyPacket;
+	std::cout << "inserting send data...";
+	insertPacketMutexless( sendOnlyPacket );
+	std::cout << " done\n";
 
-	insertPacket();
-
-	packetMutex.lock();
-	kinectSocket.send( packet , sourceIP , sourcePort );
-	packetMutex.unlock();
+	std::cout << " sending...";
+	sendSocket.send( sendOnlyPacket , sourceIP , sourcePort );
+	std::cout << " done\n";
 }
 
 void KinectBase::receive() {
@@ -39,7 +39,9 @@ void KinectBase::receive() {
 
 	while ( !closeThreads ) {
 		packetMutex.lock();
+		std::cout << "receiving...";
 		onlineStatus = kinectSocket.receive( packet , receiveIP , receivePort );
+		std::cout << " done\n";
 		packetMutex.unlock();
 
 		// get a safe version of onlineStatus
@@ -59,7 +61,7 @@ void KinectBase::receive() {
 		}
 
 		// else do nothing because the socket is fine; it just doesn't have any new values
-		sf::sleep( sf::milliseconds( 250 ) );
+		Wait( 0.25 );
 	}
 }
 
