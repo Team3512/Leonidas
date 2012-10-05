@@ -15,7 +15,7 @@ void TurretKinect::clearValues() {
     pixelOffset = 0;
     distance = 0;
     targetSelect = 0;
-    dummyVar = 0;
+    //dummyVar = 0;
     KinectBase::clearValues();
     valueMutex.unlock();
 }
@@ -23,7 +23,7 @@ void TurretKinect::clearValues() {
 void TurretKinect::insertPacket() {
 	packetMutex.lock();
 	valueMutex.lock();
-	packet << pixelOffset << distance << targetSelect << dummyVar;
+	packet << pixelOffset << distance << targetSelect;// << dummyVar;
 	valueMutex.unlock();
 	packetMutex.unlock();
 }
@@ -35,7 +35,7 @@ void TurretKinect::insertPacketMutexless( sf::Packet& tempPacket ) {
 void TurretKinect::extractPacket() {
 	packetMutex.lock();
 	valueMutex.lock();
-	packet >> pixelOffset >> distance >> targetSelect >> dummyVar;
+	packet >> pixelOffset >> distance >> targetSelect;// >> dummyVar;
 	valueMutex.unlock();
 	packetMutex.unlock();
 }

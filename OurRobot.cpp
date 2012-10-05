@@ -59,25 +59,22 @@ void OurRobot::DS_PrintOut() {
      *
      * double: shooter RPM
      * bool: shooter RPM control is manual
-     * float: turret ScaleZ
+     * unsigned int: turret ScaleZ
      * bool: turret is locked on
      * unsigned char: Kinect is online
      * bool: isShooting
      * bool: isAutoAiming
-     * float: distance to target
+     * unsigned int: distance to target
      */
 
     driverStation->clear();
-
-    *driverStation << static_cast<int>(1);
 
     *driverStation << static_cast<double>(60.f / ( 16.f * shooterEncoder.GetPeriod() ));
 
     *driverStation << shooterIsManual;
 
-    *driverStation << static_cast<float>(1.f);
-
-    //*driverStation << ScaleZ(turretStick); // This was "72.f * ScaleZ(turretStick) * 60.f"
+    // floats don't work so " * 10000" saves some precision in a UINT
+    *driverStation << static_cast<unsigned int>(ScaleZ(turretStick) * 10000);
 
     *driverStation << static_cast<bool>( sPixelOffset < TurretKinect::pxlDeadband && sOnlineStatus == sf::Socket::Done );
 
@@ -87,12 +84,7 @@ void OurRobot::DS_PrintOut() {
 
     *driverStation << isAutoAiming;
 
-    /* Inserts distance to target
-     * 0.00328084f converts from millimeters to feet
-     */
-    *driverStation << static_cast<float>(sDistance * 0.00328084f);
-
-    *driverStation << static_cast<float>(0.f); // dummy value
+    *driverStation << sDistance;
 
     driverStation->sendToDS();
     /* ====================================== */
