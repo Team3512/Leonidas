@@ -33,7 +33,7 @@ OurRobot::OurRobot() :
 
     shooterEncoder( 4 ),
 
-    turretKinect( "10.35.12.192" , 5614 ) // on-board computer's IP address and port
+    turretKinect( "10.35.12.6" , 5614 ) // on-board computer's IP address and port
 {
     mainDrive.SetExpiration( 1.f ); // let motors run for 1 second uncontrolled before shutting them down
 
@@ -57,7 +57,7 @@ void OurRobot::DS_PrintOut() {
     /* ===== Print to Driver Station LCD =====
      * Packs the following variables:
      *
-     * double: shooter RPM
+     * unsigned int: shooter RPM
      * bool: shooter RPM control is manual
      * unsigned int: turret ScaleZ
      * bool: turret is locked on
@@ -69,12 +69,12 @@ void OurRobot::DS_PrintOut() {
 
     driverStation->clear();
 
-    *driverStation << static_cast<double>(60.f / ( 16.f * shooterEncoder.GetPeriod() ));
+    *driverStation << static_cast<unsigned int>(60.f / ( 16.f * shooterEncoder.GetPeriod() ) * 100000.f);
 
     *driverStation << shooterIsManual;
 
     // floats don't work so " * 10000" saves some precision in a UINT
-    *driverStation << static_cast<unsigned int>(ScaleZ(turretStick) * 10000);
+    *driverStation << static_cast<unsigned int>(ScaleZ(turretStick) * 100000.f);
 
     *driverStation << static_cast<bool>( sPixelOffset < TurretKinect::pxlDeadband && sOnlineStatus == sf::Socket::Done );
 
