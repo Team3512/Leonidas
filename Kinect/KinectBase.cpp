@@ -21,6 +21,22 @@ KinectBase::~KinectBase() {
 	kinectSocket.unbind();
 }
 
+sf::Socket::Status KinectBase::getOnlineStatus() {
+    sf::Socket::Status temp;
+
+    valueMutex.lock();
+    temp = onlineStatus;
+    valueMutex.unlock();
+
+    return temp;
+}
+
+void KinectBase::setOnlineStatus( sf::Socket::Status var ) {
+    valueMutex.lock();
+    onlineStatus = var;
+    valueMutex.unlock();
+}
+
 void KinectBase::send() {
 	sf::Packet sendOnlyPacket;
 	insertPacketMutexless( sendOnlyPacket );

@@ -43,17 +43,6 @@ OurRobot::OurRobot() :
 }
 
 void OurRobot::DS_PrintOut() {
-    /* ===== Kinect Packet Temp Storage ===== */
-    // retrieve all values needed from Kinect here to reduce lock time
-    turretKinect.valueMutex.lock();
-
-    sf::Socket::Status sOnlineStatus = turretKinect.onlineStatus;
-    signed short sPixelOffset = turretKinect.pixelOffset;
-    unsigned int sDistance = turretKinect.distance;
-
-    turretKinect.valueMutex.unlock();
-    /* ====================================== */
-
     /* ===== Print to Driver Station LCD =====
      * Packs the following variables:
      *
@@ -76,15 +65,16 @@ void OurRobot::DS_PrintOut() {
     // floats don't work so " * 10000" saves some precision in a UINT
     *driverStation << static_cast<unsigned int>(ScaleZ(turretStick) * 100000.f);
 
-    *driverStation << static_cast<bool>( sPixelOffset < TurretKinect::pxlDeadband && sOnlineStatus == sf::Socket::Done );
+    *driverStation << static_cast<bool>( fabs( turretKinect.getPixelOffset() ) < TurretKinect::pxlDeadband
+            && turretKinect.getOnlineStatus() == sf::Socket::Done );
 
-    *driverStation << static_cast<unsigned char>(sOnlineStatus);
+    *driverStation << static_cast<unsigned char>( turretKinect.getOnlineStatus() );
 
     *driverStation << isShooting;
 
     *driverStation << isAutoAiming;
 
-    *driverStation << sDistance;
+    *driverStation << turretKinect.getDistance();
 
     driverStation->sendToDS();
     /* ====================================== */

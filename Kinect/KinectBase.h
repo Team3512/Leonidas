@@ -19,6 +19,9 @@ public:
 	KinectBase( sf::IpAddress IP , unsigned short portNumber ); // takes IP and portNumber to which to bind
 	virtual ~KinectBase();
 
+	sf::Socket::Status getOnlineStatus();
+	void setOnlineStatus( sf::Socket::Status var );
+
 	void send(); // sends data to on-board computer
 	void receive(); // receives data from on-board computer
 
@@ -40,7 +43,6 @@ public:
      */
 	virtual void clearValues() = 0;
 
-	sf::Socket::Status onlineStatus;
 	sf::Mutex valueMutex; // locks data received from packet
 
 protected:
@@ -48,6 +50,7 @@ protected:
 	sf::UdpSocket kinectSocket;
 	sf::UdpSocket sendSocket;
 
+	sf::Socket::Status onlineStatus;
 	sf::Clock valueAge; // used to throw away old values
 
 	sf::IpAddress sourceIP; // IP address of data receiver when sending
