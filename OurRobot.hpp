@@ -1,12 +1,12 @@
 //=============================================================================
-//File Name: OurRobot.h
+//File Name: OurRobot.hpp
 //Description: Main robot class in which all robot sensors and devices are
 //             declared
 //Author: FRC Team 3512, Spartatroniks
 //=============================================================================
 
-#ifndef OUR_ROBOT_H
-#define OUR_ROBOT_H
+#ifndef OUR_ROBOT_HPP
+#define OUR_ROBOT_HPP
 
 #include <cmath>
 
@@ -20,7 +20,7 @@
 #include <Solenoid.h>
 #include <Counter.h>
 
-#include "Kinect/TurretKinect.h"
+#include "Kinect/TurretKinect.hpp"
 
 // scales joystick's Z axis values from -1 .. 1 to 0 .. 1, but within same range of movement
 float ScaleZ( Joystick& stick );
@@ -67,4 +67,4 @@ private:
     void DS_PrintOut(); // prints messages to driverStation LCD
 };
 
-#endif // OUR_ROBOT_H
+#endif // OUR_ROBOT_HPP

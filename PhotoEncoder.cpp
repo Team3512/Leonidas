@@ -4,7 +4,7 @@
 //Author: FRC Team 3512, Spartatroniks
 //=============================================================================
 
-#include "PhotoEncoder.h"
+#include "PhotoEncoder.hpp"
 #include <DigitalModule.h>
 #include <I2C.h>
 #include <iostream> // TODO remove this later

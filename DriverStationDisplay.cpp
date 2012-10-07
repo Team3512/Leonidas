@@ -4,7 +4,7 @@
 //Author: FRC Team 3512, Spartatroniks
 //=============================================================================
 
-#include "DriverStationDisplay.h"
+#include "DriverStationDisplay.hpp"
 
 DriverStationDisplay* DriverStationDisplay::m_dsDisplay = NULL;
 

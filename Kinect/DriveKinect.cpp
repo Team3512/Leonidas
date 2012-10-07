@@ -4,7 +4,7 @@
 //Author: FRC Team 3512, Spartatroniks
 //=============================================================================
 
-#include "DriveKinect.h"
+#include "DriveKinect.hpp"
 
 DriveKinect::DriveKinect( sf::IpAddress IP , unsigned short portNumber ) : KinectBase( IP , portNumber ) {
 	clearValues();

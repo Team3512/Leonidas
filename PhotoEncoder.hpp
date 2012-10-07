@@ -1,11 +1,11 @@
 //=============================================================================
-//File Name: PhotoEncoder.h
+//File Name: PhotoEncoder.hpp
 //Description: Handles interfacing with a custom photo-interrupt encoder
 //Author: FRC Team 3512, Spartatroniks
 //=============================================================================
 
-#ifndef PHOTO_ENCODER_H
-#define PHOTO_ENCODER_H
+#ifndef PHOTO_ENCODER_HPP
+#define PHOTO_ENCODER_HPP
 
 #include <SensorBase.h>
 
@@ -29,4 +29,4 @@ private:
     UINT8 dataArray[4];
 };
 
-#endif // PHOTO_ENCODER_H
+#endif // PHOTO_ENCODER_HPP

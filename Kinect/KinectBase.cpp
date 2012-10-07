@@ -4,7 +4,7 @@
 //Author: FRC Team 3512, Spartatroniks
 //=============================================================================
 
-#include "KinectBase.h"
+#include "KinectBase.hpp"
 #include <Timer.h>
 
 bool KinectBase::closeThreads = false;

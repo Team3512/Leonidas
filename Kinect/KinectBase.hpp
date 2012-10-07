@@ -1,11 +1,11 @@
 //=============================================================================
-//File Name: KinectBase.h
+//File Name: KinectBase.hpp
 //Description: Defines interface for all types of Kinect usage
 //Author: FRC Team 3512, Spartatroniks
 //=============================================================================
 
-#ifndef KINECT_BASE_H
-#define KINECT_BASE_H
+#ifndef KINECT_BASE_HPP
+#define KINECT_BASE_HPP
 
 #include "../SFML/Network/IpAddress.hpp"
 #include "../SFML/Network/Packet.hpp"
@@ -68,4 +68,4 @@ private:
 	static bool closeThreads;
 };
 
-#endif // KINECT_BASE_H
+#endif // KINECT_BASE_HPP

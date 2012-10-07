@@ -1,12 +1,12 @@
 //=============================================================================
-//File Name: ButtonTracker.h
+//File Name: ButtonTracker.hpp
 //Description: Helps user determine if joystick button was just pressed or just
 //             released
 //Author: FRC Team 3512, Spartatroniks
 //=============================================================================
 
-#ifndef BUTTON_TRACKER_H
-#define BUTTON_TRACKER_H
+#ifndef BUTTON_TRACKER_HPP
+#define BUTTON_TRACKER_HPP
 
 /* This class allows you to check if a button was pressed or released without
  * having to wait in one spot of code until that happens.

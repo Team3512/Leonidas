@@ -1,13 +1,13 @@
 //=============================================================================
-//File Name: TurretKinect.h
+//File Name: TurretKinect.hpp
 //Description: Declares Kinect for aiming turret
 //Author: FRC Team 3512, Spartatroniks
 //=============================================================================
 
-#ifndef TURRET_KINECT_H
-#define TURRET_KINECT_H
+#ifndef TURRET_KINECT_HPP
+#define TURRET_KINECT_HPP
 
-#include "KinectBase.h"
+#include "KinectBase.hpp"
 
 class TurretKinect : public KinectBase {
 public:
@@ -42,4 +42,4 @@ private:
      */
 };
 
-#endif // TURRET_KINECT_H
+#endif // TURRET_KINECT_HPP

@@ -6,7 +6,7 @@
 //=============================================================================
 
 #include <DriverStation.h>
-#include "ButtonTracker.h"
+#include "ButtonTracker.hpp"
 
 bool ButtonTracker::m_driverStationInit = false;
 DriverStation* ButtonTracker::m_driverStation = NULL;

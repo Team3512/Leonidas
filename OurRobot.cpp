@@ -5,8 +5,8 @@
 //Author: FRC Team 3512, Spartatroniks
 //=============================================================================
 
-#include "OurRobot.h"
-#include "DriverStationDisplay.h"
+#include "OurRobot.hpp"
+#include "DriverStationDisplay.hpp"
 
 float ScaleZ( Joystick& stick) {
     return floorf( 500.f * ( 1.f - stick.GetZ() ) / 2.f ) / 500.f; // CONSTANT^-1 is step value (now 1/500)

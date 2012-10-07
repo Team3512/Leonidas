@@ -1,13 +1,13 @@
 //=============================================================================
-//File Name: DriveKinect.h
+//File Name: DriveKinect.hpp
 //Description: Declares Kinect for driving robot
 //Author: FRC Team 3512, Spartatroniks
 //=============================================================================
 
-#ifndef DRIVE_KINECT_H
-#define DRIVE_KINECT_H
+#ifndef DRIVE_KINECT_HPP
+#define DRIVE_KINECT_HPP
 
-#include "KinectBase.h"
+#include "KinectBase.hpp"
 
 class DriveKinect : public KinectBase {
 public:
@@ -33,4 +33,4 @@ private:
     float left;
 };
 
-#endif // DRIVE_KINECT_H
+#endif // DRIVE_KINECT_HPP

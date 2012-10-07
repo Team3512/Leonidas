@@ -5,7 +5,8 @@
 //Author: FRC Team 3512, Spartatroniks
 //=============================================================================
 
-#include "OurRobot.h"
+#include <Timer.h>
+#include "OurRobot.hpp"
 
 void OurRobot::Autonomous() {
     while ( IsEnabled() && IsAutonomous() ) {

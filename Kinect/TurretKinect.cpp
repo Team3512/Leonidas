@@ -4,7 +4,7 @@
 //Author: FRC Team 3512, Spartatroniks
 //=============================================================================
 
-#include "TurretKinect.h"
+#include "TurretKinect.hpp"
 
 const unsigned int TurretKinect::pxlDeadband = 5;
 

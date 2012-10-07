@@ -1,8 +1,11 @@
 //=============================================================================
-//File Name: DriverStationDisplay.h
+//File Name: DriverStationDisplay.hpp
 //Description:
 //Author: FRC Team 3512, Spartatroniks
 //=============================================================================
+
+#ifndef DRIVER_STATION_DISPLAY_HPP
+#define DRIVER_STATION_DISPLAY_HPP
 
 #include "SFML/Network/IpAddress.hpp"
 #include "SFML/Network/Packet.hpp"
@@ -29,3 +32,5 @@ private:
     sf::IpAddress sourceIP; // IP address of Driver Station
     unsigned short sourcePort; // port to which to send data
 };
+
+#endif // DRIVER_STATION_DISPLAY_HPP

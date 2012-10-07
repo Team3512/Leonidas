@@ -5,8 +5,8 @@
 //=============================================================================
 
 #include <Timer.h>
-#include "OurRobot.h"
-#include "ButtonTracker.h"
+#include "OurRobot.hpp"
+#include "ButtonTracker.hpp"
 
 void OurRobot::OperatorControl() {
     Timer hammerClock;
