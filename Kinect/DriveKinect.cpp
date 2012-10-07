@@ -42,30 +42,15 @@ void DriveKinect::setLeft( float var ) {
     valueMutex.unlock();
 }
 
-void DriveKinect::clearValues() {
-    valueMutex.lock();
+void DriveKinect::insertPacketMutexless( sf::Packet& insertHere ) {
+    insertHere << right << left;
+}
+
+void DriveKinect::extractPacketMutexless( sf::Packet& extractHere ) {
+    extractHere >> right >> left;
+}
+
+void DriveKinect::clearValuesMutexless() {
     right = 0;
     left = 0;
-    KinectBase::clearValues();
-    valueMutex.unlock();
-}
-
-void DriveKinect::insertPacket() {
-	packetMutex.lock();
-	valueMutex.lock();
-	packet << right << left;
-	valueMutex.unlock();
-	packetMutex.unlock();
-}
-
-// does nothing because sending isn't needed in this class implementation
-void DriveKinect::insertPacketMutexless( sf::Packet& tempPacket ) {
-}
-
-void DriveKinect::extractPacket() {
-	packetMutex.lock();
-	valueMutex.lock();
-	packet >> right >> left;
-	valueMutex.unlock();
-	packetMutex.unlock();
 }

@@ -9,7 +9,7 @@
 
 bool KinectBase::closeThreads = false;
 
-KinectBase::KinectBase( sf::IpAddress IP , unsigned short portNumber ) : socketThread( &KinectBase::receive , this ) , sourceIP( IP ) , sourcePort( portNumber ) {
+KinectBase::KinectBase( sf::IpAddress IP , unsigned short portNumber ) : socketThread( &KinectBase::receive , this ) , sendIP( IP ) , sendPort( portNumber ) {
 	kinectSocket.bind( portNumber );
 	socketThread.launch();
 }
@@ -38,19 +38,20 @@ void KinectBase::setOnlineStatus( sf::Socket::Status var ) {
 }
 
 void KinectBase::send() {
-	sf::Packet sendOnlyPacket;
-	insertPacketMutexless( sendOnlyPacket );
+    insertPacket( sender ); // inserts data into the sender packet
 
-	sendSocket.send( sendOnlyPacket , sourceIP , sourcePort );
+    sender.mutex.lock();
+    sendSocket.send( sender.packet , sendIP , sendPort );
+	sender.mutex.unlock();
 }
 
 void KinectBase::receive() {
 	sf::Socket::Status sOnlineStatus; // used to store safe value for Kinect's packet data status
 
 	while ( !closeThreads ) {
-		packetMutex.lock();
-		onlineStatus = kinectSocket.receive( packet , receiveIP , receivePort );
-		packetMutex.unlock();
+	    receiver.mutex.lock();
+		onlineStatus = kinectSocket.receive( receiver.packet , receiveIP , receivePort );
+		receiver.mutex.unlock();
 
 		// get a safe version of onlineStatus
 		valueMutex.lock();
@@ -58,7 +59,7 @@ void KinectBase::receive() {
 		valueMutex.unlock();
 
 		if ( sOnlineStatus == sf::Socket::Done ) { // data received
-			extractPacket(); // unpack new data
+			extractPacket( receiver ); // unpack new data from receiver packet
 			valueAge.restart();
 		}
 		else if ( sOnlineStatus == sf::Socket::Disconnected || sOnlineStatus == sf::Socket::Error ) { // if socket failed
@@ -72,7 +73,34 @@ void KinectBase::receive() {
 	}
 }
 
-// KinectBase::clearValues() should be called at end of all clearValues() implementations to reset the timer
+void KinectBase::insertPacket( PacketStruct& insertHere ) {
+    insertHere.mutex.lock();
+
+    insertHere.packet.clear();
+
+    valueMutex.lock();
+
+    insertPacketMutexless( sender ); // inserts data into the sender packet
+
+    valueMutex.unlock();
+    insertHere.mutex.unlock();
+}
+
+void KinectBase::extractPacket( PacketStruct& extractHere ) {
+    extractHere.mutex.lock();
+    valueMutex.lock();
+
+    extractPacketMutexless( receiver ); // extracts data from the receiver packet
+
+    valueMutex.unlock();
+    extractHere.mutex.unlock();
+}
+
 void KinectBase::clearValues() {
-	valueAge.restart();
+	valueMutex.lock();
+
+	clearValuesMutexless();
+	valueAge.restart(); // there are new values, so reset the timer
+
+	valueMutex.unlock();
 }

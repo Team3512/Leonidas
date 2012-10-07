@@ -60,32 +60,17 @@ void TurretKinect::setTargetSelect( signed char var ) {
     valueMutex.unlock();
 }
 
-void TurretKinect::clearValues() {
-    valueMutex.lock();
+void TurretKinect::insertPacketMutexless( PacketStruct& insertHere ) {
+    insertHere.packet << targetSelect;// << dummyVar;
+}
+
+void TurretKinect::extractPacketMutexless( PacketStruct& extractHere ) {
+	extractHere.packet >> pixelOffset >> distance >> targetSelect;// >> dummyVar;
+}
+
+void TurretKinect::clearValuesMutexless() {
     pixelOffset = 0;
     distance = 0;
     targetSelect = 0;
     //dummyVar = 0;
-    KinectBase::clearValues();
-    valueMutex.unlock();
-}
-
-void TurretKinect::insertPacket() {
-	packetMutex.lock();
-	valueMutex.lock();
-	packet << pixelOffset << distance << targetSelect;// << dummyVar;
-	valueMutex.unlock();
-	packetMutex.unlock();
-}
-
-void TurretKinect::insertPacketMutexless( sf::Packet& tempPacket ) {
-    tempPacket << targetSelect;
-}
-
-void TurretKinect::extractPacket() {
-	packetMutex.lock();
-	valueMutex.lock();
-	packet >> pixelOffset >> distance >> targetSelect;// >> dummyVar;
-	valueMutex.unlock();
-	packetMutex.unlock();
 }

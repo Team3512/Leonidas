@@ -19,13 +19,11 @@ public:
     void setRight( float var );
     void setLeft( float var );
 
-    void clearValues(); // own definition of clearValues()
-
 protected:
-    // own definitions of packet manipulation functions
-    void insertPacket();
-    void insertPacketMutexless( sf::Packet& tempPacket );
-    void extractPacket();
+    // derived definitions of packet manipulation functions
+    void insertPacketMutexless( sf::Packet& insertHere );
+    void extractPacketMutexless( sf::Packet& extractHere );
+    void clearValuesMutexless();
 
 private:
     // Packet data

@@ -14,6 +14,11 @@
 #include "../SFML/System/Mutex.hpp"
 #include "../SFML/System/Thread.hpp"
 
+typedef struct PacketStruct {
+    sf::Packet packet;
+    sf::Mutex mutex;
+} PacketStruct;
+
 class KinectBase {
 public:
 	KinectBase( sf::IpAddress IP , unsigned short portNumber ); // takes IP and portNumber to which to bind
@@ -22,50 +27,59 @@ public:
 	sf::Socket::Status getOnlineStatus();
 	void setOnlineStatus( sf::Socket::Status var );
 
-	void send(); // sends data to on-board computer
-	void receive(); // receives data from on-board computer
+	void send(); // sends data to single board computer
 
-	/* The next two methods are used for packing a derived Kinect class's packet.
-	 * Each Kinect's packet is unique, so the method must be defined by the derived class.
+	/* Zeroes all data in the packet (has mutex wrapping)
+	 * Used if socket connection fails or data is old
 	 */
-
-	// Packs data into packet for sending to on-board computer
-	virtual void insertPacket() = 0;
-
-	// Packs data into user-provided packet for sending to on-board computer (NO MUTEXES)
-	virtual void insertPacketMutexless( sf::Packet& tempPacket ) = 0;
-
-	// Unpacks data received from on-board computer
-	virtual void extractPacket() = 0;
-
-	/* This zeroes all data in the packet (used if socket connection fails or data is old).
-     * KinectBase::clearValues() should be called at end of all clearValues() implementations to reset the timer
-     */
-	virtual void clearValues() = 0;
-
-	sf::Mutex valueMutex; // locks data received from packet
+	void clearValues();
 
 protected:
-	sf::Thread socketThread;
-	sf::UdpSocket kinectSocket;
-	sf::UdpSocket sendSocket;
+    /* The next two methods are used for packing a derived Kinect class's packet.
+     * Each Kinect's packet is unique, so the method must be defined by the derived class.
+     */
 
-	sf::Socket::Status onlineStatus;
-	sf::Clock valueAge; // used to throw away old values
+    // Packs data into user-provided packet for sending to single board computer (NO MUTEXES)
+    virtual void insertPacketMutexless( PacketStruct& insertHere ) = 0;
 
-	sf::IpAddress sourceIP; // IP address of data receiver when sending
-	unsigned short sourcePort; // port to which to bind and wait for incoming data
+    // Unpacks data received from single board computer into user-provided packet (NO MUTEXES)
+    virtual void extractPacketMutexless( PacketStruct& extractHere ) = 0;
 
-	sf::IpAddress receiveIP;
-	unsigned short receivePort;
+    // Zeroes all data in the packet
+    virtual void clearValuesMutexless() = 0;
 
-	sf::Packet packet;
-	sf::Mutex packetMutex; // locks packet for insertion, extraction, and receive operations
+	// Used for locking a packet during send, receive, and manipulation functions
+	PacketStruct receiver;
+	PacketStruct sender;
 
-	sf::Packet sendOnlyPacket;
+    // locks data received from packet
+    sf::Mutex valueMutex;
 
 private:
-	static bool closeThreads;
+    static bool closeThreads;
+
+    sf::Thread socketThread;
+
+    sf::UdpSocket kinectSocket;
+    sf::UdpSocket sendSocket;
+
+    sf::IpAddress sendIP; // IP address of data receiver when sending
+    unsigned short sendPort; // stores port of remote sender when data is received
+
+    sf::IpAddress receiveIP;
+    unsigned short receivePort;
+
+    sf::Clock valueAge; // used to throw away old values
+
+    sf::Socket::Status onlineStatus;
+
+    void receive(); // receives data from on-board computer
+
+    // Packs data into sendPacket for sending to single board computer (has mutex wrapping)
+    void insertPacket( PacketStruct& insertHere );
+
+    // Unpacks data from packet received from single board computer (has mutex wrapping)
+    void extractPacket( PacketStruct& extractHere );
 };
 
 #endif // KINECT_BASE_HPP
