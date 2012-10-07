@@ -1,4 +1,5 @@
 // Implementation of class ShooterController
+#include <Victor.h>
 #include "ShooterController.hpp"
 #include "PhotoEncoder.hpp"
 

@@ -3,8 +3,6 @@
 #ifndef _SHOOTER_CONTROLLER_INCLUDED
 #define _SHOOTER_CONTROLLER_INCLUDED
 
-#include "OurRobot.hpp"
-
 //! This class controls the shooter mechanism.
 /**
  * How to use this class:
