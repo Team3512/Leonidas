@@ -1,6 +1,6 @@
 //=============================================================================
 //File Name: AutonomousNothing.cpp
-//Description: Does nothing but immediately exit Autonomous. USED ONLY FOR
+//Description: Does nothing but wait until Autonomous exits. USED ONLY FOR
 //             DEBUG PURPOSES
 //Author: FRC Team 3512, Spartatroniks
 //=============================================================================
