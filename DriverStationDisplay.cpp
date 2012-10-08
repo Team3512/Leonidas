@@ -17,10 +17,10 @@ DriverStationDisplay* DriverStationDisplay::getInstance() {
 }
 
 void DriverStationDisplay::sendToDS() {
-    socket.send( *static_cast<sf::Packet*>(this) , sourceIP , sourcePort );
+    socket.send( *static_cast<sf::Packet*>(this) , dsIP , dsPort );
 }
 
-DriverStationDisplay::DriverStationDisplay( sf::IpAddress IP , unsigned short portNumber ) : sourceIP( IP ) , sourcePort( portNumber ) {
+DriverStationDisplay::DriverStationDisplay( sf::IpAddress IP , unsigned short portNumber ) : dsIP( IP ) , dsPort( portNumber ) {
 }
 
 DriverStationDisplay::DriverStationDisplay( const DriverStationDisplay& ) {

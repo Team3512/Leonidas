@@ -48,8 +48,8 @@ private:
 
     sf::UdpSocket socket;
 
-    sf::IpAddress sourceIP; // IP address of Driver Station
-    unsigned short sourcePort; // port to which to send data
+    sf::IpAddress dsIP; // IP address of Driver Station
+    unsigned short dsPort; // port to which to send data
 };
 
 #endif // DRIVER_STATION_DISPLAY_HPP
