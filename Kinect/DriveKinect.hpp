@@ -21,8 +21,8 @@ public:
 
 protected:
     // derived definitions of packet manipulation functions
-    void insertPacketMutexless( sf::Packet& insertHere );
-    void extractPacketMutexless( sf::Packet& extractHere );
+    void insertPacketMutexless( PacketStruct& insertHere );
+    void extractPacketMutexless( PacketStruct& extractHere );
     void clearValuesMutexless();
 
 private:

@@ -6,10 +6,10 @@
 
 #include "TurretKinect.hpp"
 
-const unsigned int TurretKinect::pxlDeadband = 5;
+const unsigned int TurretKinect::pxlDeadband;
 
 TurretKinect::TurretKinect( sf::IpAddress IP , unsigned short portNumber ) : KinectBase( IP , portNumber ) {
-	clearValues();
+    clearValues();
 }
 
 signed short TurretKinect::getPixelOffset() {
@@ -61,16 +61,15 @@ void TurretKinect::setTargetSelect( signed char var ) {
 }
 
 void TurretKinect::insertPacketMutexless( PacketStruct& insertHere ) {
-    insertHere.packet << targetSelect;// << dummyVar;
+    insertHere.packet << targetSelect;
 }
 
 void TurretKinect::extractPacketMutexless( PacketStruct& extractHere ) {
-	extractHere.packet >> pixelOffset >> distance >> targetSelect;// >> dummyVar;
+    extractHere.packet >> pixelOffset >> distance >> targetSelect;
 }
 
 void TurretKinect::clearValuesMutexless() {
     pixelOffset = 0;
     distance = 0;
     targetSelect = 0;
-    //dummyVar = 0;
 }

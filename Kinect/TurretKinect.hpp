@@ -11,7 +11,7 @@
 
 class TurretKinect : public KinectBase {
 public:
-    static const unsigned int pxlDeadband;
+    static const unsigned int pxlDeadband = 5;
 
     TurretKinect( sf::IpAddress IP , unsigned short portNumber );
 
@@ -34,10 +34,6 @@ private:
     signed short pixelOffset; // amount of pixels turret is off of center (is from -320 to 320)
     unsigned int distance;
     signed char targetSelect;
-    //unsigned char dummyVar;
-    /* FIXME "dummyVar" isn't and should never be used.
-     * Including it in packet insertion and extraction somehow prevents the robot code from crashing during data receive.
-     */
 };
 
 #endif // TURRET_KINECT_HPP

@@ -7,7 +7,7 @@
 #include "DriveKinect.hpp"
 
 DriveKinect::DriveKinect( sf::IpAddress IP , unsigned short portNumber ) : KinectBase( IP , portNumber ) {
-	clearValues();
+    clearValues();
 }
 
 float DriveKinect::getRight() {
@@ -42,12 +42,12 @@ void DriveKinect::setLeft( float var ) {
     valueMutex.unlock();
 }
 
-void DriveKinect::insertPacketMutexless( sf::Packet& insertHere ) {
-    insertHere << right << left;
+void DriveKinect::insertPacketMutexless( PacketStruct& insertHere ) {
+    insertHere.packet << right << left;
 }
 
-void DriveKinect::extractPacketMutexless( sf::Packet& extractHere ) {
-    extractHere >> right >> left;
+void DriveKinect::extractPacketMutexless( PacketStruct& extractHere ) {
+    extractHere.packet >> right >> left;
 }
 
 void DriveKinect::clearValuesMutexless() {

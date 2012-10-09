@@ -21,18 +21,18 @@ typedef struct PacketStruct {
 
 class KinectBase {
 public:
-	KinectBase( sf::IpAddress IP , unsigned short portNumber ); // takes IP and portNumber to which to bind
-	virtual ~KinectBase();
+    KinectBase( sf::IpAddress IP , unsigned short portNumber ); // takes IP and portNumber to which to bind
+    virtual ~KinectBase();
 
-	sf::Socket::Status getOnlineStatus();
-	void setOnlineStatus( sf::Socket::Status var );
+    sf::Socket::Status getOnlineStatus();
+    void setOnlineStatus( sf::Socket::Status var );
 
-	void send(); // sends data to single board computer
+    void send(); // sends data to single board computer
 
-	/* Zeroes all data in the packet (has mutex wrapping)
-	 * Used if socket connection fails or data is old
-	 */
-	void clearValues();
+    /* Zeroes all data in the packet (has mutex wrapping)
+     * Used if socket connection fails or data is old
+     */
+    void clearValues();
 
 protected:
     /* The next two methods are used for packing a derived Kinect class's packet.
@@ -48,9 +48,9 @@ protected:
     // Zeroes all data in the packet
     virtual void clearValuesMutexless() = 0;
 
-	// Used for locking a packet during send, receive, and manipulation functions
-	PacketStruct receiver;
-	PacketStruct sender;
+    // Used for locking a packet during send, receive, and manipulation functions
+    PacketStruct receiver;
+    PacketStruct sender;
 
     // locks data received from packet
     sf::Mutex valueMutex;

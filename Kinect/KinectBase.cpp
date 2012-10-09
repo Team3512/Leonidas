@@ -9,7 +9,8 @@
 
 bool KinectBase::closeThreads = false;
 
-KinectBase::KinectBase( sf::IpAddress IP , unsigned short portNumber ) : socketThread( &KinectBase::receive , this ) , sendIP( IP ) , sendPort( portNumber ) {
+KinectBase::KinectBase( sf::IpAddress IP , unsigned short portNumber ) :
+        socketThread( &KinectBase::receive , this ) , sendIP( IP ) , sendPort( portNumber ) {
 	kinectSocket.bind( portNumber );
 	socketThread.launch();
 }
@@ -58,14 +59,17 @@ void KinectBase::receive() {
 		sOnlineStatus = onlineStatus;
 		valueMutex.unlock();
 
-		if ( sOnlineStatus == sf::Socket::Done ) { // data received
+		// if data received
+		if ( sOnlineStatus == sf::Socket::Done ) {
 			extractPacket( receiver ); // unpack new data from receiver packet
 			valueAge.restart();
 		}
-		else if ( sOnlineStatus == sf::Socket::Disconnected || sOnlineStatus == sf::Socket::Error ) { // if socket failed
+		// if socket failed
+		else if ( sOnlineStatus == sf::Socket::Disconnected || sOnlineStatus == sf::Socket::Error ) {
 			clearValues();
 		}
-		else if ( valueAge.getElapsedTime().asMilliseconds() > 500 ) { // if values received are older than 500ms clear them
+		// if values received are older than 500ms, clear them
+		else if ( valueAge.getElapsedTime().asMilliseconds() > 500 ) {
 			clearValues();
 		}
 
