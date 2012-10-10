@@ -1,15 +1,15 @@
 //=============================================================================
-//File Name: AutonomousNothing.cpp
-//Description: Does nothing but wait until Autonomous exits. USED ONLY FOR
-//             DEBUG PURPOSES
+//File Name: AutonomousFeed.cpp
+//Description: Reverses ball retrieval mechanism for feeding balls to another
+//             team during autonomous
 //Author: FRC Team 3512, Spartatroniks
 //=============================================================================
 
-#include <Timer.h>
-#include "OurRobot.hpp"
+#include "../OurRobot.hpp"
 
 void OurRobot::Autonomous() {
     while ( IsEnabled() && IsAutonomous() ) {
-        Wait( 0.01 );
+        // make ball conveyors run in reverse for all of Autonomous
+        lift.Set( Relay::kReverse );
     }
 }
