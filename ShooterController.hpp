@@ -23,7 +23,7 @@
 
 #include <Timer.h>
 
-class PhotoEncoder;
+class Counter;
 class Victor;
 
 //------------------------------------------------------------------------------
@@ -32,6 +32,8 @@ typedef struct TimeRPM {
 	float time;
 	float RPM;
 } TimeRPM;
+
+double getRPM( Counter* counter );
 
 class ShooterController
 {
@@ -44,7 +46,7 @@ public:
 	~ShooterController();
 
 	// Must call this function before attempting any other method.
-	void Initialize( PhotoEncoder* pPhotoEncoder, Victor* pShooterMotorLeft, Victor* pShooterMotorRight );
+	void Initialize( Counter* pEncoder, Victor* pShooterMotorLeft, Victor* pShooterMotorRight );
 
 	//! Check this property to determine whether or not the shooter has stabilized at
 	//! the required rotational speed for the specified distance/RPM setting.
@@ -67,7 +69,7 @@ public:
 
 private:
 
-	PhotoEncoder*	m_pPhotoEncoder;
+	Counter*        m_pEncoder;
 	Victor* 		m_pShooterMotorLeft;
 	Victor* 		m_pShooterMotorRight;
 

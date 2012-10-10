@@ -1,16 +1,20 @@
 // Implementation of class ShooterController
 #include <Victor.h>
+#include <Counter.h>
 #include "ShooterController.hpp"
-#include "PhotoEncoder.hpp"
+
+double getRPM( Counter* counter ) {
+    return 60.f / ( 16.f * counter->GetPeriod() );
+}
 
 //------------------------------------------------------------------------------
 // Static items
 // NOTE: Adjust these based on empirical testing.
 
 // Proportional control gain values
-float ShooterController::GAIN_KP = 0.2F;
-float ShooterController::GAIN_KI = 0.2F;
-float ShooterController::GAIN_KD = 0.2F;
+float ShooterController::GAIN_KP = 0.5F;
+float ShooterController::GAIN_KI = 0.0F;
+float ShooterController::GAIN_KD = 0.0F;
 
 // Zero RPM band
 float ShooterController::ZERO_RPM_BAND = 1.0F;
@@ -23,7 +27,7 @@ float ShooterController::RPM_RANGE_BAND = 100.0F;
 
 ShooterController::ShooterController()
 {
-	m_pPhotoEncoder = NULL;
+	m_pEncoder = NULL;
 	m_pShooterMotorLeft = NULL;
 	m_pShooterMotorRight = NULL;
 
@@ -125,9 +129,9 @@ float ShooterController::DetermineRPMFromTargetDistance( float distanceFt )
 
 //------------------------------------------------------------------------------
 
-void ShooterController::Initialize( PhotoEncoder* pPhotoEncoder, Victor* pShooterMotorLeft, Victor* pShooterMotorRight )
+void ShooterController::Initialize( Counter* pEncoder, Victor* pShooterMotorLeft, Victor* pShooterMotorRight )
 {
-	m_pPhotoEncoder = pPhotoEncoder;
+	m_pEncoder = pEncoder;
 	m_pShooterMotorLeft = pShooterMotorLeft;
 	m_pShooterMotorRight = pShooterMotorRight;
 
@@ -291,7 +295,7 @@ void ShooterController::Update()
 {
 	// Get a new encoder value.
 	m_bGotGoodEncoderValue = true;
-	m_fLastEncoderRPM = m_pPhotoEncoder->getRPM();	// the new value
+	m_fLastEncoderRPM = getRPM( m_pEncoder );	// the new value
 
 	// Special check for zero target, to ensure motor speed really goes to zero.
 	// (Make sure we turn it off, regardless of encoder value and status.)

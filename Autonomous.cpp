@@ -13,6 +13,8 @@ void OurRobot::Autonomous() {
     Timer autoTime;
     autoTime.Start();
 
+    shooterEncoder.Start();
+
     turretKinect.clearValues();
 
     rotateMotor.Set( 0 );
@@ -57,4 +59,6 @@ void OurRobot::Autonomous() {
             lift.Set( Relay::kForward );
         }
     }
+
+    shooterEncoder.Stop();
 }

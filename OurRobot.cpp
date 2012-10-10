@@ -30,13 +30,17 @@ OurRobot::OurRobot() :
     hammer( 2 ),
     shifter( 1 ),
 
-    shooterEncoder( 4 ),
+    shooterEncoder( 6 ),
 
-    turretKinect( "10.35.12.6" , 5614 ) // on-board computer's IP address and port
+    turretKinect( "10.35.12.6" , 5614 ), // on-board computer's IP address and port
+
+    pidControl()
 {
     mainDrive.SetExpiration( 1.f ); // let motors run for 1 second uncontrolled before shutting them down
 
-    shooterIsManual = true;
+    pidControl.Initialize( &shooterEncoder , &shooterMotorLeft , &shooterMotorRight );
+
+    shooterIsManual = false;
     isShooting = false;
     isAutoAiming = false;
 }

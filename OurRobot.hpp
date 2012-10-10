@@ -21,6 +21,7 @@
 #include <Counter.h>
 
 #include "Kinect/TurretKinect.hpp"
+#include "ShooterController.hpp"
 
 // scales joystick's Z axis values from -1 .. 1 to 0 .. 1, but within same range of movement
 float ScaleZ( Joystick& stick );
@@ -58,6 +59,8 @@ private:
     Counter shooterEncoder;
 
     TurretKinect turretKinect;
+
+    ShooterController pidControl;
 
     bool shooterIsManual;
     bool isShooting;

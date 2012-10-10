@@ -7,7 +7,6 @@
 #include <Timer.h>
 #include "OurRobot.hpp"
 #include "ButtonTracker.hpp"
-#include <iostream>
 
 void OurRobot::OperatorControl() {
     Timer hammerClock;
@@ -24,6 +23,8 @@ void OurRobot::OperatorControl() {
     ButtonTracker driveStick1Buttons( 1 );
     ButtonTracker driveStick2Buttons( 2 );
     ButtonTracker turretStickButtons( 3 );
+
+    shooterEncoder.Start();
 
     while ( IsEnabled() && IsOperatorControl() ) {
         DS_PrintOut();
@@ -84,21 +85,27 @@ void OurRobot::OperatorControl() {
             isShooting = !isShooting;
         }
 
+        if ( isShooting && turretStickButtons.releasedButton( 1 ) ) {
+            pidControl.SetTargetDistance( 25.f ); // * 0.00328084f
+        }
+
         if ( isShooting ) {
             if ( shooterIsManual ) { // let driver change shooter speed manually
                 shooterMotorLeft.Set( -ScaleZ(turretStick) );
                 shooterMotorRight.Set( ScaleZ(turretStick) );
             }
             else { // else adjust shooter voltage to match RPM
-                std::cout << "RPM=" << 60.f / ( 16.f * shooterEncoder.GetPeriod() ) << "\n";
-                if ( 60.f / ( 16.f * shooterEncoder.GetPeriod() ) < 72.0 * ScaleZ(turretStick) * 60.0 ) {
+                //pidControl.SetTargetDistance( 25.f ); // * 0.00328084f
+                pidControl.Update();
+
+                /*if ( 60.f / ( 16.f * shooterEncoder.GetPeriod() ) < 72.0 * ScaleZ(turretStick) * 60.0 ) {
                     shooterMotorLeft.Set( -1 );
                     shooterMotorRight.Set( 1 );
                 }
                 else {
                     shooterMotorLeft.Set( 0 );
                     shooterMotorRight.Set( 0 );
-                }
+                }*/
             }
         }
         else {
@@ -199,4 +206,6 @@ void OurRobot::OperatorControl() {
 
         Wait( 0.1 );
     }
+
+    shooterEncoder.Stop();
 }
