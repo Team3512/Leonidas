@@ -10,7 +10,6 @@
 void OurRobot::Autonomous() {
     while ( IsEnabled() && IsAutonomous() ) {
         // make ball conveyors run in reverse for all of Autonomous
-        upperLift.Set( Relay::kReverse );
-        lowerLift.Set( Relay::kForward );
+        lift.Set( Relay::kReverse );
     }
 }

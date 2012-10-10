@@ -45,8 +45,7 @@ private:
     Joystick driveStick1;
     Joystick driveStick2;
     Joystick turretStick;
-    Relay upperLift;
-    Relay lowerLift;
+    Relay lift;
 
     Victor shooterMotorLeft;
     Victor shooterMotorRight;

@@ -20,8 +20,7 @@ OurRobot::OurRobot() :
     driveStick1( 1 ),
     driveStick2( 2 ),
     turretStick( 3 ),
-    upperLift( 7 ),
-    lowerLift( 8 ),
+    lift( 7 ),
 
     shooterMotorLeft( 7 ),
     shooterMotorRight( 6 ),

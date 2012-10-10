@@ -54,8 +54,7 @@ void OurRobot::Autonomous() {
 
         if ( autoTime.Get() > 6.f ) { // gives shooter six seconds to spin up before starting ball conveyor
             // start conveyor moving balls up to shooter
-            upperLift.Set( Relay::kForward );
-            lowerLift.Set( Relay::kReverse );
+            lift.Set( Relay::kForward );
         }
     }
 }

@@ -7,6 +7,7 @@
 #include <Timer.h>
 #include "OurRobot.hpp"
 #include "ButtonTracker.hpp"
+#include <iostream>
 
 void OurRobot::OperatorControl() {
     Timer hammerClock;
@@ -89,6 +90,7 @@ void OurRobot::OperatorControl() {
                 shooterMotorRight.Set( ScaleZ(turretStick) );
             }
             else { // else adjust shooter voltage to match RPM
+                std::cout << "RPM=" << 60.f / ( 16.f * shooterEncoder.GetPeriod() ) << "\n";
                 if ( 60.f / ( 16.f * shooterEncoder.GetPeriod() ) < 72.0 * ScaleZ(turretStick) * 60.0 ) {
                     shooterMotorLeft.Set( -1 );
                     shooterMotorRight.Set( 1 );
@@ -112,36 +114,14 @@ void OurRobot::OperatorControl() {
 
 
         /* ===== Ball Intake/Conveyor ===== */
-        if ( turretStick.GetRawButton( 6 ) ) { // move upper lift up
-            upperLift.Set( Relay::kForward );
+        if ( turretStick.GetRawButton( 6 ) ) { // move lift up
+            lift.Set( Relay::kForward );
         }
-        else if ( turretStick.GetRawButton( 11 ) ) { // move upper lift down
-            upperLift.Set( Relay::kReverse );
+        else if ( turretStick.GetRawButton( 7 ) ) { // move lift down
+            lift.Set( Relay::kReverse );
         }
         else {
-            upperLift.Set( Relay::kOff ); // turn off lift
-        }
-
-        if ( turretStick.GetRawButton( 7 ) ) { // move lower lift up
-            lowerLift.Set( Relay::kReverse );
-        }
-        else if ( turretStick.GetRawButton( 10 ) ) { // move lower lift down
-            lowerLift.Set( Relay::kForward );
-		}
-        else {
-            lowerLift.Set( Relay::kOff ); // turn off lift
-        }
-
-        // ---------- Full Lift Forward ----------
-        if ( turretStick.GetRawButton( 8 ) ) { // move all lifts up
-            upperLift.Set( Relay::kForward );
-            lowerLift.Set( Relay::kReverse );
-        }
-
-        // ---------- Full Lift Reverse ----------
-        if ( turretStick.GetRawButton( 9 ) ) { // move all lifts down
-            upperLift.Set( Relay::kReverse );
-            lowerLift.Set( Relay::kForward );
+            lift.Set( Relay::kOff ); // turn off lift
         }
         /* ================================ */
 
