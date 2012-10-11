@@ -2,6 +2,7 @@
 #include <Victor.h>
 #include <Counter.h>
 #include "ShooterController.hpp"
+#include <iostream> // FIXME
 
 double getRPM( Counter* counter ) {
     return 60.f / ( 16.f * counter->GetPeriod() );
@@ -111,7 +112,7 @@ float ShooterController::DetermineRPMFromTargetDistance( float distanceFt )
 		for (unsigned int index = 1; index < m_distanceRPMTableLength; index++)
 		{
 			// Interpolate between previous and current table entries.
-			int indexPrevious = index - 1;
+			unsigned int indexPrevious = index - 1;
 			float previousDistance = m_distanceRPMTable[ indexPrevious ].targetDistanceFt;
 			float currentDistance = m_distanceRPMTable[ index ].targetDistanceFt;
 			if (distanceFt >= previousDistance && distanceFt <= currentDistance)
@@ -149,12 +150,13 @@ void ShooterController::InitializeDistanceRPMTable()
 	m_distanceRPMTableLength = 2;
 	m_distanceRPMTable = new TargetDistanceRPMTableEntry[ m_distanceRPMTableLength ];
 
+	// TODO Add more values to the table
 	// Must fill table in increasing value of distance.
-	m_distanceRPMTable[1].targetDistanceFt = 12.0F;
-	m_distanceRPMTable[1].rotationsPerMinute = 2242.0F;
+	m_distanceRPMTable[0].targetDistanceFt = 12.0F;
+	m_distanceRPMTable[0].rotationsPerMinute = 2242.0F;
 
 	m_distanceRPMTable[1].targetDistanceFt = 15.0F;
-	m_distanceRPMTable[1].rotationsPerMinute = 0.0F;
+	m_distanceRPMTable[1].rotationsPerMinute = 2242.0F;
 }
 
 //------------------------------------------------------------------------------
@@ -284,6 +286,7 @@ void ShooterController::SetTargetDistance( float ft )
 {
 	// What rotational speed do we need for this distance?
 	float fRPM = DetermineRPMFromTargetDistance( ft );
+	std::cout << "tRPM=" << fRPM << "\n";
 	SetShooterRPM( fRPM );
 }
 

@@ -86,7 +86,7 @@ void OurRobot::OperatorControl() {
         }
 
         if ( isShooting && turretStickButtons.releasedButton( 1 ) ) {
-            pidControl.SetTargetDistance( 25.f ); // * 0.00328084f
+            pidControl.SetTargetDistance( 15.f ); // * 0.00328084f
         }
 
         if ( isShooting ) {
