@@ -49,33 +49,46 @@ void OurRobot::DS_PrintOut() {
     /* ===== Print to Driver Station LCD =====
      * Packs the following variables:
      *
+     * unsigned int: drive1 ScaleZ
+     * unsigned int: drive2 ScaleZ
+     * unsigned int: turret ScaleZ
+     * bool: drivetrain is in high gear
+     * bool: is hammer mechanism deployed
      * unsigned int: shooter RPM
      * bool: shooter RPM control is manual
-     * unsigned int: turret ScaleZ
-     * bool: turret is locked on
-     * unsigned char: Kinect is online
      * bool: isShooting
      * bool: isAutoAiming
+     * bool: turret is locked on
+     * unsigned char: Kinect is online
      * unsigned int: distance to target
      */
 
+    // floats don't work so " * 100000" saves some precision in a UINT
+
     driverStation->clear();
+
+    *driverStation << static_cast<unsigned int>(ScaleZ(driveStick1) * 100000.f);
+
+    *driverStation << static_cast<unsigned int>(ScaleZ(driveStick2) * 100000.f);
+
+    *driverStation << static_cast<unsigned int>(ScaleZ(turretStick) * 100000.f);
+
+    *driverStation << shifter.Get();
+
+    *driverStation << hammer.Get();
 
     *driverStation << static_cast<unsigned int>(60.f / ( 16.f * shooterEncoder.GetPeriod() ) * 100000.f);
 
     *driverStation << shooterIsManual;
 
-    // floats don't work so " * 10000" saves some precision in a UINT
-    *driverStation << static_cast<unsigned int>(ScaleZ(turretStick) * 100000.f);
+    *driverStation << isShooting;
+
+    *driverStation << isAutoAiming;
 
     *driverStation << static_cast<bool>( fabs( turretKinect.getPixelOffset() ) < TurretKinect::pxlDeadband
             && turretKinect.getOnlineStatus() == sf::Socket::Done );
 
     *driverStation << static_cast<unsigned char>( turretKinect.getOnlineStatus() );
-
-    *driverStation << isShooting;
-
-    *driverStation << isAutoAiming;
 
     *driverStation << turretKinect.getDistance();
 
