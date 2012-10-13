@@ -45,13 +45,18 @@ void OurRobot::Autonomous() {
         /* gives full power to shooter motors until it reaches set point,
          * then turn them off until the shooter slows down again
          */
-        if ( 60.f / ( 16.f * shooterEncoder.GetPeriod() ) < 2300 ) {
-            shooterMotorLeft.Set( -1 );
-            shooterMotorRight.Set( 1 );
-        }
-        else {
+        float encoderRPM = 60.f / ( 16.f * shooterEncoder.GetPeriod() );
+        if ( encoderRPM >= 2300.f ) {
             shooterMotorLeft.Set( 0 );
             shooterMotorRight.Set( 0 );
+        }
+        else if ( encoderRPM > 2242.f ) {
+            shooterMotorLeft.Set( -0.3f );
+            shooterMotorRight.Set( 0.3f );
+        }
+        else {
+            shooterMotorLeft.Set( -1 );
+            shooterMotorRight.Set( 1 );
         }
 
         if ( autoTime.Get() > 6.f ) { // gives shooter six seconds to spin up before starting ball conveyor

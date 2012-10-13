@@ -98,13 +98,18 @@ void OurRobot::OperatorControl() {
                 //pidControl.SetTargetDistance( 25.f ); // * 0.00328084f
                 pidControl.Update();
 
-                /*if ( 60.f / ( 16.f * shooterEncoder.GetPeriod() ) < 72.0 * ScaleZ(turretStick) * 60.0 ) {
-                    shooterMotorLeft.Set( -1 );
-                    shooterMotorRight.Set( 1 );
-                }
-                else {
+                /*float encoderRPM = 60.f / ( 16.f * shooterEncoder.GetPeriod() );
+                if ( encoderRPM >= 72.0 * ScaleZ(turretStick) * 60.0 ) {
                     shooterMotorLeft.Set( 0 );
                     shooterMotorRight.Set( 0 );
+                }
+                else if ( encoderRPM > 2242.f ) {
+                    shooterMotorLeft.Set( -0.3f );
+                    shooterMotorRight.Set( 0.3f );
+                }
+                else {
+                    shooterMotorLeft.Set( -1 );
+                    shooterMotorRight.Set( 1 );
                 }*/
             }
         }
