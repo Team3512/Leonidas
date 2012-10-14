@@ -56,7 +56,8 @@ protected:
     sf::Mutex valueMutex;
 
 private:
-    static bool closeThreads;
+    // tells the receive thread to exit when the object instance is destructed
+    volatile bool closeThread;
 
     sf::Thread socketThread;
 

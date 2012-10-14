@@ -7,16 +7,15 @@
 #include "KinectBase.hpp"
 #include <Timer.h>
 
-bool KinectBase::closeThreads = false;
-
 KinectBase::KinectBase( sf::IpAddress IP , unsigned short portNumber ) :
         socketThread( &KinectBase::receive , this ) , sendIP( IP ) , sendPort( portNumber ) {
-	kinectSocket.bind( portNumber );
+	closeThread = false;
+    kinectSocket.bind( portNumber );
 	socketThread.launch();
 }
 
 KinectBase::~KinectBase() {
-	closeThreads = true;
+	closeThread = true;
 
 	socketThread.wait(); // waits for receive thread to end
 	kinectSocket.unbind();
@@ -49,7 +48,7 @@ void KinectBase::send() {
 void KinectBase::receive() {
 	sf::Socket::Status sOnlineStatus; // used to store safe value for Kinect's packet data status
 
-	while ( !closeThreads ) {
+	while ( !closeThread ) {
 	    receiver.mutex.lock();
 		onlineStatus = kinectSocket.receive( receiver.packet , receiveIP , receivePort );
 		receiver.mutex.unlock();
