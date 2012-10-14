@@ -36,7 +36,7 @@ void OurRobot::OperatorControl() {
 
         /* ===== AIM ===== */
         if ( fabs( turretStick.GetX() ) > 0.1 ) { // manual turret movement outside of -0.5 to 0.5 range, up to 0.5 speed
-            rotateMotor.Set( -turretStick.GetX() / 2.f );
+            rotateMotor.Set( -pow( turretStick.GetX() , 2.f ) );
         }
         else if ( isAutoAiming ) { // let autoAiming take over if activated and user isn't rotating turret
             if( fabs( turretKinect.getPixelOffset() ) < TurretKinect::pxlDeadband ) { // deadband so shooter won't jitter
