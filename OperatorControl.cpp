@@ -126,11 +126,11 @@ void OurRobot::OperatorControl() {
 
 
         /* ===== Ball Intake/Conveyor ===== */
-        if ( turretStick.GetRawButton( 6 ) ) { // move lift up
-            lift.Set( Relay::kForward );
+        if ( turretStick.GetRawButton( 6 ) ) {
+            lift.Set( Relay::kForward ); // move lift up
         }
-        else if ( turretStick.GetRawButton( 7 ) ) { // move lift down
-            lift.Set( Relay::kReverse );
+        else if ( turretStick.GetRawButton( 7 ) ) {
+            lift.Set( Relay::kReverse ); // move lift down
         }
         else {
             lift.Set( Relay::kOff ); // turn off lift
