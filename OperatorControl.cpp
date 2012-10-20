@@ -35,7 +35,7 @@ void OurRobot::OperatorControl() {
         turretStickButtons.updateButtons();
 
         /* ===== AIM ===== */
-        if ( fabs( turretStick.GetX() ) > 0.1 ) { // manual turret movement outside of -0.5 to 0.5 range, up to 0.5 speed
+        if ( fabs( turretStick.GetX() ) > 0.06 ) { // manual turret movement
             rotateMotor.Set( -pow( turretStick.GetX() , 2.f ) );
         }
         else if ( isAutoAiming ) { // let autoAiming take over if activated and user isn't rotating turret
