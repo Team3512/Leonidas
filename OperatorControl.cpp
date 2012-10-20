@@ -36,7 +36,8 @@ void OurRobot::OperatorControl() {
 
         /* ===== AIM ===== */
         if ( fabs( turretStick.GetX() ) > 0.06 ) { // manual turret movement
-            rotateMotor.Set( -pow( turretStick.GetX() , 2.f ) );
+            // Squaring gives finer control with a smaller joystick movement while retaining max speed
+            rotateMotor.Set( -( turretStick.GetX() * fabs(turretStick.GetX() ) ) );
         }
         else if ( isAutoAiming ) { // let autoAiming take over if activated and user isn't rotating turret
             if( fabs( turretKinect.getPixelOffset() ) < TurretKinect::pxlDeadband ) { // deadband so shooter won't jitter
