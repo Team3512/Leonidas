@@ -25,12 +25,11 @@ OurRobot::OurRobot() :
     shooterMotorLeft( 7 ),
     shooterMotorRight( 6 ),
     rotateMotor( 5 ),
-    pinLock( 3 ),
-
-    hammer( 2 ),
-    shifter( 1 ),
 
     shooterEncoder( 6 ),
+
+    shifter( 1 ),
+    bridgeArm( 2 , 3 ),
 
     turretKinect( "10.35.12.6" , 5614 ), // on-board computer's IP address and port
 
@@ -52,8 +51,8 @@ void OurRobot::DS_PrintOut() {
      * unsigned int: drive1 ScaleZ
      * unsigned int: drive2 ScaleZ
      * unsigned int: turret ScaleZ
-     * bool: drivetrain is in high gear
-     * bool: is hammer mechanism deployed
+     * bool: drivetrain is in low gear
+     * unsigned char: is hammer mechanism deployed
      * unsigned int: shooter RPM
      * bool: shooter RPM control is manual
      * bool: isShooting
@@ -73,9 +72,9 @@ void OurRobot::DS_PrintOut() {
 
     *driverStation << static_cast<unsigned int>(ScaleZ(turretStick) * 100000.f);
 
-    *driverStation << shifter.Get();
+    *driverStation << ( !shifter.Get() );
 
-    *driverStation << hammer.Get();
+    *driverStation << static_cast<unsigned char>( bridgeArm.Get() );
 
     *driverStation << static_cast<unsigned int>(60.f / ( 16.f * shooterEncoder.GetPeriod() ) * 100000.f);
 

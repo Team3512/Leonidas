@@ -10,6 +10,7 @@
 
 void OurRobot::Disabled() {
     mainCompressor.Stop();
+    bridgeArm.Set( LockSolenoid::Retracted );
 
     ButtonTracker driveStick1Buttons( 1 );
     ButtonTracker driveStick2Buttons( 2 );
@@ -40,6 +41,8 @@ void OurRobot::Disabled() {
            shooterIsManual = !shooterIsManual;
        }
        /* =================================================== */
+
+       bridgeArm.Update();
 
         Wait( 0.1 );
     }

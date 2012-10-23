@@ -9,16 +9,12 @@
 #include "ButtonTracker.hpp"
 
 void OurRobot::OperatorControl() {
-    Timer hammerClock;
-    bool isHammerDown = false;
-
     mainCompressor.Start();
 
     isShooting = false;
     isAutoAiming = false;
 
-    pinLock.Set( false );
-    hammer.Set( false );
+    bridgeArm.Set( LockSolenoid::Retracted );
 
     ButtonTracker driveStick1Buttons( 1 );
     ButtonTracker driveStick2Buttons( 2 );
@@ -138,68 +134,24 @@ void OurRobot::OperatorControl() {
         }
         /* ================================ */
 
-        /* ===== Hammer =====
-         * There are two parts to switching the state of this mechanism.
-         *
-         * 1) The first device is moved into position and out of the other one's way.
-         * 2) The second device is moved after a delay to avoid a mechanical lock-up.
-         *
-         * When the trigger is released, the state variable switches and a timer is started.
-         * The first device is moved into position immediately.
-         *
-         * After the delay for the respective state change has passed,
-         *     the second device is moved into position. This is done
-         *     to make sure that there are no mechanical lock-ups caused
-         *     by the devices being triggered at the same time. It may
-         *     damage them.
-         *
-         * After the second device is told to move, the timers are stopped and
-         *     reset since they aren't needed anymore.
-         *
-         * Note: We don't know for sure if either device moved out of the way by
-         *       the time the second device needs to be moved. It's just
-         *       assumed that the delay gave the first device enough time
-         *       to do so.
-         */
+        /* ===== Bridge Arm ===== */
+        if ( turretStickButtons.releasedButton( 1 ) ) {
+            LockSolenoid::Status armState = bridgeArm.Get();
 
-        // ===== PART 1
-        if ( driveStick2Buttons.releasedButton( 1 ) ) { // if released trigger
-            // start process of switching position of hammer
-            isHammerDown = !isHammerDown;
-
-            hammerClock.Start(); // used to track delay between actions
-
-            // move the first device immediately
-            if( isHammerDown ) {
-                hammer.Set( true ); // if hammer should be going down, deploy it immediately
+            /* Toggles state of bridge arm between Retracted and Deployed
+             * (Doesn't toggle if the arm is transitioning)
+             */
+            if ( armState == LockSolenoid::Retracted ) {
+                bridgeArm.Set( LockSolenoid::Deployed );
             }
-            else {
-                pinLock.Set( false ); // if hammer is coming back up, unlock solenoid immediately
+            else if ( armState == LockSolenoid::Deployed ) {
+                bridgeArm.Set( LockSolenoid::Retracted );
             }
         }
-        // ============
 
-        // ===== PART 2
-        // move second device after delay has passed
-        if ( isHammerDown && hammerClock.Get() > 0 ) {
-            // if hammer is down and delay passed, deploy locks
-            pinLock.Set( true );
-
-            // stop timer because the device has finished switching states
-            hammerClock.Stop();
-            hammerClock.Reset();
-        }
-
-        if ( !isHammerDown && hammerClock.Get() > 0.2 ) {
-            // if hammer is coming back up after delay passed, locks are disengaged so bring hammer back up
-            hammer.Set( false );
-
-            // stop timer because the device has finished switching states
-            hammerClock.Stop();
-            hammerClock.Reset();
-        }
-        // ============
-        /* ================== */
+        // Makes sure bridge arm completed transitioning between states
+        bridgeArm.Update();
+        /* ====================== */
 
         /* ===== Shifter ===== */
         if ( driveStick1Buttons.releasedButton( 1 ) ) { // if released trigger

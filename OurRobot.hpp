@@ -17,9 +17,10 @@
 #include <Joystick.h>
 #include <Relay.h>
 #include <Victor.h>
-#include <Solenoid.h>
 #include <Counter.h>
+#include <Solenoid.h>
 
+#include "LockSolenoid.hpp"
 #include "Kinect/TurretKinect.hpp"
 #include "ShooterController.hpp"
 
@@ -52,9 +53,8 @@ private:
     Victor shooterMotorRight;
     Victor rotateMotor;
 
-    Solenoid pinLock;
-    Solenoid hammer;
     Solenoid shifter;
+    LockSolenoid bridgeArm;
 
     Counter shooterEncoder;
 
