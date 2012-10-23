@@ -63,6 +63,8 @@ void OurRobot::Autonomous() {
             // start conveyor moving balls up to shooter
             lift.Set( Relay::kForward );
         }
+
+        Wait( 0.1 );
     }
 
     shooterEncoder.Stop();

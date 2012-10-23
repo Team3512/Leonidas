@@ -53,10 +53,10 @@ private:
     Victor shooterMotorRight;
     Victor rotateMotor;
 
+    Counter shooterEncoder;
+
     Solenoid shifter;
     LockSolenoid bridgeArm;
-
-    Counter shooterEncoder;
 
     TurretKinect turretKinect;
 
