@@ -261,6 +261,7 @@
                 <file name="/Leonidas/OurRobot.cpp"/>
                 <file name="/Leonidas/ShooterController.cpp"/>
                 <file name="/Leonidas/AutonomousModes/Autonomous.cpp"/>
+                <file name="/Leonidas/LockSolenoid.cpp"/>
             </contents>
         </buildtarget>
     </buildtargets>
