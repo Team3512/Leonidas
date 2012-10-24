@@ -135,7 +135,7 @@ void OurRobot::OperatorControl() {
         /* ================================ */
 
         /* ===== Bridge Arm ===== */
-        if ( turretStickButtons.releasedButton( 1 ) ) {
+        if ( driveStick2Buttons.releasedButton( 1 ) ) {
             LockSolenoid::Status armState = bridgeArm.Get();
 
             /* Toggles state of bridge arm between Retracted and Deployed

@@ -72,7 +72,7 @@ void OurRobot::DS_PrintOut() {
 
     *driverStation << static_cast<unsigned int>(ScaleZ(turretStick) * 100000.f);
 
-    *driverStation << ( !shifter.Get() );
+    *driverStation << static_cast<bool>( !shifter.Get() );
 
     *driverStation << static_cast<unsigned char>( bridgeArm.Get() );
 
