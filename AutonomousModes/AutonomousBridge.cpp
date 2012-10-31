@@ -9,8 +9,7 @@
 
 void OurRobot::Autonomous() {
     mainCompressor.Start();
-
-    Timer autoTime;
+    autoTime.Reset();
     autoTime.Start();
 
     shifter.Set( false ); // Set robot's drivetrain to low gear

@@ -66,6 +66,9 @@ private:
     bool isShooting;
     bool isAutoAiming;
 
+    // Used for timing in all Autonomous routines
+    Timer autoTime;
+
     void DS_PrintOut(); // prints messages to driverStation LCD
 };
 
