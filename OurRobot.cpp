@@ -12,7 +12,7 @@ float ScaleZ( Joystick& stick) {
     return floorf( 500.f * ( 1.f - stick.GetZ() ) / 2.f ) / 500.f; // CONSTANT^-1 is step value (now 1/500)
 }
 
-DriverStationDisplay* OurRobot::driverStation = DriverStationDisplay::getInstance();
+DriverStationDisplay* OurRobot::driverStation = DriverStationDisplay::getInstance( 5615 );
 
 OurRobot::OurRobot() :
     mainCompressor( 1 , 6 ),
@@ -91,6 +91,7 @@ void OurRobot::DS_PrintOut() {
 
     *driverStation << turretKinect.getDistance();
 
+    driverStation->receiveFromDS();
     driverStation->sendToDS();
     /* ====================================== */
 }

@@ -30,6 +30,9 @@
 #include <fcntl.h>
 #include <cstring>
 
+extern "C" {
+#include <assert.h>
+}
 
 namespace sf
 {
@@ -65,11 +68,9 @@ void SocketImpl::close(SocketHandle sock)
 ////////////////////////////////////////////////////////////
 void SocketImpl::setBlocking(SocketHandle sock, bool block)
 {
-    int status = fcntl(sock, F_GETFL);
-    if (block)
-        fcntl(sock, F_SETFL, status & ~O_NONBLOCK);
-    else
-        fcntl(sock, F_SETFL, status | O_NONBLOCK);
+    int doblock = !block;
+
+    ioctl(sock, FIONBIO, reinterpret_cast<int>(&doblock));
 }
 
 

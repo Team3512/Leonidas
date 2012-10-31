@@ -1,6 +1,6 @@
 //=============================================================================
 //File Name: DriverStationDisplay.hpp
-//Description:
+//Description: Receives IP address from remote host then sends HUD data there
 //Author: FRC Team 3512, Spartatroniks
 //=============================================================================
 
@@ -32,13 +32,18 @@
 
 class DriverStationDisplay : public sf::Packet {
 public:
-    static DriverStationDisplay* getInstance();
+    virtual ~DriverStationDisplay();
+
+    static DriverStationDisplay* getInstance( unsigned short dsPort );
 
     // sends data currently in packet to Driver Station
     void sendToDS();
 
+    // receive control commands from Driver Station
+    void receiveFromDS();
+
 private:
-    DriverStationDisplay( sf::IpAddress IP , unsigned short portNumber );
+    DriverStationDisplay( unsigned short portNumber );
 
     // disallow copy and assignment
     DriverStationDisplay( const DriverStationDisplay& );
@@ -46,10 +51,15 @@ private:
 
     static DriverStationDisplay* m_dsDisplay;
 
-    sf::UdpSocket socket;
+    sf::UdpSocket m_socket;
 
-    sf::IpAddress dsIP; // IP address of Driver Station
-    unsigned short dsPort; // port to which to send data
+    sf::IpAddress m_dsIP; // IP address of Driver Station
+    unsigned short m_dsPort; // port to which to send data
+
+    sf::IpAddress m_recvIP; // stores IP address temporarily during receive
+    unsigned short m_recvPort; // stores port temporarily during receive
+    char* m_recvBuffer; // buffer for Driver Station requests
+    size_t m_recvAmount; // holds number of bytes received from Driver Station
 };
 
 #endif // DRIVER_STATION_DISPLAY_HPP
