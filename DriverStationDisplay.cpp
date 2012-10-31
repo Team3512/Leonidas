@@ -6,7 +6,9 @@
 
 #include "DriverStationDisplay.hpp"
 #include <cstdlib>
+#include <loadLib.h>
 #include <rebootLib.h>
+#include <fcntl.h>
 
 DriverStationDisplay* DriverStationDisplay::m_dsDisplay = NULL;
 
@@ -39,8 +41,9 @@ void DriverStationDisplay::receiveFromDS() {
         }
 
         else if ( std::strcmp( m_recvBuffer , "reload" ) == 0 ) {
-
-            // TODO spawn task to reload kernel image here
+            // Spawns kernel task to reload image
+            int program = open( "ni-rt/system/AFL.out" , O_RDONLY , 0 );
+            loadModule( program , LOAD_ALL_SYMBOLS | LOAD_CPLUS_XTOR_AUTO );
         }
 
         else if ( std::strcmp( m_recvBuffer , "newsettings" ) == 0 ) {
