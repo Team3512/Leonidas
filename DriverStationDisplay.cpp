@@ -46,10 +46,6 @@ void DriverStationDisplay::receiveFromDS() {
             loadModule( program , LOAD_ALL_SYMBOLS | LOAD_CPLUS_XTOR_AUTO );
         }
 
-        else if ( std::strcmp( m_recvBuffer , "newsettings" ) == 0 ) {
-            // TODO reload settings file
-        }
-
         else if ( std::strcmp( m_recvBuffer , "reboot" ) == 0 ) {
             reboot( 0 ); // reboot cRIO controller (means return 0?)
         }
