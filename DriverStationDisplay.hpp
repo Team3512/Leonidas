@@ -24,6 +24,8 @@
  * Note: Make sure that the application on the Driver Station extracts the same
  *       types from the received packet in the same order in which you inserted
  *       them.
+ *
+ * The packets are always sent to 10.35.12.42 for testing purposes
  */
 
 #include "SFML/Network/IpAddress.hpp"

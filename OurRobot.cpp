@@ -12,9 +12,9 @@ float ScaleZ( Joystick& stick) {
     return floorf( 500.f * ( 1.f - stick.GetZ() ) / 2.f ) / 500.f; // CONSTANT^-1 is step value (now 1/500)
 }
 
-DriverStationDisplay* OurRobot::driverStation = DriverStationDisplay::getInstance( 5615 );
-
 OurRobot::OurRobot() :
+    Settings( "IPSettings.txt" ),
+
     mainCompressor( 1 , 6 ),
     mainDrive( 3 , 4 , 1 , 2 ),
     driveStick1( 1 ),
@@ -31,11 +31,15 @@ OurRobot::OurRobot() :
     shifter( 1 ),
     bridgeArm( 2 , 3 ),
 
-    turretKinect( "10.35.12.6" , 5614 ), // on-board computer's IP address and port
+    // single board computer's IP address and port
+    turretKinect( getValueFor( "SBC_IP" ) , atoi( getValueFor( "SBC_Port" ).c_str() ) ),
 
     pidControl()
 {
-    mainDrive.SetExpiration( 1.f ); // let motors run for 1 second uncontrolled before shutting them down
+    driverStation = DriverStationDisplay::getInstance( atoi( Settings::getValueFor( "DS_Port" ).c_str() ) );
+
+    // let motors run for up to 1 second uncontrolled before shutting them down
+    mainDrive.SetExpiration( 1.f );
 
     pidControl.Initialize( &shooterEncoder , &shooterMotorLeft , &shooterMotorRight );
 

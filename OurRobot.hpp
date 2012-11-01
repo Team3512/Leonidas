@@ -11,6 +11,7 @@
 #include <cmath>
 
 #include <SimpleRobot.h>
+#include "Settings.hpp"
 
 #include <Compressor.h>
 #include <RobotDrive.h>
@@ -29,9 +30,9 @@ float ScaleZ( Joystick& stick );
 
 class DriverStationDisplay;
 
-class OurRobot : public SimpleRobot {
+class OurRobot : public SimpleRobot , public Settings {
 public:
-    static DriverStationDisplay* driverStation; // used for sending data to the Driver Station
+    DriverStationDisplay* driverStation; // used for sending data to the Driver Station
 
     OurRobot();
 
