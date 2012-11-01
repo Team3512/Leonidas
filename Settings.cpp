@@ -11,7 +11,7 @@
 Settings::Settings( std::string fileName ) :
         m_fileName( fileName ) ,
         m_index( 0 ) {
-    updateSettings();
+    update();
 }
 
 Settings::~Settings() {
