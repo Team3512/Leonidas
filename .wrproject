@@ -262,6 +262,7 @@
                 <file name="/Leonidas/ShooterController.cpp"/>
                 <file name="/Leonidas/AutonomousModes/Autonomous.cpp"/>
                 <file name="/Leonidas/LockSolenoid.cpp"/>
+                <file name="/Leonidas/Settings.cpp"/>
             </contents>
         </buildtarget>
     </buildtargets>

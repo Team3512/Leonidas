@@ -13,7 +13,7 @@ float ScaleZ( Joystick& stick) {
 }
 
 OurRobot::OurRobot() :
-    Settings( "IPSettings.txt" ),
+    Settings( "/ni-rt/system/IPSettings.txt" ),
 
     mainCompressor( 1 , 6 ),
     mainDrive( 3 , 4 , 1 , 2 ),
