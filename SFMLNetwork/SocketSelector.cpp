@@ -30,6 +30,7 @@
 #include "SocketImpl.hpp"
 #include "../SFML/System/Err.hpp"
 #include <utility>
+#include <string.h>
 
 
 namespace sf

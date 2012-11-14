@@ -6,6 +6,7 @@
 
 #include "DriverStationDisplay.hpp"
 #include <cstdlib>
+#include <cstring>
 #include <ioLib.h>
 #include <loadLib.h>
 #include <rebootLib.h>

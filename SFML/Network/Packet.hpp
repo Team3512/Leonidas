@@ -190,7 +190,6 @@ public:
     Packet& operator >>(char*         data);
     Packet& operator >>(std::string&  data);
     Packet& operator >>(wchar_t*      data);
-    Packet& operator >>(std::wstring& data);
     Packet& operator >>(String&       data);
 
     ////////////////////////////////////////////////////////////
@@ -211,7 +210,6 @@ public:
     Packet& operator <<(const char*         data);
     Packet& operator <<(const std::string&  data);
     Packet& operator <<(const wchar_t*      data);
-    Packet& operator <<(const std::wstring& data);
     Packet& operator <<(const String&       data);
 
 protected:

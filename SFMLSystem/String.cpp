@@ -110,13 +110,6 @@ String::operator std::string() const
 
 
 ////////////////////////////////////////////////////////////
-String::operator std::wstring() const
-{
-    return toWideString();
-}
-
-
-////////////////////////////////////////////////////////////
 std::string String::toAnsiString(const std::locale& locale) const
 {
     // Prepare the output string
@@ -125,20 +118,6 @@ std::string String::toAnsiString(const std::locale& locale) const
 
     // Convert
     Utf32::toAnsi(m_string.begin(), m_string.end(), std::back_inserter(output), 0, locale);
-
-    return output;
-}
-
-
-////////////////////////////////////////////////////////////
-std::wstring String::toWideString() const
-{
-    // Prepare the output string
-    std::wstring output;
-    output.reserve(m_string.length() + 1);
-
-    // Convert
-    Utf32::toWide(m_string.begin(), m_string.end(), std::back_inserter(output), 0);
 
     return output;
 }

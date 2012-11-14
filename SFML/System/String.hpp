@@ -149,21 +149,6 @@ public :
     operator std::string() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Implicit cast operator to std::wstring (wide string)
-    ///
-    /// Characters that do not fit in the target encoding are
-    /// discarded from the returned string.
-    /// This operator is defined for convenience, and is equivalent
-    /// to calling toWideString().
-    ///
-    /// \return Converted wide string
-    ///
-    /// \see toWideString, operator std::string
-    ///
-    ////////////////////////////////////////////////////////////
-    operator std::wstring() const;
-
-    ////////////////////////////////////////////////////////////
     /// \brief Convert the unicode string to an ANSI string
     ///
     /// The UTF-32 string is converted to an ANSI string in
@@ -179,19 +164,6 @@ public :
     ///
     ////////////////////////////////////////////////////////////
     std::string toAnsiString(const std::locale& locale = std::locale()) const;
-
-    ////////////////////////////////////////////////////////////
-    /// \brief Convert the unicode string to a wide string
-    ///
-    /// Characters that do not fit in the target encoding are
-    /// discarded from the returned string.
-    ///
-    /// \return Converted wide string
-    ///
-    /// \see toAnsiString, operator std::wstring
-    ///
-    ////////////////////////////////////////////////////////////
-    std::wstring toWideString() const;
 
     ////////////////////////////////////////////////////////////
     /// \brief Overload of assignment operator
