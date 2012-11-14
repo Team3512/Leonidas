@@ -13,7 +13,7 @@ SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/tav/Git/Leonidas/SFMLNetwork/TcpListener.cpp" "/home/tav/Git/Leonidas/SFMLNetwork/CMakeFiles/SFMLNetwork.dir/TcpListener.cpp.obj"
   "/home/tav/Git/Leonidas/SFMLNetwork/TcpSocket.cpp" "/home/tav/Git/Leonidas/SFMLNetwork/CMakeFiles/SFMLNetwork.dir/TcpSocket.cpp.obj"
   "/home/tav/Git/Leonidas/SFMLNetwork/UdpSocket.cpp" "/home/tav/Git/Leonidas/SFMLNetwork/CMakeFiles/SFMLNetwork.dir/UdpSocket.cpp.obj"
-  "/home/tav/Git/Leonidas/SFMLNetwork/Unix/SocketImpl.cpp" "/home/tav/Git/Leonidas/SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.obj"
+  "/home/tav/Git/Leonidas/SFMLNetwork/VxWorks/SocketImpl.cpp" "/home/tav/Git/Leonidas/SFMLNetwork/CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.obj"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

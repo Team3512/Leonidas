@@ -331,29 +331,29 @@ UdpSocket.cpp.s:
 	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLNetwork/CMakeFiles/SFMLNetwork.dir/build.make SFMLNetwork/CMakeFiles/SFMLNetwork.dir/UdpSocket.cpp.s
 .PHONY : UdpSocket.cpp.s
 
-Unix/SocketImpl.obj: Unix/SocketImpl.cpp.obj
-.PHONY : Unix/SocketImpl.obj
+VxWorks/SocketImpl.obj: VxWorks/SocketImpl.cpp.obj
+.PHONY : VxWorks/SocketImpl.obj
 
 # target to build an object file
-Unix/SocketImpl.cpp.obj:
-	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLNetwork/CMakeFiles/SFMLNetwork.dir/build.make SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.obj
-.PHONY : Unix/SocketImpl.cpp.obj
+VxWorks/SocketImpl.cpp.obj:
+	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLNetwork/CMakeFiles/SFMLNetwork.dir/build.make SFMLNetwork/CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.obj
+.PHONY : VxWorks/SocketImpl.cpp.obj
 
-Unix/SocketImpl.i: Unix/SocketImpl.cpp.i
-.PHONY : Unix/SocketImpl.i
+VxWorks/SocketImpl.i: VxWorks/SocketImpl.cpp.i
+.PHONY : VxWorks/SocketImpl.i
 
 # target to preprocess a source file
-Unix/SocketImpl.cpp.i:
-	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLNetwork/CMakeFiles/SFMLNetwork.dir/build.make SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.i
-.PHONY : Unix/SocketImpl.cpp.i
+VxWorks/SocketImpl.cpp.i:
+	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLNetwork/CMakeFiles/SFMLNetwork.dir/build.make SFMLNetwork/CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.i
+.PHONY : VxWorks/SocketImpl.cpp.i
 
-Unix/SocketImpl.s: Unix/SocketImpl.cpp.s
-.PHONY : Unix/SocketImpl.s
+VxWorks/SocketImpl.s: VxWorks/SocketImpl.cpp.s
+.PHONY : VxWorks/SocketImpl.s
 
 # target to generate assembly for a file
-Unix/SocketImpl.cpp.s:
-	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLNetwork/CMakeFiles/SFMLNetwork.dir/build.make SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.s
-.PHONY : Unix/SocketImpl.cpp.s
+VxWorks/SocketImpl.cpp.s:
+	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLNetwork/CMakeFiles/SFMLNetwork.dir/build.make SFMLNetwork/CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.s
+.PHONY : VxWorks/SocketImpl.cpp.s
 
 # Help Target
 help:
@@ -391,9 +391,9 @@ help:
 	@echo "... UdpSocket.obj"
 	@echo "... UdpSocket.i"
 	@echo "... UdpSocket.s"
-	@echo "... Unix/SocketImpl.obj"
-	@echo "... Unix/SocketImpl.i"
-	@echo "... Unix/SocketImpl.s"
+	@echo "... VxWorks/SocketImpl.obj"
+	@echo "... VxWorks/SocketImpl.i"
+	@echo "... VxWorks/SocketImpl.s"
 .PHONY : help
 
 

@@ -32,19 +32,19 @@ SFMLNetwork/CMakeFiles/SFMLNetwork.dir/IpAddress.cpp.obj: SFMLNetwork/../SFML/Ne
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/IpAddress.cpp.obj: SFMLNetwork/../SFML/Network/Socket.hpp
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/IpAddress.cpp.obj: SFMLNetwork/../SFML/Network/TcpSocket.hpp
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/IpAddress.cpp.obj: SFMLNetwork/IpAddress.cpp
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/IpAddress.cpp.obj: SFMLNetwork/Unix/../../SFML/Network/Socket.hpp
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/IpAddress.cpp.obj: SFMLNetwork/Unix/../../SFML/Network/SocketHandle.hpp
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/IpAddress.cpp.obj: SFMLNetwork/Unix/SocketImpl.hpp
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/IpAddress.cpp.obj: SFMLNetwork/VxWorks/../../SFML/Network/Socket.hpp
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/IpAddress.cpp.obj: SFMLNetwork/VxWorks/../../SFML/Network/SocketHandle.hpp
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/IpAddress.cpp.obj: SFMLNetwork/VxWorks/SocketImpl.hpp
 
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Packet.cpp.obj: SFMLNetwork/../SFML/Network/../Config.hpp
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Packet.cpp.obj: SFMLNetwork/../SFML/Network/Export.hpp
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Packet.cpp.obj: SFMLNetwork/../SFML/Network/Packet.hpp
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Packet.cpp.obj: SFMLNetwork/../SFML/System/String.hpp
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Packet.cpp.obj: SFMLNetwork/Packet.cpp
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Packet.cpp.obj: SFMLNetwork/Unix/../../SFML/Network/../System/NonCopyable.hpp
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Packet.cpp.obj: SFMLNetwork/Unix/../../SFML/Network/Socket.hpp
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Packet.cpp.obj: SFMLNetwork/Unix/../../SFML/Network/SocketHandle.hpp
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Packet.cpp.obj: SFMLNetwork/Unix/SocketImpl.hpp
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Packet.cpp.obj: SFMLNetwork/VxWorks/../../SFML/Network/../System/NonCopyable.hpp
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Packet.cpp.obj: SFMLNetwork/VxWorks/../../SFML/Network/Socket.hpp
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Packet.cpp.obj: SFMLNetwork/VxWorks/../../SFML/Network/SocketHandle.hpp
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Packet.cpp.obj: SFMLNetwork/VxWorks/SocketImpl.hpp
 
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Socket.cpp.obj: SFMLNetwork/../SFML/Config.hpp
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Socket.cpp.obj: SFMLNetwork/../SFML/Network/../Config.hpp
@@ -55,8 +55,8 @@ SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Socket.cpp.obj: SFMLNetwork/../SFML/Netwo
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Socket.cpp.obj: SFMLNetwork/../SFML/System/Err.hpp
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Socket.cpp.obj: SFMLNetwork/Socket.cpp
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Socket.cpp.obj: SFMLNetwork/SocketImpl.hpp
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Socket.cpp.obj: SFMLNetwork/Unix/../../SFML/Network/Socket.hpp
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Socket.cpp.obj: SFMLNetwork/Unix/SocketImpl.hpp
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Socket.cpp.obj: SFMLNetwork/VxWorks/../../SFML/Network/Socket.hpp
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Socket.cpp.obj: SFMLNetwork/VxWorks/SocketImpl.hpp
 
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/SocketSelector.cpp.obj: SFMLNetwork/../SFML/Config.hpp
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/SocketSelector.cpp.obj: SFMLNetwork/../SFML/Network/../Config.hpp
@@ -69,8 +69,8 @@ SFMLNetwork/CMakeFiles/SFMLNetwork.dir/SocketSelector.cpp.obj: SFMLNetwork/../SF
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/SocketSelector.cpp.obj: SFMLNetwork/../SFML/System/Err.hpp
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/SocketSelector.cpp.obj: SFMLNetwork/SocketImpl.hpp
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/SocketSelector.cpp.obj: SFMLNetwork/SocketSelector.cpp
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/SocketSelector.cpp.obj: SFMLNetwork/Unix/../../SFML/Network/Socket.hpp
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/SocketSelector.cpp.obj: SFMLNetwork/Unix/SocketImpl.hpp
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/SocketSelector.cpp.obj: SFMLNetwork/VxWorks/../../SFML/Network/Socket.hpp
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/SocketSelector.cpp.obj: SFMLNetwork/VxWorks/SocketImpl.hpp
 
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/TcpListener.cpp.obj: SFMLNetwork/../SFML/Config.hpp
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/TcpListener.cpp.obj: SFMLNetwork/../SFML/Network/../Config.hpp
@@ -84,8 +84,8 @@ SFMLNetwork/CMakeFiles/SFMLNetwork.dir/TcpListener.cpp.obj: SFMLNetwork/../SFML/
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/TcpListener.cpp.obj: SFMLNetwork/../SFML/System/Err.hpp
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/TcpListener.cpp.obj: SFMLNetwork/SocketImpl.hpp
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/TcpListener.cpp.obj: SFMLNetwork/TcpListener.cpp
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/TcpListener.cpp.obj: SFMLNetwork/Unix/../../SFML/Network/Socket.hpp
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/TcpListener.cpp.obj: SFMLNetwork/Unix/SocketImpl.hpp
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/TcpListener.cpp.obj: SFMLNetwork/VxWorks/../../SFML/Network/Socket.hpp
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/TcpListener.cpp.obj: SFMLNetwork/VxWorks/SocketImpl.hpp
 
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/TcpSocket.cpp.obj: SFMLNetwork/../SFML/Config.hpp
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/TcpSocket.cpp.obj: SFMLNetwork/../SFML/Network/../Config.hpp
@@ -100,8 +100,8 @@ SFMLNetwork/CMakeFiles/SFMLNetwork.dir/TcpSocket.cpp.obj: SFMLNetwork/../SFML/Ne
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/TcpSocket.cpp.obj: SFMLNetwork/../SFML/System/Err.hpp
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/TcpSocket.cpp.obj: SFMLNetwork/SocketImpl.hpp
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/TcpSocket.cpp.obj: SFMLNetwork/TcpSocket.cpp
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/TcpSocket.cpp.obj: SFMLNetwork/Unix/../../SFML/Network/Socket.hpp
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/TcpSocket.cpp.obj: SFMLNetwork/Unix/SocketImpl.hpp
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/TcpSocket.cpp.obj: SFMLNetwork/VxWorks/../../SFML/Network/Socket.hpp
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/TcpSocket.cpp.obj: SFMLNetwork/VxWorks/SocketImpl.hpp
 
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/UdpSocket.cpp.obj: SFMLNetwork/../SFML/Config.hpp
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/UdpSocket.cpp.obj: SFMLNetwork/../SFML/Network/../Config.hpp
@@ -116,14 +116,14 @@ SFMLNetwork/CMakeFiles/SFMLNetwork.dir/UdpSocket.cpp.obj: SFMLNetwork/../SFML/Ne
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/UdpSocket.cpp.obj: SFMLNetwork/../SFML/System/Err.hpp
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/UdpSocket.cpp.obj: SFMLNetwork/SocketImpl.hpp
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/UdpSocket.cpp.obj: SFMLNetwork/UdpSocket.cpp
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/UdpSocket.cpp.obj: SFMLNetwork/Unix/../../SFML/Network/Socket.hpp
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/UdpSocket.cpp.obj: SFMLNetwork/Unix/SocketImpl.hpp
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/UdpSocket.cpp.obj: SFMLNetwork/VxWorks/../../SFML/Network/Socket.hpp
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/UdpSocket.cpp.obj: SFMLNetwork/VxWorks/SocketImpl.hpp
 
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.obj: SFMLNetwork/Unix/../../SFML/Network/../Config.hpp
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.obj: SFMLNetwork/Unix/../../SFML/Network/../System/NonCopyable.hpp
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.obj: SFMLNetwork/Unix/../../SFML/Network/Export.hpp
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.obj: SFMLNetwork/Unix/../../SFML/Network/Socket.hpp
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.obj: SFMLNetwork/Unix/../../SFML/Network/SocketHandle.hpp
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.obj: SFMLNetwork/Unix/SocketImpl.cpp
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.obj: SFMLNetwork/Unix/SocketImpl.hpp
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.obj: SFMLNetwork/VxWorks/../../SFML/Network/../Config.hpp
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.obj: SFMLNetwork/VxWorks/../../SFML/Network/../System/NonCopyable.hpp
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.obj: SFMLNetwork/VxWorks/../../SFML/Network/Export.hpp
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.obj: SFMLNetwork/VxWorks/../../SFML/Network/Socket.hpp
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.obj: SFMLNetwork/VxWorks/../../SFML/Network/SocketHandle.hpp
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.obj: SFMLNetwork/VxWorks/SocketImpl.cpp
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.obj: SFMLNetwork/VxWorks/SocketImpl.hpp
 

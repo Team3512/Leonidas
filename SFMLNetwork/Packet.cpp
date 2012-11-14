@@ -26,7 +26,7 @@
 // Headers
 ////////////////////////////////////////////////////////////
 #include "../SFML/Network/Packet.hpp"
-#include "Unix/SocketImpl.hpp"
+#include "VxWorks/SocketImpl.hpp"
 #include "../SFML/System/String.hpp"
 #include <cstring>
 

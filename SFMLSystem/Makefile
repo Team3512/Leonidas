@@ -307,125 +307,125 @@ Time.cpp.s:
 	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/Time.cpp.s
 .PHONY : Time.cpp.s
 
-Unix/ClockImpl.obj: Unix/ClockImpl.cpp.obj
-.PHONY : Unix/ClockImpl.obj
+VxWorks/ClockImpl.obj: VxWorks/ClockImpl.cpp.obj
+.PHONY : VxWorks/ClockImpl.obj
 
 # target to build an object file
-Unix/ClockImpl.cpp.obj:
-	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ClockImpl.cpp.obj
-.PHONY : Unix/ClockImpl.cpp.obj
+VxWorks/ClockImpl.cpp.obj:
+	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ClockImpl.cpp.obj
+.PHONY : VxWorks/ClockImpl.cpp.obj
 
-Unix/ClockImpl.i: Unix/ClockImpl.cpp.i
-.PHONY : Unix/ClockImpl.i
+VxWorks/ClockImpl.i: VxWorks/ClockImpl.cpp.i
+.PHONY : VxWorks/ClockImpl.i
 
 # target to preprocess a source file
-Unix/ClockImpl.cpp.i:
-	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ClockImpl.cpp.i
-.PHONY : Unix/ClockImpl.cpp.i
+VxWorks/ClockImpl.cpp.i:
+	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ClockImpl.cpp.i
+.PHONY : VxWorks/ClockImpl.cpp.i
 
-Unix/ClockImpl.s: Unix/ClockImpl.cpp.s
-.PHONY : Unix/ClockImpl.s
+VxWorks/ClockImpl.s: VxWorks/ClockImpl.cpp.s
+.PHONY : VxWorks/ClockImpl.s
 
 # target to generate assembly for a file
-Unix/ClockImpl.cpp.s:
-	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ClockImpl.cpp.s
-.PHONY : Unix/ClockImpl.cpp.s
+VxWorks/ClockImpl.cpp.s:
+	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ClockImpl.cpp.s
+.PHONY : VxWorks/ClockImpl.cpp.s
 
-Unix/MutexImpl.obj: Unix/MutexImpl.cpp.obj
-.PHONY : Unix/MutexImpl.obj
+VxWorks/MutexImpl.obj: VxWorks/MutexImpl.cpp.obj
+.PHONY : VxWorks/MutexImpl.obj
 
 # target to build an object file
-Unix/MutexImpl.cpp.obj:
-	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/MutexImpl.cpp.obj
-.PHONY : Unix/MutexImpl.cpp.obj
+VxWorks/MutexImpl.cpp.obj:
+	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/MutexImpl.cpp.obj
+.PHONY : VxWorks/MutexImpl.cpp.obj
 
-Unix/MutexImpl.i: Unix/MutexImpl.cpp.i
-.PHONY : Unix/MutexImpl.i
+VxWorks/MutexImpl.i: VxWorks/MutexImpl.cpp.i
+.PHONY : VxWorks/MutexImpl.i
 
 # target to preprocess a source file
-Unix/MutexImpl.cpp.i:
-	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/MutexImpl.cpp.i
-.PHONY : Unix/MutexImpl.cpp.i
+VxWorks/MutexImpl.cpp.i:
+	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/MutexImpl.cpp.i
+.PHONY : VxWorks/MutexImpl.cpp.i
 
-Unix/MutexImpl.s: Unix/MutexImpl.cpp.s
-.PHONY : Unix/MutexImpl.s
+VxWorks/MutexImpl.s: VxWorks/MutexImpl.cpp.s
+.PHONY : VxWorks/MutexImpl.s
 
 # target to generate assembly for a file
-Unix/MutexImpl.cpp.s:
-	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/MutexImpl.cpp.s
-.PHONY : Unix/MutexImpl.cpp.s
+VxWorks/MutexImpl.cpp.s:
+	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/MutexImpl.cpp.s
+.PHONY : VxWorks/MutexImpl.cpp.s
 
-Unix/SleepImpl.obj: Unix/SleepImpl.cpp.obj
-.PHONY : Unix/SleepImpl.obj
+VxWorks/SleepImpl.obj: VxWorks/SleepImpl.cpp.obj
+.PHONY : VxWorks/SleepImpl.obj
 
 # target to build an object file
-Unix/SleepImpl.cpp.obj:
-	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/SleepImpl.cpp.obj
-.PHONY : Unix/SleepImpl.cpp.obj
+VxWorks/SleepImpl.cpp.obj:
+	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/SleepImpl.cpp.obj
+.PHONY : VxWorks/SleepImpl.cpp.obj
 
-Unix/SleepImpl.i: Unix/SleepImpl.cpp.i
-.PHONY : Unix/SleepImpl.i
+VxWorks/SleepImpl.i: VxWorks/SleepImpl.cpp.i
+.PHONY : VxWorks/SleepImpl.i
 
 # target to preprocess a source file
-Unix/SleepImpl.cpp.i:
-	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/SleepImpl.cpp.i
-.PHONY : Unix/SleepImpl.cpp.i
+VxWorks/SleepImpl.cpp.i:
+	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/SleepImpl.cpp.i
+.PHONY : VxWorks/SleepImpl.cpp.i
 
-Unix/SleepImpl.s: Unix/SleepImpl.cpp.s
-.PHONY : Unix/SleepImpl.s
+VxWorks/SleepImpl.s: VxWorks/SleepImpl.cpp.s
+.PHONY : VxWorks/SleepImpl.s
 
 # target to generate assembly for a file
-Unix/SleepImpl.cpp.s:
-	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/SleepImpl.cpp.s
-.PHONY : Unix/SleepImpl.cpp.s
+VxWorks/SleepImpl.cpp.s:
+	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/SleepImpl.cpp.s
+.PHONY : VxWorks/SleepImpl.cpp.s
 
-Unix/ThreadImpl.obj: Unix/ThreadImpl.cpp.obj
-.PHONY : Unix/ThreadImpl.obj
+VxWorks/ThreadImpl.obj: VxWorks/ThreadImpl.cpp.obj
+.PHONY : VxWorks/ThreadImpl.obj
 
 # target to build an object file
-Unix/ThreadImpl.cpp.obj:
-	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadImpl.cpp.obj
-.PHONY : Unix/ThreadImpl.cpp.obj
+VxWorks/ThreadImpl.cpp.obj:
+	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadImpl.cpp.obj
+.PHONY : VxWorks/ThreadImpl.cpp.obj
 
-Unix/ThreadImpl.i: Unix/ThreadImpl.cpp.i
-.PHONY : Unix/ThreadImpl.i
+VxWorks/ThreadImpl.i: VxWorks/ThreadImpl.cpp.i
+.PHONY : VxWorks/ThreadImpl.i
 
 # target to preprocess a source file
-Unix/ThreadImpl.cpp.i:
-	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadImpl.cpp.i
-.PHONY : Unix/ThreadImpl.cpp.i
+VxWorks/ThreadImpl.cpp.i:
+	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadImpl.cpp.i
+.PHONY : VxWorks/ThreadImpl.cpp.i
 
-Unix/ThreadImpl.s: Unix/ThreadImpl.cpp.s
-.PHONY : Unix/ThreadImpl.s
+VxWorks/ThreadImpl.s: VxWorks/ThreadImpl.cpp.s
+.PHONY : VxWorks/ThreadImpl.s
 
 # target to generate assembly for a file
-Unix/ThreadImpl.cpp.s:
-	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadImpl.cpp.s
-.PHONY : Unix/ThreadImpl.cpp.s
+VxWorks/ThreadImpl.cpp.s:
+	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadImpl.cpp.s
+.PHONY : VxWorks/ThreadImpl.cpp.s
 
-Unix/ThreadLocalImpl.obj: Unix/ThreadLocalImpl.cpp.obj
-.PHONY : Unix/ThreadLocalImpl.obj
+VxWorks/ThreadLocalImpl.obj: VxWorks/ThreadLocalImpl.cpp.obj
+.PHONY : VxWorks/ThreadLocalImpl.obj
 
 # target to build an object file
-Unix/ThreadLocalImpl.cpp.obj:
-	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadLocalImpl.cpp.obj
-.PHONY : Unix/ThreadLocalImpl.cpp.obj
+VxWorks/ThreadLocalImpl.cpp.obj:
+	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadLocalImpl.cpp.obj
+.PHONY : VxWorks/ThreadLocalImpl.cpp.obj
 
-Unix/ThreadLocalImpl.i: Unix/ThreadLocalImpl.cpp.i
-.PHONY : Unix/ThreadLocalImpl.i
+VxWorks/ThreadLocalImpl.i: VxWorks/ThreadLocalImpl.cpp.i
+.PHONY : VxWorks/ThreadLocalImpl.i
 
 # target to preprocess a source file
-Unix/ThreadLocalImpl.cpp.i:
-	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadLocalImpl.cpp.i
-.PHONY : Unix/ThreadLocalImpl.cpp.i
+VxWorks/ThreadLocalImpl.cpp.i:
+	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadLocalImpl.cpp.i
+.PHONY : VxWorks/ThreadLocalImpl.cpp.i
 
-Unix/ThreadLocalImpl.s: Unix/ThreadLocalImpl.cpp.s
-.PHONY : Unix/ThreadLocalImpl.s
+VxWorks/ThreadLocalImpl.s: VxWorks/ThreadLocalImpl.cpp.s
+.PHONY : VxWorks/ThreadLocalImpl.s
 
 # target to generate assembly for a file
-Unix/ThreadLocalImpl.cpp.s:
-	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadLocalImpl.cpp.s
-.PHONY : Unix/ThreadLocalImpl.cpp.s
+VxWorks/ThreadLocalImpl.cpp.s:
+	cd /home/tav/Git/Leonidas && $(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadLocalImpl.cpp.s
+.PHONY : VxWorks/ThreadLocalImpl.cpp.s
 
 # Help Target
 help:
@@ -460,21 +460,21 @@ help:
 	@echo "... Time.obj"
 	@echo "... Time.i"
 	@echo "... Time.s"
-	@echo "... Unix/ClockImpl.obj"
-	@echo "... Unix/ClockImpl.i"
-	@echo "... Unix/ClockImpl.s"
-	@echo "... Unix/MutexImpl.obj"
-	@echo "... Unix/MutexImpl.i"
-	@echo "... Unix/MutexImpl.s"
-	@echo "... Unix/SleepImpl.obj"
-	@echo "... Unix/SleepImpl.i"
-	@echo "... Unix/SleepImpl.s"
-	@echo "... Unix/ThreadImpl.obj"
-	@echo "... Unix/ThreadImpl.i"
-	@echo "... Unix/ThreadImpl.s"
-	@echo "... Unix/ThreadLocalImpl.obj"
-	@echo "... Unix/ThreadLocalImpl.i"
-	@echo "... Unix/ThreadLocalImpl.s"
+	@echo "... VxWorks/ClockImpl.obj"
+	@echo "... VxWorks/ClockImpl.i"
+	@echo "... VxWorks/ClockImpl.s"
+	@echo "... VxWorks/MutexImpl.obj"
+	@echo "... VxWorks/MutexImpl.i"
+	@echo "... VxWorks/MutexImpl.s"
+	@echo "... VxWorks/SleepImpl.obj"
+	@echo "... VxWorks/SleepImpl.i"
+	@echo "... VxWorks/SleepImpl.s"
+	@echo "... VxWorks/ThreadImpl.obj"
+	@echo "... VxWorks/ThreadImpl.i"
+	@echo "... VxWorks/ThreadImpl.s"
+	@echo "... VxWorks/ThreadLocalImpl.obj"
+	@echo "... VxWorks/ThreadLocalImpl.i"
+	@echo "... VxWorks/ThreadLocalImpl.s"
 .PHONY : help
 
 

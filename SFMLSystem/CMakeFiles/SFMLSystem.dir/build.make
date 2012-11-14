@@ -236,120 +236,120 @@ SFMLSystem/CMakeFiles/SFMLSystem.dir/Time.cpp.obj.provides: SFMLSystem/CMakeFile
 
 SFMLSystem/CMakeFiles/SFMLSystem.dir/Time.cpp.obj.provides.build: SFMLSystem/CMakeFiles/SFMLSystem.dir/Time.cpp.obj
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ClockImpl.cpp.obj: SFMLSystem/CMakeFiles/SFMLSystem.dir/flags.make
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ClockImpl.cpp.obj: SFMLSystem/Unix/ClockImpl.cpp
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ClockImpl.cpp.obj: SFMLSystem/CMakeFiles/SFMLSystem.dir/flags.make
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ClockImpl.cpp.obj: SFMLSystem/VxWorks/ClockImpl.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/tav/Git/Leonidas/CMakeFiles $(CMAKE_PROGRESS_9)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ClockImpl.cpp.obj"
-	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) -c /home/tav/Git/Leonidas/SFMLSystem/Unix/ClockImpl.cpp -o CMakeFiles/SFMLSystem.dir/Unix/ClockImpl.cpp.obj $(CXX_FLAGS)   -mcpu=603 -mstrict-align  -mlongcall -nostdlib -ansi -Wall  -isystem /usr/local/powerpc-wrs-vxworks/wind_base/target/h/wrn/coreip -DCPU=PPC603 -DTOOL_FAMILY=gnu -DTOOL=gnu -D_WRS_KERNEL
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ClockImpl.cpp.obj"
+	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) -c /home/tav/Git/Leonidas/SFMLSystem/VxWorks/ClockImpl.cpp -o CMakeFiles/SFMLSystem.dir/VxWorks/ClockImpl.cpp.obj $(CXX_FLAGS)   -mcpu=603 -mstrict-align  -mlongcall -nostdlib -ansi -Wall  -isystem /usr/local/powerpc-wrs-vxworks/wind_base/target/h/wrn/coreip -DCPU=PPC603 -DTOOL_FAMILY=gnu -DTOOL=gnu -D_WRS_KERNEL
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ClockImpl.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLSystem.dir/Unix/ClockImpl.cpp.i"
-	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tav/Git/Leonidas/SFMLSystem/Unix/ClockImpl.cpp > CMakeFiles/SFMLSystem.dir/Unix/ClockImpl.cpp.i
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ClockImpl.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLSystem.dir/VxWorks/ClockImpl.cpp.i"
+	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tav/Git/Leonidas/SFMLSystem/VxWorks/ClockImpl.cpp > CMakeFiles/SFMLSystem.dir/VxWorks/ClockImpl.cpp.i
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ClockImpl.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLSystem.dir/Unix/ClockImpl.cpp.s"
-	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tav/Git/Leonidas/SFMLSystem/Unix/ClockImpl.cpp -o CMakeFiles/SFMLSystem.dir/Unix/ClockImpl.cpp.s
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ClockImpl.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLSystem.dir/VxWorks/ClockImpl.cpp.s"
+	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tav/Git/Leonidas/SFMLSystem/VxWorks/ClockImpl.cpp -o CMakeFiles/SFMLSystem.dir/VxWorks/ClockImpl.cpp.s
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ClockImpl.cpp.obj.requires:
-.PHONY : SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ClockImpl.cpp.obj.requires
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ClockImpl.cpp.obj.requires:
+.PHONY : SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ClockImpl.cpp.obj.requires
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ClockImpl.cpp.obj.provides: SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ClockImpl.cpp.obj.requires
-	$(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ClockImpl.cpp.obj.provides.build
-.PHONY : SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ClockImpl.cpp.obj.provides
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ClockImpl.cpp.obj.provides: SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ClockImpl.cpp.obj.requires
+	$(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ClockImpl.cpp.obj.provides.build
+.PHONY : SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ClockImpl.cpp.obj.provides
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ClockImpl.cpp.obj.provides.build: SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ClockImpl.cpp.obj
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ClockImpl.cpp.obj.provides.build: SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ClockImpl.cpp.obj
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/MutexImpl.cpp.obj: SFMLSystem/CMakeFiles/SFMLSystem.dir/flags.make
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/MutexImpl.cpp.obj: SFMLSystem/Unix/MutexImpl.cpp
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/MutexImpl.cpp.obj: SFMLSystem/CMakeFiles/SFMLSystem.dir/flags.make
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/MutexImpl.cpp.obj: SFMLSystem/VxWorks/MutexImpl.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/tav/Git/Leonidas/CMakeFiles $(CMAKE_PROGRESS_10)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/MutexImpl.cpp.obj"
-	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) -c /home/tav/Git/Leonidas/SFMLSystem/Unix/MutexImpl.cpp -o CMakeFiles/SFMLSystem.dir/Unix/MutexImpl.cpp.obj $(CXX_FLAGS)   -mcpu=603 -mstrict-align  -mlongcall -nostdlib -ansi -Wall  -isystem /usr/local/powerpc-wrs-vxworks/wind_base/target/h/wrn/coreip -DCPU=PPC603 -DTOOL_FAMILY=gnu -DTOOL=gnu -D_WRS_KERNEL
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/MutexImpl.cpp.obj"
+	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) -c /home/tav/Git/Leonidas/SFMLSystem/VxWorks/MutexImpl.cpp -o CMakeFiles/SFMLSystem.dir/VxWorks/MutexImpl.cpp.obj $(CXX_FLAGS)   -mcpu=603 -mstrict-align  -mlongcall -nostdlib -ansi -Wall  -isystem /usr/local/powerpc-wrs-vxworks/wind_base/target/h/wrn/coreip -DCPU=PPC603 -DTOOL_FAMILY=gnu -DTOOL=gnu -D_WRS_KERNEL
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/MutexImpl.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLSystem.dir/Unix/MutexImpl.cpp.i"
-	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tav/Git/Leonidas/SFMLSystem/Unix/MutexImpl.cpp > CMakeFiles/SFMLSystem.dir/Unix/MutexImpl.cpp.i
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/MutexImpl.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLSystem.dir/VxWorks/MutexImpl.cpp.i"
+	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tav/Git/Leonidas/SFMLSystem/VxWorks/MutexImpl.cpp > CMakeFiles/SFMLSystem.dir/VxWorks/MutexImpl.cpp.i
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/MutexImpl.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLSystem.dir/Unix/MutexImpl.cpp.s"
-	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tav/Git/Leonidas/SFMLSystem/Unix/MutexImpl.cpp -o CMakeFiles/SFMLSystem.dir/Unix/MutexImpl.cpp.s
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/MutexImpl.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLSystem.dir/VxWorks/MutexImpl.cpp.s"
+	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tav/Git/Leonidas/SFMLSystem/VxWorks/MutexImpl.cpp -o CMakeFiles/SFMLSystem.dir/VxWorks/MutexImpl.cpp.s
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/MutexImpl.cpp.obj.requires:
-.PHONY : SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/MutexImpl.cpp.obj.requires
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/MutexImpl.cpp.obj.requires:
+.PHONY : SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/MutexImpl.cpp.obj.requires
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/MutexImpl.cpp.obj.provides: SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/MutexImpl.cpp.obj.requires
-	$(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/MutexImpl.cpp.obj.provides.build
-.PHONY : SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/MutexImpl.cpp.obj.provides
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/MutexImpl.cpp.obj.provides: SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/MutexImpl.cpp.obj.requires
+	$(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/MutexImpl.cpp.obj.provides.build
+.PHONY : SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/MutexImpl.cpp.obj.provides
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/MutexImpl.cpp.obj.provides.build: SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/MutexImpl.cpp.obj
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/MutexImpl.cpp.obj.provides.build: SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/MutexImpl.cpp.obj
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/SleepImpl.cpp.obj: SFMLSystem/CMakeFiles/SFMLSystem.dir/flags.make
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/SleepImpl.cpp.obj: SFMLSystem/Unix/SleepImpl.cpp
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/SleepImpl.cpp.obj: SFMLSystem/CMakeFiles/SFMLSystem.dir/flags.make
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/SleepImpl.cpp.obj: SFMLSystem/VxWorks/SleepImpl.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/tav/Git/Leonidas/CMakeFiles $(CMAKE_PROGRESS_11)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/SleepImpl.cpp.obj"
-	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) -c /home/tav/Git/Leonidas/SFMLSystem/Unix/SleepImpl.cpp -o CMakeFiles/SFMLSystem.dir/Unix/SleepImpl.cpp.obj $(CXX_FLAGS)   -mcpu=603 -mstrict-align  -mlongcall -nostdlib -ansi -Wall  -isystem /usr/local/powerpc-wrs-vxworks/wind_base/target/h/wrn/coreip -DCPU=PPC603 -DTOOL_FAMILY=gnu -DTOOL=gnu -D_WRS_KERNEL
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/SleepImpl.cpp.obj"
+	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) -c /home/tav/Git/Leonidas/SFMLSystem/VxWorks/SleepImpl.cpp -o CMakeFiles/SFMLSystem.dir/VxWorks/SleepImpl.cpp.obj $(CXX_FLAGS)   -mcpu=603 -mstrict-align  -mlongcall -nostdlib -ansi -Wall  -isystem /usr/local/powerpc-wrs-vxworks/wind_base/target/h/wrn/coreip -DCPU=PPC603 -DTOOL_FAMILY=gnu -DTOOL=gnu -D_WRS_KERNEL
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/SleepImpl.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLSystem.dir/Unix/SleepImpl.cpp.i"
-	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tav/Git/Leonidas/SFMLSystem/Unix/SleepImpl.cpp > CMakeFiles/SFMLSystem.dir/Unix/SleepImpl.cpp.i
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/SleepImpl.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLSystem.dir/VxWorks/SleepImpl.cpp.i"
+	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tav/Git/Leonidas/SFMLSystem/VxWorks/SleepImpl.cpp > CMakeFiles/SFMLSystem.dir/VxWorks/SleepImpl.cpp.i
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/SleepImpl.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLSystem.dir/Unix/SleepImpl.cpp.s"
-	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tav/Git/Leonidas/SFMLSystem/Unix/SleepImpl.cpp -o CMakeFiles/SFMLSystem.dir/Unix/SleepImpl.cpp.s
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/SleepImpl.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLSystem.dir/VxWorks/SleepImpl.cpp.s"
+	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tav/Git/Leonidas/SFMLSystem/VxWorks/SleepImpl.cpp -o CMakeFiles/SFMLSystem.dir/VxWorks/SleepImpl.cpp.s
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/SleepImpl.cpp.obj.requires:
-.PHONY : SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/SleepImpl.cpp.obj.requires
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/SleepImpl.cpp.obj.requires:
+.PHONY : SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/SleepImpl.cpp.obj.requires
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/SleepImpl.cpp.obj.provides: SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/SleepImpl.cpp.obj.requires
-	$(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/SleepImpl.cpp.obj.provides.build
-.PHONY : SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/SleepImpl.cpp.obj.provides
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/SleepImpl.cpp.obj.provides: SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/SleepImpl.cpp.obj.requires
+	$(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/SleepImpl.cpp.obj.provides.build
+.PHONY : SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/SleepImpl.cpp.obj.provides
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/SleepImpl.cpp.obj.provides.build: SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/SleepImpl.cpp.obj
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/SleepImpl.cpp.obj.provides.build: SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/SleepImpl.cpp.obj
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadImpl.cpp.obj: SFMLSystem/CMakeFiles/SFMLSystem.dir/flags.make
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadImpl.cpp.obj: SFMLSystem/Unix/ThreadImpl.cpp
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadImpl.cpp.obj: SFMLSystem/CMakeFiles/SFMLSystem.dir/flags.make
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadImpl.cpp.obj: SFMLSystem/VxWorks/ThreadImpl.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/tav/Git/Leonidas/CMakeFiles $(CMAKE_PROGRESS_12)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadImpl.cpp.obj"
-	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) -c /home/tav/Git/Leonidas/SFMLSystem/Unix/ThreadImpl.cpp -o CMakeFiles/SFMLSystem.dir/Unix/ThreadImpl.cpp.obj $(CXX_FLAGS)   -mcpu=603 -mstrict-align  -mlongcall -nostdlib -ansi -Wall  -isystem /usr/local/powerpc-wrs-vxworks/wind_base/target/h/wrn/coreip -DCPU=PPC603 -DTOOL_FAMILY=gnu -DTOOL=gnu -D_WRS_KERNEL
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadImpl.cpp.obj"
+	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) -c /home/tav/Git/Leonidas/SFMLSystem/VxWorks/ThreadImpl.cpp -o CMakeFiles/SFMLSystem.dir/VxWorks/ThreadImpl.cpp.obj $(CXX_FLAGS)   -mcpu=603 -mstrict-align  -mlongcall -nostdlib -ansi -Wall  -isystem /usr/local/powerpc-wrs-vxworks/wind_base/target/h/wrn/coreip -DCPU=PPC603 -DTOOL_FAMILY=gnu -DTOOL=gnu -D_WRS_KERNEL
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadImpl.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLSystem.dir/Unix/ThreadImpl.cpp.i"
-	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tav/Git/Leonidas/SFMLSystem/Unix/ThreadImpl.cpp > CMakeFiles/SFMLSystem.dir/Unix/ThreadImpl.cpp.i
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadImpl.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLSystem.dir/VxWorks/ThreadImpl.cpp.i"
+	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tav/Git/Leonidas/SFMLSystem/VxWorks/ThreadImpl.cpp > CMakeFiles/SFMLSystem.dir/VxWorks/ThreadImpl.cpp.i
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadImpl.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLSystem.dir/Unix/ThreadImpl.cpp.s"
-	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tav/Git/Leonidas/SFMLSystem/Unix/ThreadImpl.cpp -o CMakeFiles/SFMLSystem.dir/Unix/ThreadImpl.cpp.s
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadImpl.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLSystem.dir/VxWorks/ThreadImpl.cpp.s"
+	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tav/Git/Leonidas/SFMLSystem/VxWorks/ThreadImpl.cpp -o CMakeFiles/SFMLSystem.dir/VxWorks/ThreadImpl.cpp.s
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadImpl.cpp.obj.requires:
-.PHONY : SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadImpl.cpp.obj.requires
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadImpl.cpp.obj.requires:
+.PHONY : SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadImpl.cpp.obj.requires
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadImpl.cpp.obj.provides: SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadImpl.cpp.obj.requires
-	$(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadImpl.cpp.obj.provides.build
-.PHONY : SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadImpl.cpp.obj.provides
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadImpl.cpp.obj.provides: SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadImpl.cpp.obj.requires
+	$(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadImpl.cpp.obj.provides.build
+.PHONY : SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadImpl.cpp.obj.provides
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadImpl.cpp.obj.provides.build: SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadImpl.cpp.obj
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadImpl.cpp.obj.provides.build: SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadImpl.cpp.obj
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadLocalImpl.cpp.obj: SFMLSystem/CMakeFiles/SFMLSystem.dir/flags.make
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadLocalImpl.cpp.obj: SFMLSystem/Unix/ThreadLocalImpl.cpp
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadLocalImpl.cpp.obj: SFMLSystem/CMakeFiles/SFMLSystem.dir/flags.make
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadLocalImpl.cpp.obj: SFMLSystem/VxWorks/ThreadLocalImpl.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/tav/Git/Leonidas/CMakeFiles $(CMAKE_PROGRESS_13)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadLocalImpl.cpp.obj"
-	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) -c /home/tav/Git/Leonidas/SFMLSystem/Unix/ThreadLocalImpl.cpp -o CMakeFiles/SFMLSystem.dir/Unix/ThreadLocalImpl.cpp.obj $(CXX_FLAGS)   -mcpu=603 -mstrict-align  -mlongcall -nostdlib -ansi -Wall  -isystem /usr/local/powerpc-wrs-vxworks/wind_base/target/h/wrn/coreip -DCPU=PPC603 -DTOOL_FAMILY=gnu -DTOOL=gnu -D_WRS_KERNEL
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadLocalImpl.cpp.obj"
+	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) -c /home/tav/Git/Leonidas/SFMLSystem/VxWorks/ThreadLocalImpl.cpp -o CMakeFiles/SFMLSystem.dir/VxWorks/ThreadLocalImpl.cpp.obj $(CXX_FLAGS)   -mcpu=603 -mstrict-align  -mlongcall -nostdlib -ansi -Wall  -isystem /usr/local/powerpc-wrs-vxworks/wind_base/target/h/wrn/coreip -DCPU=PPC603 -DTOOL_FAMILY=gnu -DTOOL=gnu -D_WRS_KERNEL
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadLocalImpl.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLSystem.dir/Unix/ThreadLocalImpl.cpp.i"
-	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tav/Git/Leonidas/SFMLSystem/Unix/ThreadLocalImpl.cpp > CMakeFiles/SFMLSystem.dir/Unix/ThreadLocalImpl.cpp.i
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadLocalImpl.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLSystem.dir/VxWorks/ThreadLocalImpl.cpp.i"
+	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tav/Git/Leonidas/SFMLSystem/VxWorks/ThreadLocalImpl.cpp > CMakeFiles/SFMLSystem.dir/VxWorks/ThreadLocalImpl.cpp.i
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadLocalImpl.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLSystem.dir/Unix/ThreadLocalImpl.cpp.s"
-	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tav/Git/Leonidas/SFMLSystem/Unix/ThreadLocalImpl.cpp -o CMakeFiles/SFMLSystem.dir/Unix/ThreadLocalImpl.cpp.s
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadLocalImpl.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLSystem.dir/VxWorks/ThreadLocalImpl.cpp.s"
+	cd /home/tav/Git/Leonidas/SFMLSystem && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tav/Git/Leonidas/SFMLSystem/VxWorks/ThreadLocalImpl.cpp -o CMakeFiles/SFMLSystem.dir/VxWorks/ThreadLocalImpl.cpp.s
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadLocalImpl.cpp.obj.requires:
-.PHONY : SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadLocalImpl.cpp.obj.requires
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadLocalImpl.cpp.obj.requires:
+.PHONY : SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadLocalImpl.cpp.obj.requires
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadLocalImpl.cpp.obj.provides: SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadLocalImpl.cpp.obj.requires
-	$(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadLocalImpl.cpp.obj.provides.build
-.PHONY : SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadLocalImpl.cpp.obj.provides
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadLocalImpl.cpp.obj.provides: SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadLocalImpl.cpp.obj.requires
+	$(MAKE) -f SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadLocalImpl.cpp.obj.provides.build
+.PHONY : SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadLocalImpl.cpp.obj.provides
 
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadLocalImpl.cpp.obj.provides.build: SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadLocalImpl.cpp.obj
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadLocalImpl.cpp.obj.provides.build: SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadLocalImpl.cpp.obj
 
 # Object files for target SFMLSystem
 SFMLSystem_OBJECTS = \
@@ -361,11 +361,11 @@ SFMLSystem_OBJECTS = \
 "CMakeFiles/SFMLSystem.dir/Thread.cpp.obj" \
 "CMakeFiles/SFMLSystem.dir/ThreadLocal.cpp.obj" \
 "CMakeFiles/SFMLSystem.dir/Time.cpp.obj" \
-"CMakeFiles/SFMLSystem.dir/Unix/ClockImpl.cpp.obj" \
-"CMakeFiles/SFMLSystem.dir/Unix/MutexImpl.cpp.obj" \
-"CMakeFiles/SFMLSystem.dir/Unix/SleepImpl.cpp.obj" \
-"CMakeFiles/SFMLSystem.dir/Unix/ThreadImpl.cpp.obj" \
-"CMakeFiles/SFMLSystem.dir/Unix/ThreadLocalImpl.cpp.obj"
+"CMakeFiles/SFMLSystem.dir/VxWorks/ClockImpl.cpp.obj" \
+"CMakeFiles/SFMLSystem.dir/VxWorks/MutexImpl.cpp.obj" \
+"CMakeFiles/SFMLSystem.dir/VxWorks/SleepImpl.cpp.obj" \
+"CMakeFiles/SFMLSystem.dir/VxWorks/ThreadImpl.cpp.obj" \
+"CMakeFiles/SFMLSystem.dir/VxWorks/ThreadLocalImpl.cpp.obj"
 
 # External object files for target SFMLSystem
 SFMLSystem_EXTERNAL_OBJECTS =
@@ -378,11 +378,11 @@ SFMLSystem/libSFMLSystem.a: SFMLSystem/CMakeFiles/SFMLSystem.dir/String.cpp.obj
 SFMLSystem/libSFMLSystem.a: SFMLSystem/CMakeFiles/SFMLSystem.dir/Thread.cpp.obj
 SFMLSystem/libSFMLSystem.a: SFMLSystem/CMakeFiles/SFMLSystem.dir/ThreadLocal.cpp.obj
 SFMLSystem/libSFMLSystem.a: SFMLSystem/CMakeFiles/SFMLSystem.dir/Time.cpp.obj
-SFMLSystem/libSFMLSystem.a: SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ClockImpl.cpp.obj
-SFMLSystem/libSFMLSystem.a: SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/MutexImpl.cpp.obj
-SFMLSystem/libSFMLSystem.a: SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/SleepImpl.cpp.obj
-SFMLSystem/libSFMLSystem.a: SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadImpl.cpp.obj
-SFMLSystem/libSFMLSystem.a: SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadLocalImpl.cpp.obj
+SFMLSystem/libSFMLSystem.a: SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ClockImpl.cpp.obj
+SFMLSystem/libSFMLSystem.a: SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/MutexImpl.cpp.obj
+SFMLSystem/libSFMLSystem.a: SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/SleepImpl.cpp.obj
+SFMLSystem/libSFMLSystem.a: SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadImpl.cpp.obj
+SFMLSystem/libSFMLSystem.a: SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadLocalImpl.cpp.obj
 SFMLSystem/libSFMLSystem.a: SFMLSystem/CMakeFiles/SFMLSystem.dir/build.make
 SFMLSystem/libSFMLSystem.a: SFMLSystem/CMakeFiles/SFMLSystem.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library libSFMLSystem.a"
@@ -401,11 +401,11 @@ SFMLSystem/CMakeFiles/SFMLSystem.dir/requires: SFMLSystem/CMakeFiles/SFMLSystem.
 SFMLSystem/CMakeFiles/SFMLSystem.dir/requires: SFMLSystem/CMakeFiles/SFMLSystem.dir/Thread.cpp.obj.requires
 SFMLSystem/CMakeFiles/SFMLSystem.dir/requires: SFMLSystem/CMakeFiles/SFMLSystem.dir/ThreadLocal.cpp.obj.requires
 SFMLSystem/CMakeFiles/SFMLSystem.dir/requires: SFMLSystem/CMakeFiles/SFMLSystem.dir/Time.cpp.obj.requires
-SFMLSystem/CMakeFiles/SFMLSystem.dir/requires: SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ClockImpl.cpp.obj.requires
-SFMLSystem/CMakeFiles/SFMLSystem.dir/requires: SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/MutexImpl.cpp.obj.requires
-SFMLSystem/CMakeFiles/SFMLSystem.dir/requires: SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/SleepImpl.cpp.obj.requires
-SFMLSystem/CMakeFiles/SFMLSystem.dir/requires: SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadImpl.cpp.obj.requires
-SFMLSystem/CMakeFiles/SFMLSystem.dir/requires: SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadLocalImpl.cpp.obj.requires
+SFMLSystem/CMakeFiles/SFMLSystem.dir/requires: SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ClockImpl.cpp.obj.requires
+SFMLSystem/CMakeFiles/SFMLSystem.dir/requires: SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/MutexImpl.cpp.obj.requires
+SFMLSystem/CMakeFiles/SFMLSystem.dir/requires: SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/SleepImpl.cpp.obj.requires
+SFMLSystem/CMakeFiles/SFMLSystem.dir/requires: SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadImpl.cpp.obj.requires
+SFMLSystem/CMakeFiles/SFMLSystem.dir/requires: SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadLocalImpl.cpp.obj.requires
 .PHONY : SFMLSystem/CMakeFiles/SFMLSystem.dir/requires
 
 SFMLSystem/CMakeFiles/SFMLSystem.dir/clean:

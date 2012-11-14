@@ -8,7 +8,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/SFMLNetwork.dir/TcpListener.cpp.obj"
   "CMakeFiles/SFMLNetwork.dir/TcpSocket.cpp.obj"
   "CMakeFiles/SFMLNetwork.dir/UdpSocket.cpp.obj"
-  "CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.obj"
+  "CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.obj"
   "libSFMLNetwork.pdb"
   "libSFMLNetwork.a"
 )

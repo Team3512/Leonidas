@@ -27,7 +27,7 @@
 ////////////////////////////////////////////////////////////
 #include "../SFML/System/Mutex.hpp"
 
-#include "Unix/MutexImpl.hpp"
+#include "VxWorks/MutexImpl.hpp"
 
 
 namespace sf

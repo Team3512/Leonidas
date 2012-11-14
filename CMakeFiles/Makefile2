@@ -59,8 +59,8 @@ CMAKE_BINARY_DIR = /home/tav/Git/Leonidas
 # Target rules for target CMakeFiles/FRC_UserProgram.out.dir
 
 # All Build rule for target.
-CMakeFiles/FRC_UserProgram.out.dir/all: SFMLNetwork/CMakeFiles/SFMLNetwork.dir/all
 CMakeFiles/FRC_UserProgram.out.dir/all: SFMLSystem/CMakeFiles/SFMLSystem.dir/all
+CMakeFiles/FRC_UserProgram.out.dir/all: SFMLNetwork/CMakeFiles/SFMLNetwork.dir/all
 	$(MAKE) -f CMakeFiles/FRC_UserProgram.out.dir/build.make CMakeFiles/FRC_UserProgram.out.dir/depend
 	$(MAKE) -f CMakeFiles/FRC_UserProgram.out.dir/build.make CMakeFiles/FRC_UserProgram.out.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/tav/Git/Leonidas/CMakeFiles  1 2 3 4 5 6 7 8 9 10 11 12

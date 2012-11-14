@@ -27,8 +27,7 @@
 ////////////////////////////////////////////////////////////
 #include "../SFML/System/Thread.hpp"
 
-
-#include "Unix/ThreadImpl.hpp"
+#include "VxWorks/ThreadImpl.hpp"
 
 
 namespace sf

@@ -27,7 +27,7 @@
 ////////////////////////////////////////////////////////////
 #include "../SFML/System/ThreadLocal.hpp"
 
-#include "Unix/ThreadLocalImpl.hpp"
+#include "VxWorks/ThreadLocalImpl.hpp"
 
 
 namespace sf

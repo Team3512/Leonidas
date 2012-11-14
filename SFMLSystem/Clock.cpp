@@ -27,7 +27,7 @@
 ////////////////////////////////////////////////////////////
 #include "../SFML/System/Clock.hpp"
 
-    #include "Unix/ClockImpl.hpp"
+#include "VxWorks/ClockImpl.hpp"
 
 namespace sf
 {

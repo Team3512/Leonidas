@@ -12,11 +12,11 @@ SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/tav/Git/Leonidas/SFMLSystem/Thread.cpp" "/home/tav/Git/Leonidas/SFMLSystem/CMakeFiles/SFMLSystem.dir/Thread.cpp.obj"
   "/home/tav/Git/Leonidas/SFMLSystem/ThreadLocal.cpp" "/home/tav/Git/Leonidas/SFMLSystem/CMakeFiles/SFMLSystem.dir/ThreadLocal.cpp.obj"
   "/home/tav/Git/Leonidas/SFMLSystem/Time.cpp" "/home/tav/Git/Leonidas/SFMLSystem/CMakeFiles/SFMLSystem.dir/Time.cpp.obj"
-  "/home/tav/Git/Leonidas/SFMLSystem/Unix/ClockImpl.cpp" "/home/tav/Git/Leonidas/SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ClockImpl.cpp.obj"
-  "/home/tav/Git/Leonidas/SFMLSystem/Unix/MutexImpl.cpp" "/home/tav/Git/Leonidas/SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/MutexImpl.cpp.obj"
-  "/home/tav/Git/Leonidas/SFMLSystem/Unix/SleepImpl.cpp" "/home/tav/Git/Leonidas/SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/SleepImpl.cpp.obj"
-  "/home/tav/Git/Leonidas/SFMLSystem/Unix/ThreadImpl.cpp" "/home/tav/Git/Leonidas/SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadImpl.cpp.obj"
-  "/home/tav/Git/Leonidas/SFMLSystem/Unix/ThreadLocalImpl.cpp" "/home/tav/Git/Leonidas/SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadLocalImpl.cpp.obj"
+  "/home/tav/Git/Leonidas/SFMLSystem/VxWorks/ClockImpl.cpp" "/home/tav/Git/Leonidas/SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ClockImpl.cpp.obj"
+  "/home/tav/Git/Leonidas/SFMLSystem/VxWorks/MutexImpl.cpp" "/home/tav/Git/Leonidas/SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/MutexImpl.cpp.obj"
+  "/home/tav/Git/Leonidas/SFMLSystem/VxWorks/SleepImpl.cpp" "/home/tav/Git/Leonidas/SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/SleepImpl.cpp.obj"
+  "/home/tav/Git/Leonidas/SFMLSystem/VxWorks/ThreadImpl.cpp" "/home/tav/Git/Leonidas/SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadImpl.cpp.obj"
+  "/home/tav/Git/Leonidas/SFMLSystem/VxWorks/ThreadLocalImpl.cpp" "/home/tav/Git/Leonidas/SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadLocalImpl.cpp.obj"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

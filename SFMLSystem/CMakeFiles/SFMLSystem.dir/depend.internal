@@ -7,9 +7,9 @@ SFMLSystem/CMakeFiles/SFMLSystem.dir/Clock.cpp.obj
  /home/tav/Git/Leonidas/SFMLSystem/../SFML/System/Export.hpp
  /home/tav/Git/Leonidas/SFMLSystem/../SFML/System/Time.hpp
  /home/tav/Git/Leonidas/SFMLSystem/Clock.cpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/../../SFML/Config.hpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/../../SFML/System/Time.hpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/ClockImpl.hpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/../../SFML/Config.hpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/../../SFML/System/Time.hpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/ClockImpl.hpp
 SFMLSystem/CMakeFiles/SFMLSystem.dir/Err.cpp.obj
  /home/tav/Git/Leonidas/SFMLSystem/../SFML/System/../Config.hpp
  /home/tav/Git/Leonidas/SFMLSystem/../SFML/System/Err.hpp
@@ -28,8 +28,8 @@ SFMLSystem/CMakeFiles/SFMLSystem.dir/Mutex.cpp.obj
  /home/tav/Git/Leonidas/SFMLSystem/../SFML/System/Mutex.hpp
  /home/tav/Git/Leonidas/SFMLSystem/../SFML/System/NonCopyable.hpp
  /home/tav/Git/Leonidas/SFMLSystem/Mutex.cpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/../../SFML/System/NonCopyable.hpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/MutexImpl.hpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/../../SFML/System/NonCopyable.hpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/MutexImpl.hpp
 SFMLSystem/CMakeFiles/SFMLSystem.dir/String.cpp.obj
  /home/tav/Git/Leonidas/SFMLSystem/../SFML/System/../Config.hpp
  /home/tav/Git/Leonidas/SFMLSystem/../SFML/System/Export.hpp
@@ -44,52 +44,52 @@ SFMLSystem/CMakeFiles/SFMLSystem.dir/Thread.cpp.obj
  /home/tav/Git/Leonidas/SFMLSystem/../SFML/System/Thread.hpp
  /home/tav/Git/Leonidas/SFMLSystem/../SFML/System/Thread.inl
  /home/tav/Git/Leonidas/SFMLSystem/Thread.cpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/../../SFML/System/NonCopyable.hpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/ThreadImpl.hpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/../../SFML/System/NonCopyable.hpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/ThreadImpl.hpp
 SFMLSystem/CMakeFiles/SFMLSystem.dir/ThreadLocal.cpp.obj
  /home/tav/Git/Leonidas/SFMLSystem/../SFML/System/../Config.hpp
  /home/tav/Git/Leonidas/SFMLSystem/../SFML/System/Export.hpp
  /home/tav/Git/Leonidas/SFMLSystem/../SFML/System/NonCopyable.hpp
  /home/tav/Git/Leonidas/SFMLSystem/../SFML/System/ThreadLocal.hpp
  /home/tav/Git/Leonidas/SFMLSystem/ThreadLocal.cpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/../../SFML/System/NonCopyable.hpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/ThreadLocalImpl.hpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/../../SFML/System/NonCopyable.hpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/ThreadLocalImpl.hpp
 SFMLSystem/CMakeFiles/SFMLSystem.dir/Time.cpp.obj
  /home/tav/Git/Leonidas/SFMLSystem/../SFML/System/../Config.hpp
  /home/tav/Git/Leonidas/SFMLSystem/../SFML/System/Export.hpp
  /home/tav/Git/Leonidas/SFMLSystem/../SFML/System/Time.hpp
  /home/tav/Git/Leonidas/SFMLSystem/Time.cpp
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ClockImpl.cpp.obj
- /home/tav/Git/Leonidas/SFMLSystem/Unix/../../SFML/Config.hpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/../../SFML/System/../Config.hpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/../../SFML/System/Export.hpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/../../SFML/System/Time.hpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/ClockImpl.cpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/ClockImpl.hpp
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/MutexImpl.cpp.obj
- /home/tav/Git/Leonidas/SFMLSystem/Unix/../../SFML/System/../Config.hpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/../../SFML/System/Export.hpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/../../SFML/System/NonCopyable.hpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/MutexImpl.cpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/MutexImpl.hpp
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/SleepImpl.cpp.obj
- /home/tav/Git/Leonidas/SFMLSystem/Unix/../../SFML/Config.hpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/../../SFML/System/../Config.hpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/../../SFML/System/Export.hpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/../../SFML/System/Time.hpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/SleepImpl.cpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/SleepImpl.hpp
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadImpl.cpp.obj
- /home/tav/Git/Leonidas/SFMLSystem/Unix/../../SFML/System/../Config.hpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/../../SFML/System/Export.hpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/../../SFML/System/NonCopyable.hpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/../../SFML/System/Thread.hpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/../../SFML/System/Thread.inl
- /home/tav/Git/Leonidas/SFMLSystem/Unix/ThreadImpl.cpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/ThreadImpl.hpp
-SFMLSystem/CMakeFiles/SFMLSystem.dir/Unix/ThreadLocalImpl.cpp.obj
- /home/tav/Git/Leonidas/SFMLSystem/Unix/../../SFML/System/../Config.hpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/../../SFML/System/Export.hpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/../../SFML/System/NonCopyable.hpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/ThreadLocalImpl.cpp
- /home/tav/Git/Leonidas/SFMLSystem/Unix/ThreadLocalImpl.hpp
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ClockImpl.cpp.obj
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/../../SFML/Config.hpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/../../SFML/System/../Config.hpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/../../SFML/System/Export.hpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/../../SFML/System/Time.hpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/ClockImpl.cpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/ClockImpl.hpp
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/MutexImpl.cpp.obj
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/../../SFML/System/../Config.hpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/../../SFML/System/Export.hpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/../../SFML/System/NonCopyable.hpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/MutexImpl.cpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/MutexImpl.hpp
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/SleepImpl.cpp.obj
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/../../SFML/Config.hpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/../../SFML/System/../Config.hpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/../../SFML/System/Export.hpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/../../SFML/System/Time.hpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/SleepImpl.cpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/SleepImpl.hpp
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadImpl.cpp.obj
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/../../SFML/System/../Config.hpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/../../SFML/System/Export.hpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/../../SFML/System/NonCopyable.hpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/../../SFML/System/Thread.hpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/../../SFML/System/Thread.inl
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/ThreadImpl.cpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/ThreadImpl.hpp
+SFMLSystem/CMakeFiles/SFMLSystem.dir/VxWorks/ThreadLocalImpl.cpp.obj
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/../../SFML/System/../Config.hpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/../../SFML/System/Export.hpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/../../SFML/System/NonCopyable.hpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/ThreadLocalImpl.cpp
+ /home/tav/Git/Leonidas/SFMLSystem/VxWorks/ThreadLocalImpl.hpp

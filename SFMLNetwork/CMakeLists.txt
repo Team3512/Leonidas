@@ -8,7 +8,7 @@ set(SFML_NET_SRC
     TcpListener.cpp
     TcpSocket.cpp
     UdpSocket.cpp
-    Unix/SocketImpl.cpp
+    VxWorks/SocketImpl.cpp
 )
 
 add_library(SFMLNetwork ${SFML_NET_SRC})

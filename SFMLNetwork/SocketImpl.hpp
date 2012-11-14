@@ -28,4 +28,4 @@
 #include "../SFML/Config.hpp"
 
 
-#include "Unix/SocketImpl.hpp"
+#include "VxWorks/SocketImpl.hpp"

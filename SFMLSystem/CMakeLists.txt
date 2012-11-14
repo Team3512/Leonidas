@@ -7,11 +7,11 @@ set(SFML_SYS_SRC
     Thread.cpp
     ThreadLocal.cpp
     Time.cpp
-    Unix/ClockImpl.cpp
-    Unix/MutexImpl.cpp
-    Unix/SleepImpl.cpp
-    Unix/ThreadImpl.cpp
-    Unix/ThreadLocalImpl.cpp
+    VxWorks/ClockImpl.cpp
+    VxWorks/MutexImpl.cpp
+    VxWorks/SleepImpl.cpp
+    VxWorks/ThreadImpl.cpp
+    VxWorks/ThreadLocalImpl.cpp
 )
 
 add_library(SFMLSystem ${SFML_SYS_SRC})

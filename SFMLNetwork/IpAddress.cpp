@@ -27,7 +27,7 @@
 ////////////////////////////////////////////////////////////
 #include "../SFML/Network/IpAddress.hpp"
 #include "../SFML/Network/Http.hpp"
-#include "Unix/SocketImpl.hpp"
+#include "VxWorks/SocketImpl.hpp"
 
 
 namespace

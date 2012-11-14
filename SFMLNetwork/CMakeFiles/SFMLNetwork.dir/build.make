@@ -259,28 +259,28 @@ SFMLNetwork/CMakeFiles/SFMLNetwork.dir/UdpSocket.cpp.obj.provides: SFMLNetwork/C
 
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/UdpSocket.cpp.obj.provides.build: SFMLNetwork/CMakeFiles/SFMLNetwork.dir/UdpSocket.cpp.obj
 
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.obj: SFMLNetwork/CMakeFiles/SFMLNetwork.dir/flags.make
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.obj: SFMLNetwork/Unix/SocketImpl.cpp
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.obj: SFMLNetwork/CMakeFiles/SFMLNetwork.dir/flags.make
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.obj: SFMLNetwork/VxWorks/SocketImpl.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/tav/Git/Leonidas/CMakeFiles $(CMAKE_PROGRESS_10)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.obj"
-	cd /home/tav/Git/Leonidas/SFMLNetwork && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) -c /home/tav/Git/Leonidas/SFMLNetwork/Unix/SocketImpl.cpp -o CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.obj $(CXX_FLAGS)   -mcpu=603 -mstrict-align  -mlongcall -nostdlib -ansi -Wall  -isystem /usr/local/powerpc-wrs-vxworks/wind_base/target/h/wrn/coreip -DCPU=PPC603 -DTOOL_FAMILY=gnu -DTOOL=gnu -D_WRS_KERNEL
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object SFMLNetwork/CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.obj"
+	cd /home/tav/Git/Leonidas/SFMLNetwork && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) -c /home/tav/Git/Leonidas/SFMLNetwork/VxWorks/SocketImpl.cpp -o CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.obj $(CXX_FLAGS)   -mcpu=603 -mstrict-align  -mlongcall -nostdlib -ansi -Wall  -isystem /usr/local/powerpc-wrs-vxworks/wind_base/target/h/wrn/coreip -DCPU=PPC603 -DTOOL_FAMILY=gnu -DTOOL=gnu -D_WRS_KERNEL
 
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.i"
-	cd /home/tav/Git/Leonidas/SFMLNetwork && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tav/Git/Leonidas/SFMLNetwork/Unix/SocketImpl.cpp > CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.i
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.i"
+	cd /home/tav/Git/Leonidas/SFMLNetwork && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/tav/Git/Leonidas/SFMLNetwork/VxWorks/SocketImpl.cpp > CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.i
 
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.s"
-	cd /home/tav/Git/Leonidas/SFMLNetwork && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tav/Git/Leonidas/SFMLNetwork/Unix/SocketImpl.cpp -o CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.s
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.s"
+	cd /home/tav/Git/Leonidas/SFMLNetwork && /usr/local/bin/powerpc-wrs-vxworks-g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/tav/Git/Leonidas/SFMLNetwork/VxWorks/SocketImpl.cpp -o CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.s
 
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.obj.requires:
-.PHONY : SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.obj.requires
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.obj.requires:
+.PHONY : SFMLNetwork/CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.obj.requires
 
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.obj.provides: SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.obj.requires
-	$(MAKE) -f SFMLNetwork/CMakeFiles/SFMLNetwork.dir/build.make SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.obj.provides.build
-.PHONY : SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.obj.provides
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.obj.provides: SFMLNetwork/CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.obj.requires
+	$(MAKE) -f SFMLNetwork/CMakeFiles/SFMLNetwork.dir/build.make SFMLNetwork/CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.obj.provides.build
+.PHONY : SFMLNetwork/CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.obj.provides
 
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.obj.provides.build: SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.obj
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.obj.provides.build: SFMLNetwork/CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.obj
 
 # Object files for target SFMLNetwork
 SFMLNetwork_OBJECTS = \
@@ -293,7 +293,7 @@ SFMLNetwork_OBJECTS = \
 "CMakeFiles/SFMLNetwork.dir/TcpListener.cpp.obj" \
 "CMakeFiles/SFMLNetwork.dir/TcpSocket.cpp.obj" \
 "CMakeFiles/SFMLNetwork.dir/UdpSocket.cpp.obj" \
-"CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.obj"
+"CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.obj"
 
 # External object files for target SFMLNetwork
 SFMLNetwork_EXTERNAL_OBJECTS =
@@ -307,7 +307,7 @@ SFMLNetwork/libSFMLNetwork.a: SFMLNetwork/CMakeFiles/SFMLNetwork.dir/SocketSelec
 SFMLNetwork/libSFMLNetwork.a: SFMLNetwork/CMakeFiles/SFMLNetwork.dir/TcpListener.cpp.obj
 SFMLNetwork/libSFMLNetwork.a: SFMLNetwork/CMakeFiles/SFMLNetwork.dir/TcpSocket.cpp.obj
 SFMLNetwork/libSFMLNetwork.a: SFMLNetwork/CMakeFiles/SFMLNetwork.dir/UdpSocket.cpp.obj
-SFMLNetwork/libSFMLNetwork.a: SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.obj
+SFMLNetwork/libSFMLNetwork.a: SFMLNetwork/CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.obj
 SFMLNetwork/libSFMLNetwork.a: SFMLNetwork/CMakeFiles/SFMLNetwork.dir/build.make
 SFMLNetwork/libSFMLNetwork.a: SFMLNetwork/CMakeFiles/SFMLNetwork.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library libSFMLNetwork.a"
@@ -327,7 +327,7 @@ SFMLNetwork/CMakeFiles/SFMLNetwork.dir/requires: SFMLNetwork/CMakeFiles/SFMLNetw
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/requires: SFMLNetwork/CMakeFiles/SFMLNetwork.dir/TcpListener.cpp.obj.requires
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/requires: SFMLNetwork/CMakeFiles/SFMLNetwork.dir/TcpSocket.cpp.obj.requires
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/requires: SFMLNetwork/CMakeFiles/SFMLNetwork.dir/UdpSocket.cpp.obj.requires
-SFMLNetwork/CMakeFiles/SFMLNetwork.dir/requires: SFMLNetwork/CMakeFiles/SFMLNetwork.dir/Unix/SocketImpl.cpp.obj.requires
+SFMLNetwork/CMakeFiles/SFMLNetwork.dir/requires: SFMLNetwork/CMakeFiles/SFMLNetwork.dir/VxWorks/SocketImpl.cpp.obj.requires
 .PHONY : SFMLNetwork/CMakeFiles/SFMLNetwork.dir/requires
 
 SFMLNetwork/CMakeFiles/SFMLNetwork.dir/clean:
