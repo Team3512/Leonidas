@@ -1,3 +1,0 @@
-/home/tav/Git/Leonidas/CMakeFiles/FRC_UserProgram.out.dir
-/home/tav/Git/Leonidas/SFMLNetwork/CMakeFiles/SFMLNetwork.dir
-/home/tav/Git/Leonidas/SFMLSystem/CMakeFiles/SFMLSystem.dir
