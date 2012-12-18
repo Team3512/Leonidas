@@ -7,11 +7,6 @@
 #include "DriverStationDisplay.hpp"
 #include <cstdlib>
 #include <cstring>
-#include <ioLib.h>
-#include <loadLib.h>
-#include <rebootLib.h>
-#include <sysLib.h>
-#include <fcntl.h>
 
 DriverStationDisplay* DriverStationDisplay::m_dsDisplay = NULL;
 
@@ -42,17 +37,6 @@ void DriverStationDisplay::receiveFromDS() {
         if ( std::strcmp( m_recvBuffer , "connect" ) == 0 ) {
             m_dsIP = m_recvIP;
             m_dsPort = m_recvPort;
-        }
-
-        else if ( std::strcmp( m_recvBuffer , "reload" ) == 0 ) {
-            // Spawns kernel task to reload image
-            int program = open( "/ni-rt/system/ALF.out" , O_RDONLY , 0 );
-            loadModule( program , LOAD_ALL_SYMBOLS | LOAD_CPLUS_XTOR_AUTO );
-            close( program );
-        }
-
-        else if ( std::strcmp( m_recvBuffer , "reboot" ) == 0 ) {
-            reboot( BOOT_NORMAL ); // reboot cRIO controller normally
         }
     }
 }
