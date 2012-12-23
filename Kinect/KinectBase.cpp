@@ -11,6 +11,7 @@ KinectBase::KinectBase( sf::IpAddress IP , unsigned short portNumber ) :
         socketThread( &KinectBase::receive , this ) , sendIP( IP ) , sendPort( portNumber ) {
 	closeThread = false;
     kinectSocket.bind( portNumber );
+    kinectSocket.setBlocking( false );
 	socketThread.launch();
 }
 
@@ -67,12 +68,15 @@ void KinectBase::receive() {
 		else if ( sOnlineStatus == sf::Socket::Disconnected || sOnlineStatus == sf::Socket::Error ) {
 			clearValues();
 		}
-		// if values received are older than 500ms, clear them
-		else if ( valueAge.getElapsedTime().asMilliseconds() > 500 ) {
+		// if values received are older than 600ms, clear them
+		else if ( valueAge.getElapsedTime().asMilliseconds() > 600 ) {
 			clearValues();
 		}
 
 		// else do nothing because the socket is fine; it just doesn't have any new values
+
+		// Keeps non-blocking socket thread from consuming all system resources
+		Wait( 0.1 );
 	}
 }
 
