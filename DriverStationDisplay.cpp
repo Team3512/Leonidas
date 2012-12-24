@@ -23,6 +23,10 @@ DriverStationDisplay* DriverStationDisplay::getInstance( unsigned short dsPort )
     return m_dsDisplay;
 }
 
+void DriverStationDisplay::freeInstance() {
+    delete m_dsDisplay;
+}
+
 void DriverStationDisplay::sendToDS() {
     if ( m_dsIP != sf::IpAddress::None ) {
         m_socket.send( *static_cast<sf::Packet*>(this) , m_dsIP , m_dsPort );

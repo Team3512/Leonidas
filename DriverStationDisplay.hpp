@@ -38,6 +38,8 @@ public:
 
     static DriverStationDisplay* getInstance( unsigned short dsPort );
 
+    static void freeInstance();
+
     // sends data currently in packet to Driver Station
     void sendToDS();
 

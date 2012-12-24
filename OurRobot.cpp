@@ -48,6 +48,11 @@ OurRobot::OurRobot() :
     isAutoAiming = false;
 }
 
+OurRobot::~OurRobot() {
+    DriverStationDisplay::freeInstance();
+    driverStation = NULL;
+}
+
 void OurRobot::DS_PrintOut() {
     /* ===== Print to Driver Station LCD =====
      * Packs the following variables:

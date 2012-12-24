@@ -35,6 +35,7 @@ public:
     DriverStationDisplay* driverStation; // used for sending data to the Driver Station
 
     OurRobot();
+    ~OurRobot();
 
     void Autonomous();
     void OperatorControl();
