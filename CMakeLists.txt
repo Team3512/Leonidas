@@ -7,7 +7,7 @@ include_directories( "${WIND_BASE}/target/h/WPILib" )
 add_subdirectory(SFMLNetwork)
 add_subdirectory(SFMLSystem)
 
-set(MAIN_SRC
+set(SRC
     AutonomousModes/Autonomous.cpp
     Kinect/DriveKinect.cpp
     Kinect/TurretKinect.cpp
@@ -23,6 +23,6 @@ set(MAIN_SRC
     ShooterController.cpp
 )
 
-add_executable(FRC_UserProgram.out ${MAIN_SRC})
+add_executable(FRC_UserProgram.out ${SRC})
 
 target_link_libraries(FRC_UserProgram.out SFMLNetwork SFMLSystem)
