@@ -25,6 +25,7 @@ DriverStationDisplay* DriverStationDisplay::getInstance( unsigned short dsPort )
 
 void DriverStationDisplay::freeInstance() {
     delete m_dsDisplay;
+    m_dsDisplay = NULL;
 }
 
 void DriverStationDisplay::sendToDS() {
@@ -36,11 +37,15 @@ void DriverStationDisplay::sendToDS() {
     m_socket.send( *static_cast<sf::Packet*>(this) , sf::IpAddress( 10 , 35 , 12 , 42 ) , m_dsPort );
 }
 
-void DriverStationDisplay::receiveFromDS() {
+void DriverStationDisplay::receiveFromDS( void* userData ) {
     if ( m_socket.receive( m_recvBuffer , 256 , m_recvAmount , m_recvIP , m_recvPort ) == sf::Socket::Done ) {
-        if ( std::strcmp( m_recvBuffer , "connect" ) == 0 ) {
+        if ( std::strncmp( m_recvBuffer , "connect\r\n" , 9 ) == 0 ) {
             m_dsIP = m_recvIP;
             m_dsPort = m_recvPort;
+        }
+        else if ( std::strncmp( m_recvBuffer , "autonSelect\r\n" , 13 ) == 0 ) {
+            // Next byte after command is selection choice
+            *static_cast<char*>(userData) = m_recvBuffer[13];
         }
     }
 }
@@ -49,10 +54,4 @@ DriverStationDisplay::DriverStationDisplay( unsigned short portNumber ) : m_dsIP
     m_socket.bind( portNumber );
     m_socket.setBlocking( false );
     m_recvBuffer = static_cast<char*>( std::malloc( 256 ) );
-}
-
-DriverStationDisplay::DriverStationDisplay( const DriverStationDisplay& ) {
-}
-
-void DriverStationDisplay::operator=( const DriverStationDisplay& ) {
 }

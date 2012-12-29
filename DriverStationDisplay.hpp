@@ -28,11 +28,12 @@
  * The packets are always sent to 10.35.12.42 for testing purposes
  */
 
+#include "NonCopyable.hpp"
 #include "SFML/Network/IpAddress.hpp"
 #include "SFML/Network/Packet.hpp"
 #include "SFML/Network/UdpSocket.hpp"
 
-class DriverStationDisplay : public sf::Packet {
+class DriverStationDisplay : public NonCopyable , public sf::Packet {
 public:
     virtual ~DriverStationDisplay();
 
@@ -43,15 +44,13 @@ public:
     // sends data currently in packet to Driver Station
     void sendToDS();
 
-    // receive control commands from Driver Station
-    void receiveFromDS();
+    /* receive control commands from Driver Station
+     * 'userData' will hold extra data sent after command
+     */
+    void receiveFromDS( void* userData );
 
 private:
     DriverStationDisplay( unsigned short portNumber );
-
-    // disallow copy and assignment
-    DriverStationDisplay( const DriverStationDisplay& );
-    void operator=( const DriverStationDisplay& );
 
     static DriverStationDisplay* m_dsDisplay;
 

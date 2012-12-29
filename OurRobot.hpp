@@ -13,6 +13,8 @@
 #include <SimpleRobot.h>
 #include "Settings.hpp"
 
+#include "AutonContainer.hpp"
+
 #include <Compressor.h>
 #include <RobotDrive.h>
 #include <Joystick.h>
@@ -24,6 +26,8 @@
 #include "LockSolenoid.hpp"
 #include "Kinect/TurretKinect.hpp"
 #include "ShooterController.hpp"
+
+#include <Timer.h>
 
 // scales joystick's Z axis values from -1 .. 1 to 0 .. 1, but within same range of movement
 float ScaleZ( Joystick& stick );
@@ -38,10 +42,16 @@ public:
     ~OurRobot();
 
     void Autonomous();
+    void AutonShoot();
+    void AutonBridge();
+    void AutonFeed();
+
     void OperatorControl();
     void Disabled();
 
 private:
+    AutonContainer<OurRobot> autonModes;
+
     Compressor mainCompressor;
 
     RobotDrive mainDrive;
@@ -67,6 +77,9 @@ private:
     bool shooterIsManual;
     bool isShooting;
     bool isAutoAiming;
+
+    // Determines which autonomous mode is run
+    char autonMode;
 
     // Used for timing in all Autonomous routines
     Timer autoTime;

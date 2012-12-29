@@ -1,17 +1,14 @@
 //=============================================================================
-//File Name: Autonomous.cpp
-//Description: Holds autonomous code for robot
+//File Name: AutonShoot.cpp
+//Description: Shoots balls contained within robot at hoop
 //Author: FRC Team 3512, Spartatroniks
 //=============================================================================
 
-#include <Timer.h>
 #include "../OurRobot.hpp"
 
-void OurRobot::Autonomous() {
-    mainCompressor.Start();
-    autoTime.Reset();
-    autoTime.Start();
+// autoTime is handled from within the main Autonomous call in Autonomous.cpp
 
+void OurRobot::AutonShoot() {
     shooterEncoder.Start();
 
     turretKinect.clearValues();
@@ -21,7 +18,8 @@ void OurRobot::Autonomous() {
     bool aiming = true;
 
     /* 1) Start aiming turret and start shooter motors
-     * 2) After 6 seconds, move ball conveyors up to shoot ball */
+     * 2) After 6 seconds, move ball conveyors up to shoot ball
+     */
 
     while ( IsEnabled() && IsAutonomous() ) {
         DS_PrintOut();

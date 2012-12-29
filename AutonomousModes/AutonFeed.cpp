@@ -1,16 +1,13 @@
 //=============================================================================
-//File Name: AutonomousFeed.cpp
+//File Name: AutonFeed.cpp
 //Description: Reverses ball retrieval mechanism for feeding balls to another
 //             team during autonomous
 //Author: FRC Team 3512, Spartatroniks
 //=============================================================================
 
-#include <Timer.h>
 #include "../OurRobot.hpp"
 
-void OurRobot::Autonomous() {
-    mainCompressor.Start();
-
+void OurRobot::AutonFeed() {
     while ( IsEnabled() && IsAutonomous() ) {
         DS_PrintOut();
 

@@ -9,7 +9,8 @@
 #include "DriverStationDisplay.hpp"
 
 float ScaleZ( Joystick& stick) {
-    return floorf( 500.f * ( 1.f - stick.GetZ() ) / 2.f ) / 500.f; // CONSTANT^-1 is step value (now 1/500)
+    // CONSTANT^-1 is step value (now 1/500)
+    return floorf( 500.f * ( 1.f - stick.GetZ() ) / 2.f ) / 500.f;
 }
 
 OurRobot::OurRobot() :
@@ -38,6 +39,10 @@ OurRobot::OurRobot() :
 {
     driverStation = DriverStationDisplay::getInstance( atoi( Settings::getValueFor( "DS_Port" ).c_str() ) );
 
+    autonModes.addMethod( "Shoot" , &OurRobot::AutonShoot , this );
+    autonModes.addMethod( "Bridge" , &OurRobot::AutonBridge , this );
+    autonModes.addMethod( "Feed" , &OurRobot::AutonFeed , this );
+
     // let motors run for up to 1 second uncontrolled before shutting them down
     mainDrive.SetExpiration( 1.f );
 
@@ -46,6 +51,8 @@ OurRobot::OurRobot() :
     shooterIsManual = false;
     isShooting = false;
     isAutoAiming = false;
+
+    autonMode = 0;
 }
 
 OurRobot::~OurRobot() {
@@ -69,6 +76,10 @@ void OurRobot::DS_PrintOut() {
      * bool: turret is locked on
      * unsigned char: Kinect is online
      * unsigned int: distance to target
+     *
+     * Autonomous Modes (contained in rest of packet):
+     * std::string: autonomous routine name
+     * ...
      */
 
     // floats don't work so " * 100000" saves some precision in a UINT
@@ -100,7 +111,11 @@ void OurRobot::DS_PrintOut() {
 
     *driverStation << turretKinect.getDistance();
 
-    driverStation->receiveFromDS();
+    for ( unsigned int i ; i < autonModes.size() ; i++ ) {
+        *driverStation << autonModes.name( i );
+    }
+
+    driverStation->receiveFromDS( &autonMode );
     driverStation->sendToDS();
     /* ====================================== */
 }

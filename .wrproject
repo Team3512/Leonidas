@@ -260,9 +260,10 @@
                 <file name="/Leonidas/OperatorControl.cpp"/>
                 <file name="/Leonidas/OurRobot.cpp"/>
                 <file name="/Leonidas/ShooterController.cpp"/>
-                <file name="/Leonidas/AutonomousModes/Autonomous.cpp"/>
                 <file name="/Leonidas/LockSolenoid.cpp"/>
                 <file name="/Leonidas/Settings.cpp"/>
+                <folder name="/Leonidas/AutonomousModes" recursive="true"/>
+                <file name="/Leonidas/Autonomous.cpp"/>
             </contents>
         </buildtarget>
     </buildtargets>

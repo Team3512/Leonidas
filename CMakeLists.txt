@@ -8,17 +8,22 @@ add_subdirectory(SFMLNetwork)
 add_subdirectory(SFMLSystem)
 
 set(SRC
-    AutonomousModes/Autonomous.cpp
+    AutonomousModes/AutonBridge.cpp
+    AutonomousModes/AutonFeed.cpp
+    AutonomousModes/AutonShoot.cpp
+
     Kinect/DriveKinect.cpp
     Kinect/TurretKinect.cpp
     Kinect/KinectBase.cpp
 
-    OurRobot.cpp
-    OperatorControl.cpp
-    Disabled.cpp
+    AutonContainer.cpp
+    Autonomous.cpp
     ButtonTracker.cpp
+    Disabled.cpp
     DriverStationDisplay.cpp
     LockSolenoid.cpp
+    OperatorControl.cpp
+    OurRobot.cpp
     Settings.cpp
     ShooterController.cpp
 )

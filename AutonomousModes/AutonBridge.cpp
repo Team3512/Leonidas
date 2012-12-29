@@ -1,17 +1,14 @@
 //=============================================================================
-//File Name: AutonomousBridge.cpp
+//File Name: AutonBridge.cpp
 //Description: Drives to Coopertition bridge and tips it to our side
 //Author: FRC Team 3512, Spartatroniks
 //=============================================================================
 
-#include <Timer.h>
 #include "../OurRobot.hpp"
 
-void OurRobot::Autonomous() {
-    mainCompressor.Start();
-    autoTime.Reset();
-    autoTime.Start();
+// autoTime is handled from within the main Autonomous call in Autonomous.cpp
 
+void OurRobot::AutonBridge() {
     shifter.Set( false ); // Set robot's drivetrain to low gear
     bridgeArm.Set( LockSolenoid::Deployed );
 
