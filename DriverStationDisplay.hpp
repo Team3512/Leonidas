@@ -41,13 +41,16 @@ public:
 
     static void freeInstance();
 
-    // sends data currently in packet to Driver Station
-    void sendToDS();
+    /* Sends data currently in packet to Driver Station
+     * 'userData' holds the packet to be sent to the Driver Station
+     * If the pointer is NULL, this class's internal packet is sent instead
+     */
+    void sendToDS( sf::Packet* userData = NULL );
 
     /* receive control commands from Driver Station
-     * 'userData' will hold extra data sent after command
+     * 'userData' will hold extra data sent after received command
      */
-    void receiveFromDS( void* userData );
+    const std::string& receiveFromDS( void* userData );
 
 private:
     DriverStationDisplay( unsigned short portNumber );

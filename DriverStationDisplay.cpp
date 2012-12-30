@@ -28,24 +28,39 @@ void DriverStationDisplay::freeInstance() {
     m_dsDisplay = NULL;
 }
 
-void DriverStationDisplay::sendToDS() {
+void DriverStationDisplay::sendToDS( sf::Packet* userData ) {
     if ( m_dsIP != sf::IpAddress::None ) {
-        m_socket.send( *static_cast<sf::Packet*>(this) , m_dsIP , m_dsPort );
+        if ( userData == NULL ) {
+            m_socket.send( *static_cast<sf::Packet*>(this) , m_dsIP , m_dsPort );
+        }
+        else {
+            m_socket.send( *userData , m_dsIP , m_dsPort );
+        }
     }
 
     // Used for testing purposes
-    m_socket.send( *static_cast<sf::Packet*>(this) , sf::IpAddress( 10 , 35 , 12 , 42 ) , m_dsPort );
+    sf::IpAddress testIP( 10 , 35 , 12 , 42 );
+    if ( userData == NULL ) {
+        m_socket.send( *static_cast<sf::Packet*>(this) , testIP , m_dsPort );
+    }
+    else {
+        m_socket.send( *userData , testIP , m_dsPort );
+    }
 }
 
-void DriverStationDisplay::receiveFromDS( void* userData ) {
+const std::string& DriverStationDisplay::receiveFromDS( void* userData ) {
     if ( m_socket.receive( m_recvBuffer , 256 , m_recvAmount , m_recvIP , m_recvPort ) == sf::Socket::Done ) {
         if ( std::strncmp( m_recvBuffer , "connect\r\n" , 9 ) == 0 ) {
             m_dsIP = m_recvIP;
             m_dsPort = m_recvPort;
+
+            return "connect\r\n";
         }
         else if ( std::strncmp( m_recvBuffer , "autonSelect\r\n" , 13 ) == 0 ) {
             // Next byte after command is selection choice
             *static_cast<char*>(userData) = m_recvBuffer[13];
+
+            return "autonSelect\r\n";
         }
     }
 }

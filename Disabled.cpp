@@ -20,29 +20,29 @@ void OurRobot::Disabled() {
         DS_PrintOut();
 
         // update "new" value of joystick buttons
-       driveStick1Buttons.updateButtons();
-       driveStick2Buttons.updateButtons();
-       turretStickButtons.updateButtons();
+        driveStick1Buttons.updateButtons();
+        driveStick2Buttons.updateButtons();
+        turretStickButtons.updateButtons();
 
-       /* ===================== AutoAim ===================== */
-       if ( turretStickButtons.releasedButton( 3 ) ) {
-           isAutoAiming = !isAutoAiming; // toggles autoAim
-       }
-       /* =================================================== */
+        /* ===================== AutoAim ===================== */
+        if ( turretStickButtons.releasedButton( 3 ) ) {
+            isAutoAiming = !isAutoAiming; // toggles autoAim
+        }
+        /* =================================================== */
 
-       /* ============== Toggle Shooter Motors ============== */
-       // turns shooter on/off
-       if ( turretStickButtons.releasedButton( 1 ) ) { // if released trigger
-           isShooting = !isShooting;
-       }
+        /* ============== Toggle Shooter Motors ============== */
+        // turns shooter on/off
+        if ( turretStickButtons.releasedButton( 1 ) ) { // if released trigger
+            isShooting = !isShooting;
+        }
 
-       // toggle manual RPM setting vs setting with encoder input
-       if ( turretStickButtons.releasedButton( 2 ) ) {
-           shooterIsManual = !shooterIsManual;
-       }
-       /* =================================================== */
+        // toggle manual RPM setting vs setting with encoder input
+        if ( turretStickButtons.releasedButton( 2 ) ) {
+            shooterIsManual = !shooterIsManual;
+        }
+        /* =================================================== */
 
-       bridgeArm.Update();
+        bridgeArm.Update();
 
         Wait( 0.1 );
     }

@@ -64,6 +64,7 @@ void OurRobot::DS_PrintOut() {
     /* ===== Print to Driver Station LCD =====
      * Packs the following variables:
      *
+     * std::string: type of data (either "display" or "autonList")
      * unsigned int: drive1 ScaleZ
      * unsigned int: drive2 ScaleZ
      * unsigned int: turret ScaleZ
@@ -76,15 +77,13 @@ void OurRobot::DS_PrintOut() {
      * bool: turret is locked on
      * unsigned char: Kinect is online
      * unsigned int: distance to target
-     *
-     * Autonomous Modes (contained in rest of packet):
-     * std::string: autonomous routine name
-     * ...
      */
 
     // floats don't work so " * 100000" saves some precision in a UINT
 
     driverStation->clear();
+
+    *driverStation << static_cast<std::string>( "display" );
 
     *driverStation << static_cast<unsigned int>(ScaleZ(driveStick1) * 100000.f);
 
@@ -111,12 +110,22 @@ void OurRobot::DS_PrintOut() {
 
     *driverStation << turretKinect.getDistance();
 
-    for ( unsigned int i ; i < autonModes.size() ; i++ ) {
-        *driverStation << autonModes.name( i );
-    }
-
-    driverStation->receiveFromDS( &autonMode );
     driverStation->sendToDS();
+
+    const std::string& command = driverStation->receiveFromDS( &autonMode );
+
+    // If the DS just connected, send it a list of available autonomous modes
+    if ( std::strcmp( command.c_str() , "connect\r\n" ) == 0 ) {
+        driverStation->clear();
+
+        *driverStation << static_cast<std::string>( "autonList" );
+
+        for ( unsigned int i = 0 ; i < autonModes.size() ; i++ ) {
+            *driverStation << autonModes.name( i );
+        }
+
+        driverStation->sendToDS();
+    }
     /* ====================================== */
 }
 
