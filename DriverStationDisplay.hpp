@@ -50,7 +50,7 @@ public:
     /* receive control commands from Driver Station
      * 'userData' will hold extra data sent after received command
      */
-    const std::string& receiveFromDS( void* userData );
+    const std::string receiveFromDS( void* userData );
 
 private:
     DriverStationDisplay( unsigned short portNumber );

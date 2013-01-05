@@ -2,7 +2,7 @@
 #include <Victor.h>
 #include <Counter.h>
 #include "ShooterController.hpp"
-#include <iostream> // FIXME
+#include <iostream> // TODO Fix PID loop
 
 double getRPM( Counter* counter ) {
     return 60.f / ( 16.f * counter->GetPeriod() );

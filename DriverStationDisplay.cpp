@@ -48,7 +48,7 @@ void DriverStationDisplay::sendToDS( sf::Packet* userData ) {
     }
 }
 
-const std::string& DriverStationDisplay::receiveFromDS( void* userData ) {
+const std::string DriverStationDisplay::receiveFromDS( void* userData ) {
     if ( m_socket.receive( m_recvBuffer , 256 , m_recvAmount , m_recvIP , m_recvPort ) == sf::Socket::Done ) {
         if ( std::strncmp( m_recvBuffer , "connect\r\n" , 9 ) == 0 ) {
             m_dsIP = m_recvIP;
@@ -63,6 +63,8 @@ const std::string& DriverStationDisplay::receiveFromDS( void* userData ) {
             return "autonSelect\r\n";
         }
     }
+
+    return "NONE";
 }
 
 DriverStationDisplay::DriverStationDisplay( unsigned short portNumber ) : m_dsIP( sf::IpAddress::None ) , m_dsPort( portNumber ) {
