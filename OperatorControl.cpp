@@ -153,12 +153,6 @@ void OurRobot::OperatorControl() {
         bridgeArm.Update();
         /* ====================== */
 
-        /* ===== Shifter ===== */
-        if ( driveStick1Buttons.releasedButton( 1 ) ) { // if released trigger
-            shifter.Set( !shifter.Get() ); // shifts between low and high gear
-        }
-        /* =================== */
-
         // move robot based on two joystick inputs
         mainDrive.ArcadeDrive( ScaleZ( driveStick1 ) * driveStick1.GetY() , ScaleZ( driveStick2 ) * driveStick2.GetX() , false );
 

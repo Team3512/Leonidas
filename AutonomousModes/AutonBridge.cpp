@@ -9,7 +9,6 @@
 // autoTime is handled from within the main Autonomous call in Autonomous.cpp
 
 void OurRobot::AutonBridge() {
-    shifter.Set( false ); // Set robot's drivetrain to low gear
     bridgeArm.Set( LockSolenoid::Deployed );
 
     while ( IsEnabled() && IsAutonomous() ) {

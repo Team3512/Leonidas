@@ -29,7 +29,6 @@ OurRobot::OurRobot() :
 
     shooterEncoder( 6 ),
 
-    shifter( 1 ),
     bridgeArm( 2 , 3 ),
 
     // single board computer's IP address and port
@@ -91,7 +90,7 @@ void OurRobot::DS_PrintOut() {
 
     *driverStation << static_cast<unsigned int>(ScaleZ(turretStick) * 100000.f);
 
-    *driverStation << static_cast<bool>( !shifter.Get() );
+    *driverStation << static_cast<bool>( false );
 
     *driverStation << static_cast<unsigned char>( bridgeArm.Get() );
 

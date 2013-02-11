@@ -67,7 +67,6 @@ private:
 
     Counter shooterEncoder;
 
-    Solenoid shifter;
     LockSolenoid bridgeArm;
 
     TurretKinect turretKinect;
