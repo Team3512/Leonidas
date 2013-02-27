@@ -62,7 +62,7 @@ ShooterController::~ShooterController()
 
 float ShooterController::DetermineMotorSpeedFromRPM( float fRPM )
 {
-	float result;
+	float result = 0.f;
 
 	// Make sure we return zero for zero.
 	if (fRPM == 0.0F)
