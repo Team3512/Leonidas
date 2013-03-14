@@ -9,7 +9,7 @@
 // autoTime is handled from within the main Autonomous call in Autonomous.cpp
 
 void OurRobot::AutonShoot() {
-    shooterEncoder.Start();
+    shooter.start();
 
     turretKinect.clearValues();
 
@@ -39,22 +39,7 @@ void OurRobot::AutonShoot() {
             }
         }
 
-        /* gives full power to shooter motors until it reaches set point,
-         * then turn them off until the shooter slows down again
-         */
-        float encoderRPM = 60.f / ( 16.f * shooterEncoder.GetPeriod() );
-        if ( encoderRPM >= 2300.f ) {
-            shooterMotorLeft.Set( 0 );
-            shooterMotorRight.Set( 0 );
-        }
-        else if ( encoderRPM > 2242.f ) {
-            shooterMotorLeft.Set( -0.3f );
-            shooterMotorRight.Set( 0.3f );
-        }
-        else {
-            shooterMotorLeft.Set( -1 );
-            shooterMotorRight.Set( 1 );
-        }
+        shooter.setRPM( 2300.f );
 
         if ( autoTime.Get() > 6.f ) { // gives shooter six seconds to spin up before starting ball conveyor
             // start conveyor moving balls up to shooter
@@ -64,5 +49,5 @@ void OurRobot::AutonShoot() {
         Wait( 0.1 );
     }
 
-    shooterEncoder.Stop();
+    shooter.stop();
 }

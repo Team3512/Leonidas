@@ -11,7 +11,6 @@
 void OurRobot::OperatorControl() {
     mainCompressor.Start();
 
-    isShooting = false;
     isAutoAiming = false;
 
     bridgeArm.Set( LockSolenoid::Retracted );
@@ -20,7 +19,7 @@ void OurRobot::OperatorControl() {
     ButtonTracker driveStick2Buttons( 2 );
     ButtonTracker turretStickButtons( 3 );
 
-    shooterEncoder.Start();
+    shooter.start();
 
     while ( IsEnabled() && IsOperatorControl() ) {
         DS_PrintOut();
@@ -79,45 +78,24 @@ void OurRobot::OperatorControl() {
         /* ============== Toggle Shooter Motors ============== */
         // turns shooter on/off
         if ( turretStickButtons.releasedButton( 1 ) ) { // if released trigger
-            isShooting = !isShooting;
-        }
-
-        if ( isShooting && turretStickButtons.releasedButton( 1 ) ) {
-            pidControl.SetTargetDistance( 15.f ); // * 0.00328084f
-        }
-
-        if ( isShooting ) {
-            if ( shooterIsManual ) { // let driver change shooter speed manually
-                shooterMotorLeft.Set( -ScaleZ(turretStick) );
-                shooterMotorRight.Set( ScaleZ(turretStick) );
+            if ( shooter.isShooting() ) {
+                shooter.stop();
             }
-            else { // else adjust shooter voltage to match RPM
-                //pidControl.SetTargetDistance( 25.f ); // * 0.00328084f
-                pidControl.Update();
-
-                /*float encoderRPM = 60.f / ( 16.f * shooterEncoder.GetPeriod() );
-                if ( encoderRPM >= 72.0 * ScaleZ(turretStick) * 60.0 ) {
-                    shooterMotorLeft.Set( 0 );
-                    shooterMotorRight.Set( 0 );
-                }
-                else if ( encoderRPM > 2242.f ) {
-                    shooterMotorLeft.Set( -0.3f );
-                    shooterMotorRight.Set( 0.3f );
-                }
-                else {
-                    shooterMotorLeft.Set( -1 );
-                    shooterMotorRight.Set( 1 );
-                }*/
+            else {
+                shooter.start();
             }
         }
-        else {
-            shooterMotorLeft.Set( 0 );
-            shooterMotorRight.Set( 0 );
-        }
+
+        shooter.setScale( ScaleZ(turretStick) );
 
         // toggle manual RPM setting vs setting with encoder input
         if ( turretStickButtons.releasedButton( 2 ) ) {
-            shooterIsManual = !shooterIsManual;
+            if ( shooter.getControlMode() == Shooter::Manual  ) {
+                shooter.setControlMode( Shooter::PID );
+            }
+            else {
+                shooter.setControlMode( Shooter::Manual );
+            }
         }
 		/* =================================================== */
 
@@ -153,11 +131,18 @@ void OurRobot::OperatorControl() {
         bridgeArm.Update();
         /* ====================== */
 
+        // Reset PID constants
+        if ( turretStickButtons.releasedButton( 8 ) ) {
+            Settings::update();
+
+            shooter.setPID( atof( getValueFor( "PID_P" ).c_str() ) , atof( getValueFor( "PID_I" ).c_str() ) , atof( getValueFor( "PID_D" ).c_str() ) );
+        }
+
         // move robot based on two joystick inputs
         mainDrive.ArcadeDrive( ScaleZ( driveStick1 ) * driveStick1.GetY() , ScaleZ( driveStick2 ) * driveStick2.GetX() , false );
 
         Wait( 0.1 );
     }
 
-    shooterEncoder.Stop();
+    shooter.stop();
 }

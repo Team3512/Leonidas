@@ -7,6 +7,9 @@
 
 #include "OurRobot.hpp"
 #include "DriverStationDisplay.hpp"
+#include <sys/times.h>
+
+int gettimeofday (struct timeval *tv_ptr, void *ptr);
 
 float ScaleZ( Joystick& stick) {
     // CONSTANT^-1 is step value (now 1/500)
@@ -23,19 +26,27 @@ OurRobot::OurRobot() :
     turretStick( 3 ),
     lift( 7 ),
 
-    shooterMotorLeft( 7 ),
-    shooterMotorRight( 6 ),
     rotateMotor( 5 ),
 
-    shooterEncoder( 6 ),
+    shooter( 7 , 6 , 6 , 16 , 1.f ),
 
     bridgeArm( 2 , 3 ),
 
     // single board computer's IP address and port
     turretKinect( getValueFor( "SBC_IP" ) , atoi( getValueFor( "SBC_Port" ).c_str() ) ),
 
-    pidControl()
+    // Create a GraphHost
+    pidGraph( 3513 )
 {
+    struct timeval rawTime;
+
+    /* Store the current time into startTime as the fixed starting point
+     * for our graph.
+     */
+    gettimeofday( &rawTime , NULL );
+    startTime = rawTime.tv_usec / 1000 + rawTime.tv_sec * 1000;
+    lastTime = startTime;
+
     driverStation = DriverStationDisplay::getInstance( atoi( Settings::getValueFor( "DS_Port" ).c_str() ) );
 
     autonModes.addMethod( "Shoot" , &OurRobot::AutonShoot , this );
@@ -45,10 +56,8 @@ OurRobot::OurRobot() :
     // let motors run for up to 1 second uncontrolled before shutting them down
     mainDrive.SetExpiration( 1.f );
 
-    pidControl.Initialize( &shooterEncoder , &shooterMotorLeft , &shooterMotorRight );
-
-    shooterIsManual = false;
-    isShooting = false;
+    shooter.setPID( atof( getValueFor( "PID_P" ).c_str() ) , atof( getValueFor( "PID_I" ).c_str() ) , atof( getValueFor( "PID_D" ).c_str() ) );
+    shooter.stop();
     isAutoAiming = false;
 
     autonMode = 0;
@@ -60,6 +69,20 @@ OurRobot::~OurRobot() {
 }
 
 void OurRobot::DS_PrintOut() {
+    struct timeval rawTime;
+    uint32_t currentTime;
+
+    gettimeofday( &rawTime , NULL );
+    currentTime = rawTime.tv_usec / 1000 + rawTime.tv_sec * 1000;
+
+    if ( currentTime - lastTime > 5 ) {
+        //pidGraph.graphData( currentTime - startTime , 5000.f , "PID0" );
+        pidGraph.graphData( currentTime - startTime , shooter.getRPM() , "PID0" );
+        pidGraph.graphData( currentTime - startTime , shooter.getTargetRPM() , "PID1" );
+
+        lastTime = currentTime;
+    }
+
     /* ===== Print to Driver Station LCD =====
      * Packs the following variables:
      *
@@ -94,11 +117,11 @@ void OurRobot::DS_PrintOut() {
 
     *driverStation << static_cast<unsigned char>( bridgeArm.Get() );
 
-    *driverStation << static_cast<unsigned int>(60.f / ( 16.f * shooterEncoder.GetPeriod() ) * 100000.f);
+    *driverStation << static_cast<unsigned int>(shooter.getRPM() * 100000.f);
 
-    *driverStation << shooterIsManual;
+    *driverStation << static_cast<bool>( shooter.getControlMode() == Shooter::Manual );
 
-    *driverStation << isShooting;
+    *driverStation << shooter.isShooting();
 
     *driverStation << isAutoAiming;
 

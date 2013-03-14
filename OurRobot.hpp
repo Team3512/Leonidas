@@ -20,14 +20,15 @@
 #include <Joystick.h>
 #include <Relay.h>
 #include <Victor.h>
-#include <Counter.h>
 #include <Solenoid.h>
 
 #include "LockSolenoid.hpp"
 #include "Kinect/TurretKinect.hpp"
-#include "ShooterController.hpp"
+#include "Subsystems/Shooter.hpp"
 
 #include <Timer.h>
+
+#include "LiveGrapherHost/graphhost-p.hpp"
 
 // scales joystick's Z axis values from -1 .. 1 to 0 .. 1, but within same range of movement
 float ScaleZ( Joystick& stick );
@@ -50,6 +51,9 @@ public:
     void Disabled();
 
 private:
+    uint32_t lastTime;
+    uint32_t startTime;
+
     AutonContainer<OurRobot> autonModes;
 
     Compressor mainCompressor;
@@ -61,20 +65,14 @@ private:
     Joystick turretStick;
     Relay lift;
 
-    Victor shooterMotorLeft;
-    Victor shooterMotorRight;
     Victor rotateMotor;
 
-    Counter shooterEncoder;
+    Shooter shooter;
 
     LockSolenoid bridgeArm;
 
     TurretKinect turretKinect;
 
-    ShooterController pidControl;
-
-    bool shooterIsManual;
-    bool isShooting;
     bool isAutoAiming;
 
     // Determines which autonomous mode is run
@@ -82,6 +80,9 @@ private:
 
     // Used for timing in all Autonomous routines
     Timer autoTime;
+
+    // The LiveGrapher host
+    GraphHost pidGraph;
 
     void DS_PrintOut(); // prints messages to driverStation LCD
 };

@@ -251,19 +251,7 @@
         </buildtarget>
         <buildtarget buildtool="Partial Image Linker" name="Leonidas_partialImage" passed="true" targetname="Leonidas_partialImage">
             <contents>
-                <folder name="/Leonidas/Kinect" recursive="true"/>
-                <folder name="/Leonidas/SFMLNetwork" recursive="true"/>
-                <folder name="/Leonidas/SFMLSystem" recursive="true"/>
-                <file name="/Leonidas/ButtonTracker.cpp"/>
-                <file name="/Leonidas/Disabled.cpp"/>
-                <file name="/Leonidas/DriverStationDisplay.cpp"/>
-                <file name="/Leonidas/OperatorControl.cpp"/>
-                <file name="/Leonidas/OurRobot.cpp"/>
-                <file name="/Leonidas/ShooterController.cpp"/>
-                <file name="/Leonidas/LockSolenoid.cpp"/>
-                <file name="/Leonidas/Settings.cpp"/>
-                <folder name="/Leonidas/AutonomousModes" recursive="true"/>
-                <file name="/Leonidas/Autonomous.cpp"/>
+                <folder name="/Leonidas" recursive="true"/>
             </contents>
         </buildtarget>
     </buildtargets>
