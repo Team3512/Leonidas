@@ -7,6 +7,8 @@
 
 #include "OurRobot.hpp"
 #include "DriverStationDisplay.hpp"
+
+#include <cstring>
 #include <sys/times.h>
 
 int gettimeofday (struct timeval *tv_ptr, void *ptr);

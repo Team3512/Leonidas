@@ -1,33 +1,28 @@
 cmake_minimum_required(VERSION 2.8)
+include(FRCDeploy)
 
 project(Leonidas)
+find_package(WPILib)
+include_directories(${WPILib_INCLUDE_DIRS})
 
-include_directories( "${WIND_BASE}/target/h/WPILib" )
-
-add_subdirectory(SFMLNetwork)
-add_subdirectory(SFMLSystem)
-
-set(SRC
-    AutonomousModes/AutonBridge.cpp
-    AutonomousModes/AutonFeed.cpp
-    AutonomousModes/AutonShoot.cpp
-
-    Kinect/DriveKinect.cpp
-    Kinect/TurretKinect.cpp
-    Kinect/KinectBase.cpp
-
-    AutonContainer.cpp
-    Autonomous.cpp
-    ButtonTracker.cpp
-    Disabled.cpp
-    DriverStationDisplay.cpp
-    LockSolenoid.cpp
-    OperatorControl.cpp
-    OurRobot.cpp
-    Settings.cpp
-    ShooterController.cpp
+set(DIRS
+    AutonomousModes/*
+    Kinect/*
+    LiveGrapherHost/*
+    Subsystems/*
+    SFMLNetwork/*
+    SFMLSystem/*
 )
 
-add_executable(FRC_UserProgram.out ${SRC})
+file(GLOB SRC *.cpp *.c)
 
-target_link_libraries(FRC_UserProgram.out SFMLNetwork SFMLSystem)
+foreach(ELEM ${DIRS})
+    file(GLOB_RECURSE FILES ${ELEM}.cpp ${ELEM}.c)
+    list(APPEND SRC ${FILES})
+endforeach(ELEM)
+
+add_executable(Leonidas.out ${SRC})
+
+target_link_libraries(Leonidas.out ${WPILib_LIBRARY})
+
+add_make_deploy(Leonidas.out 10.35.12.2)
