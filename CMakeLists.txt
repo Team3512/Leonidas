@@ -1,17 +1,15 @@
 cmake_minimum_required(VERSION 2.8)
 include(FRCDeploy)
 
-project(Leonidas)
+project(FRC_UserProgram)
 find_package(WPILib)
 include_directories(${WPILib_INCLUDE_DIRS})
 
+set(CMAKE_CXX_FLAGS "-O3 -Wall -s -DVxWorks=1")
+set(CMAKE_C_FLAGS "-O3 -Wall -s -DVxWorks=1")
+
 set(DIRS
-    AutonomousModes/*
-    Kinect/*
-    LiveGrapherHost/*
-    Subsystems/*
-    SFMLNetwork/*
-    SFMLSystem/*
+    src/*
 )
 
 file(GLOB SRC *.cpp *.c)
@@ -21,8 +19,8 @@ foreach(ELEM ${DIRS})
     list(APPEND SRC ${FILES})
 endforeach(ELEM)
 
-add_executable(Leonidas.out ${SRC})
+add_executable(FRC_UserProgram.out ${SRC})
 
-target_link_libraries(Leonidas.out ${WPILib_LIBRARY})
+target_link_libraries(FRC_UserProgram.out ${WPILib_LIBRARY})
 
-add_make_deploy(Leonidas.out 10.35.12.2)
+add_make_deploy(FRC_UserProgram.out 10.35.12.2)
