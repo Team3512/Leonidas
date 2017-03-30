@@ -5,19 +5,18 @@
 #include <Timer.h>
 
 KinectBase::KinectBase(sf::IpAddress IP, uint16_t portNumber)
-    : socketThread(&KinectBase::receive, this),
-      sendIP(IP),
-      sendPort(portNumber) {
-    closeThread = false;
+    : sendIP(IP), sendPort(portNumber) {
     kinectSocket.bind(portNumber);
     kinectSocket.setBlocking(false);
-    socketThread.launch();
+    valueAge.Start();
+
+    socketThread = std::thread(&KinectBase::receive, this);
 }
 
 KinectBase::~KinectBase() {
     closeThread = true;
 
-    socketThread.wait();  // waits for receive thread to end
+    socketThread.join();  // waits for receive thread to end
     kinectSocket.unbind();
 }
 
@@ -63,12 +62,12 @@ void KinectBase::receive() {
         if (sOnlineStatus == sf::Socket::Done) {
             // if data received
             extractPacket(receiver);  // unpack new data from receiver packet
-            valueAge.restart();
+            valueAge.Reset();
         } else if (sOnlineStatus == sf::Socket::Disconnected ||
                    sOnlineStatus == sf::Socket::Error) {
             // if socket failed
             clearValues();
-        } else if (valueAge.getElapsedTime().asMilliseconds() > 600) {
+        } else if (valueAge.HasPeriodPassed(0.6)) {
             // if values received are older than 600ms, clear them
             clearValues();
         }
@@ -108,7 +107,7 @@ void KinectBase::clearValues() {
     valueMutex.lock();
 
     clearValuesMutexless();
-    valueAge.restart();  // there are new values, so reset the timer
+    valueAge.Reset();  // there are new values, so reset the timer
 
     valueMutex.unlock();
 }

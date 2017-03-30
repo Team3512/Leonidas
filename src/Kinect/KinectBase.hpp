@@ -2,16 +2,18 @@
 
 #pragma once
 
+#include <mutex>
+#include <thread>
+
+#include <Timer.h>
+
 #include "../SFML/Network/IpAddress.hpp"
 #include "../SFML/Network/Packet.hpp"
 #include "../SFML/Network/UdpSocket.hpp"
-#include "../SFML/System/Clock.hpp"
-#include "../SFML/System/Mutex.hpp"
-#include "../SFML/System/Thread.hpp"
 
 typedef struct PacketStruct {
     sf::Packet packet;
-    sf::Mutex mutex;
+    std::mutex mutex;
 } PacketStruct;
 
 class KinectBase {
@@ -55,13 +57,13 @@ protected:
     PacketStruct sender;
 
     // locks data received from packet
-    sf::Mutex valueMutex;
+    std::mutex valueMutex;
 
 private:
     // tells the receive thread to exit when the object instance is destructed
-    volatile bool closeThread;
+    volatile bool closeThread = false;
 
-    sf::Thread socketThread;
+    std::thread socketThread;
 
     sf::UdpSocket kinectSocket;
     sf::UdpSocket sendSocket;
@@ -72,7 +74,7 @@ private:
     sf::IpAddress receiveIP;
     uint16_t receivePort;
 
-    sf::Clock valueAge;  // used to throw away old values
+    Timer valueAge;  // used to throw away old values
 
     sf::Socket::Status onlineStatus;
 

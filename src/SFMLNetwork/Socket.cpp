@@ -26,8 +26,10 @@
 // Headers
 ////////////////////////////////////////////////////////////
 #include "../SFML/Network/Socket.hpp"
+
+#include <iostream>
+
 #include "SocketImpl.hpp"
-#include "../SFML/System/Err.hpp"
 
 
 namespace sf
@@ -105,7 +107,7 @@ void Socket::create(SocketHandle handle)
             int yes = 1;
             if (setsockopt(m_socket, IPPROTO_TCP, TCP_NODELAY, reinterpret_cast<char*>(&yes), sizeof(yes)) == -1)
             {
-                err() << "Failed to set socket option \"TCP_NODELAY\" ; "
+                std::cerr << "Failed to set socket option \"TCP_NODELAY\" ; "
                       << "all your TCP packets will be buffered" << std::endl;
             }
         }
@@ -115,7 +117,7 @@ void Socket::create(SocketHandle handle)
             int yes = 1;
             if (setsockopt(m_socket, SOL_SOCKET, SO_BROADCAST, reinterpret_cast<char*>(&yes), sizeof(yes)) == -1)
             {
-                err() << "Failed to enable broadcast on UDP socket" << std::endl;
+                std::cerr << "Failed to enable broadcast on UDP socket" << std::endl;
             }
         }
     }

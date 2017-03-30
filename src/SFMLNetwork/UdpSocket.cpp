@@ -29,8 +29,8 @@
 #include "../SFML/Network/IpAddress.hpp"
 #include "../SFML/Network/Packet.hpp"
 #include "SocketImpl.hpp"
-#include "../SFML/System/Err.hpp"
 #include <algorithm>
+#include <iostream>
 
 
 namespace sf
@@ -74,7 +74,7 @@ Socket::Status UdpSocket::bind(unsigned short port)
     sockaddr_in address = priv::SocketImpl::createAddress(INADDR_ANY, port);
     if (::bind(getHandle(), reinterpret_cast<sockaddr*>(&address), sizeof(address)) == -1)
     {
-        err() << "Failed to bind socket to port " << port << std::endl;
+        std::cerr << "Failed to bind socket to port " << port << std::endl;
         return Error;
     }
 
@@ -99,7 +99,7 @@ Socket::Status UdpSocket::send(const void* data, std::size_t size, const IpAddre
     // Make sure that all the data will fit in one datagram
     if (size > MaxDatagramSize)
     {
-        err() << "Cannot send data over the network "
+        std::cerr << "Cannot send data over the network "
               << "(the number of bytes to send is greater than sf::UdpSocket::MaxDatagramSize)" << std::endl;
         return Error;
     }
@@ -129,7 +129,7 @@ Socket::Status UdpSocket::receive(void* data, std::size_t size, std::size_t& rec
     // Check the destination buffer
     if (!data)
     {
-        err() << "Cannot receive data from the network (the destination buffer is invalid)" << std::endl;
+        std::cerr << "Cannot receive data from the network (the destination buffer is invalid)" << std::endl;
         return Error;
     }
 
