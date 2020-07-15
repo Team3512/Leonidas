@@ -1,7 +1,8 @@
-// Copyright (c) 2012-2017 FRC Team 3512. All Rights Reserved.
+// Copyright (c) 2012-2020 FRC Team 3512. All Rights Reserved.
+
+#include <stdlib.h>
 
 #include "queue.h"
-#include <stdlib.h>
 
 struct queue_t* queue_init(int size) {
     struct queue_t* queue;

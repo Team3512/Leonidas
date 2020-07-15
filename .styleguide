@@ -13,3 +13,19 @@ generatedFileExclude {
   SFMLNetwork/
   SFMLSystem/
 }
+
+includeOtherLibs {
+  ^Compressor\.h$
+  ^Counter\.h$
+  ^DoubleSolenoid\.h$
+  ^DriverStation\.h$
+  ^Joystick\.h$
+  ^Solenoid\.h$
+  ^Timer\.h$
+  ^Victor\.h$
+}
+
+includeProject {
+  ^list\.h$
+  ^queue\.h$
+}

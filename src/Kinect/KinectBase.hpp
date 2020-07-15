@@ -1,4 +1,4 @@
-// Copyright (c) 2012-2017 FRC Team 3512. All Rights Reserved.
+// Copyright (c) 2012-2020 FRC Team 3512. All Rights Reserved.
 
 #pragma once
 

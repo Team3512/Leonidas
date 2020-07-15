@@ -1,4 +1,4 @@
-// Copyright (c) 2012-2017 FRC Team 3512. All Rights Reserved.
+// Copyright (c) 2012-2020 FRC Team 3512. All Rights Reserved.
 
 /* LockSolenoid class
  * ====================
@@ -30,9 +30,9 @@
 
 #pragma once
 
-#include "DoubleSolenoid.h"
-#include "Solenoid.h"
-#include "Timer.h"
+#include <DoubleSolenoid.h>
+#include <Solenoid.h>
+#include <Timer.h>
 
 class LockSolenoid {
 public:
