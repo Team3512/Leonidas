@@ -5,12 +5,10 @@
 #include <cmath>
 
 Robot::Robot() {
-    autonSelector.AddAutoMethod("Bridge",
-                                std::bind(&Robot::AutonBridgeInit, this),
-                                std::bind(&Robot::AutonBridgePeriodic, this));
-    autonSelector.AddAutoMethod("Shoot",
-                                std::bind(&Robot::AutonShootInit, this),
-                                std::bind(&Robot::AutonShootPeriodic, this));
+    autonSelector.AddAutoMethod(
+        "Bridge", [=] { AutonBridgeInit(); }, [=] { AutonBridgePeriodic(); });
+    autonSelector.AddAutoMethod(
+        "Shoot", [=] { AutonShootInit(); }, [=] { AutonShootPeriodic(); });
 }
 
 void Robot::DisabledInit() { bridgeArm.Set(LockSolenoid::State::kRetracted); }
