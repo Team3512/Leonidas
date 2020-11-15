@@ -42,7 +42,7 @@ public:
     void Update();
 
 private:
-    static constexpr units::revolutions_per_minute_t kMaxSpeed = 4000_rpm;
+    static constexpr auto kMaxSpeed = 4000_rpm;
 
     frc::Victor m_motor1{7};
     frc::Victor m_motor2{6};
