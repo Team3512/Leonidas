@@ -177,7 +177,7 @@ doxygen {
 
     generate_html true
     extension_mapping 'inc=C++'
-    project_name 'Robot-2015'
+    project_name 'Robot-2012'
     quiet true
     warn_if_undocumented false
     generate_latex false
