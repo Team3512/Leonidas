@@ -1,32 +1,24 @@
-// Copyright (c) 2012-2020 FRC Team 3512. All Rights Reserved.
+// Copyright (c) 2012-2021 FRC Team 3512. All Rights Reserved.
 
 #include "Robot.hpp"
 
 #include <cmath>
 
 Robot::Robot() {
-    autonSelector.AddAutoMethod(
-        "Bridge", [=] { AutonBridgeInit(); }, [=] { AutonBridgePeriodic(); });
-    autonSelector.AddAutoMethod(
-        "Shoot", [=] { AutonShootInit(); }, [=] { AutonShootPeriodic(); });
+    autonChooser.AddAutonomous("Bridge", [=] { AutonBridge(); });
+    autonChooser.AddAutonomous("Shoot", [=] { AutonShoot(); });
 }
 
 void Robot::DisabledInit() { bridgeArm.Set(LockSolenoid::State::kRetracted); }
 
-void Robot::AutonomousInit() {
-    autonTimer.Reset();
-    autonTimer.Start();
-
-    autonSelector.ExecAutonomousInit();
-
-    autonTimer.Stop();
-}
-
 void Robot::TeleopInit() { bridgeArm.Set(LockSolenoid::State::kRetracted); }
 
-void Robot::RobotPeriodic() { shooter.Update(); }
+void Robot::RobotPeriodic() {
+    bridgeArm.Update();
+    shooter.Update();
+}
 
-void Robot::AutonomousPeriodic() { autonSelector.ExecAutonomousPeriodic(); }
+void Robot::AutonomousPeriodic() { autonChooser.AwaitRunAutonomous(); }
 
 void Robot::TeleopPeriodic() {
     // Aim

@@ -1,10 +1,10 @@
-// Copyright (c) 2012-2020 FRC Team 3512. All Rights Reserved.
+// Copyright (c) 2012-2021 FRC Team 3512. All Rights Reserved.
 
 #pragma once
 
 #include <frc/Solenoid.h>
 #include <frc2/Timer.h>
-#include <units/units.h>
+#include <units/time.h>
 
 /**
  * Operates either single or double solenoid and locks it in deployed position

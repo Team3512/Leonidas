@@ -1,4 +1,4 @@
-// Copyright (c) 2012-2020 FRC Team 3512. All Rights Reserved.
+// Copyright (c) 2012-2021 FRC Team 3512. All Rights Reserved.
 
 #pragma once
 
@@ -12,29 +12,24 @@
 #include <frc/Victor.h>
 #include <frc/controller/PIDController.h>
 #include <frc/drive/DifferentialDrive.h>
-#include <frc2/Timer.h>
-#include <units/units.h>
 
+#include "AutonomousChooser.hpp"
 #include "LockSolenoid.hpp"
 #include "Shooter.hpp"
-#include "autonselector/AutonSelector.hpp"
 
 class Robot : public frc::TimedRobot {
 public:
     Robot();
 
     void DisabledInit() override;
-    void AutonomousInit() override;
     void TeleopInit() override;
 
     void RobotPeriodic() override;
     void AutonomousPeriodic() override;
     void TeleopPeriodic() override;
 
-    void AutonShootInit();
-    void AutonShootPeriodic();
-    void AutonBridgeInit();
-    void AutonBridgePeriodic();
+    void AutonBridge();
+    void AutonShoot();
 
 private:
     // Drivetrain Motors
@@ -59,8 +54,5 @@ private:
 
     LockSolenoid bridgeArm{2, 3};
 
-    frc3512::AutonSelector autonSelector{5800};
-
-    // Used for timing in all Autonomous routines
-    frc2::Timer autonTimer;
+    frc3512::AutonomousChooser autonChooser{"No-op", [] {}};
 };

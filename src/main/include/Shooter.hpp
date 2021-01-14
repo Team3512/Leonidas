@@ -1,11 +1,11 @@
-// Copyright (c) 2020 FRC Team 3512. All Rights Reserved.
+// Copyright (c) 2020-2021 FRC Team 3512. All Rights Reserved.
 
 #pragma once
 
 #include <frc/Encoder.h>
 #include <frc/Victor.h>
 #include <frc/controller/PIDController.h>
-#include <units/units.h>
+#include <units/angular_velocity.h>
 
 class Shooter {
 public:
